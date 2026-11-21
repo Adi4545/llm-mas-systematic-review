@@ -1,0 +1,231 @@
+{
+  "protocol_version": "v1.4",
+  "execution_date": "2026-11-20",
+  "executed_by": "Agent 3 (Literature Discovery Specialist)",
+  "environment_note": "Executed via search_web over open academic web repositories (arXiv, OpenReview, ACL Anthology, PMLR), publisher portals (ACM DL, Springer, Nature), and semantic citation indices (no closed Scopus or Web of Science bulk API exports). Our systematic protocol transparently frames retrieval as a PRISMA-governed open-web query- and snowball-seeded review, discloses targeted system-name specializations in S02/S05/S09, and appends remediation waves S12-S13.",
+  "summary": {
+    "total_raw_records_identified": 142,
+    "total_duplicates_merged": 42,
+    "preprint_to_archival_merges": 27,
+    "cross_query_and_snowball_overlaps_merged": 15,
+    "unique_records_entering_stage1": 100,
+    "wave1_unique_records": 84,
+    "remediation_v1_2_unique_records": 16
+  },
+  "searches": [
+    {
+      "search_id": "S01",
+      "protocol_query": "Q1",
+      "date": "2026-11-20",
+      "query_string_executed": "(\"multi-agent\" OR \"multi-agent debate\") (\"LLM\" OR \"large language model\") (\"single-agent\" OR \"self-consistency\" OR \"chain-of-thought\") (\"token budget\" OR \"compute-matched\" OR \"inference cost\" OR \"outperform\" OR \"underperform\") 2023..2026",
+      "domains_targeted": [
+        "arxiv.org",
+        "nature.com",
+        "aclanthology.org",
+        "proceedings.mlr.press",
+        "semanticscholar.org"
+      ],
+      "raw_hits_logged": 12,
+      "duplicates_collapsed": 4,
+      "unique_new_records_added": 8,
+      "notes": "Core Q1 compute-matched SAS-vs-MAS benchmark search and status verification; merged arXiv:2512.08296 into Nature Machine Intelligence (doi:10.1038/s42256-026-01268-y), arXiv:2311.17371 into PMLR v235 (Smit et al. 2024), arXiv:2402.18272 into ACL 2024 (Wang et al. 2024), and cross-index duplicate for Tran & Kiela (2026)."
+    },
+    {
+      "search_id": "S02",
+      "protocol_query": "Q1",
+      "date": "2026-11-20",
+      "query_string_executed": "\"Mixture-of-Agents\" OR \"Self-MoA\" OR \"ColMAD\" OR \"Self-Refine\" OR \"Reflexion\" (\"single-agent\" OR \"multi-agent\") (site:openreview.net OR site:arxiv.org OR site:proceedings.neurips.cc) 2023..2026",
+      "domains_targeted": [
+        "openreview.net",
+        "arxiv.org",
+        "proceedings.neurips.cc"
+      ],
+      "raw_hits_logged": 8,
+      "duplicates_collapsed": 3,
+      "unique_new_records_added": 5,
+      "notes": "Q1 follow-up verifying TMLR acceptance of Self-MoA (SDY0kddnVO; merged arXiv:2502.00674), ICLR 2025 MoA (PhMrGCMIRL; merged arXiv:2406.04692), ICML 2026 ColMAD (arXiv:2510.18375 merged with OpenReview record), and single-agent self-refinement exclusions (Self-Refine, Reflexion). [Post-freeze disclosure: Query specialized post-v1.0 freeze with named architectures (Mixture-of-Agents, Self-MoA, ColMAD, Self-Refine, Reflexion).]",
+      "post_freeze_specialization_disclosed": true
+    },
+    {
+      "search_id": "S03",
+      "protocol_query": "Q2",
+      "date": "2026-11-20",
+      "query_string_executed": "(\"multi-agent\" OR \"LLM-MAS\" OR \"agentic workflow\") (\"LLM\" OR \"large language model\") (\"topology\" OR \"communication graph\" OR \"pruning\" OR \"orchestration\") (\"token reduction\" OR \"token overhead\" OR \"latency\" OR \"scaling\" OR \"MCTS\" OR \"GNN\") 2023..2026",
+      "domains_targeted": [
+        "openreview.net",
+        "proceedings.mlr.press",
+        "aclanthology.org",
+        "arxiv.org",
+        "semanticscholar.org"
+      ],
+      "raw_hits_logged": 13,
+      "duplicates_collapsed": 5,
+      "unique_new_records_added": 8,
+      "notes": "Q2 topology optimization, pruning, and amortization search; merged 5 arXiv preprints into primary archival records (MacNet K3n5jPkrU6, GPTSwarm PMLR v235, AgentPrune LkzuPorQ5L, G-Designer PMLR v267, AFlow z5uVAKwmjf) and surfaced FLORA surrogate plus two workflow/communication surveys."
+    },
+    {
+      "search_id": "S04",
+      "protocol_query": "Q3",
+      "date": "2026-11-20",
+      "query_string_executed": "\"multi-agent\" \"large language model\" (\"error propagation\" OR \"error amplification\" OR \"cascading failure\" OR \"conformity\" OR \"sycophancy\" OR \"failure attribution\") 2024..2026 site:arxiv.org OR site:openreview.net OR site:aclanthology.org",
+      "domains_targeted": [
+        "arxiv.org",
+        "openreview.net",
+        "aclanthology.org",
+        "proceedings.mlr.press"
+      ],
+      "raw_hits_logged": 14,
+      "duplicates_collapsed": 6,
+      "unique_new_records_added": 8,
+      "notes": "Q3 error propagation and trajectory attribution search; merged preprint/venue pairs across MAST (NeurIPS 2025 + arXiv:2503.13657), Who&When (PMLR v267 + arXiv:2505.00212), AgenTracer (ICLR 2026 + arXiv:2509.03312), AgentDebug (ICML FAGEN + arXiv:2509.25370), AgentLocate (COLM 2026 + arXiv:2607.07989), and TraceElephant (ACL 2026 + arXiv:2604.22708)."
+    },
+    {
+      "search_id": "S05",
+      "protocol_query": "Q3",
+      "date": "2026-11-20",
+      "query_string_executed": "(\"group conformity\" OR \"sycophancy propagation\" OR \"CONSENSAGENT\" OR \"CORBA\") \"multi-agent\" (site:aclanthology.org OR site:arxiv.org OR site:openreview.net) 2024..2026",
+      "domains_targeted": [
+        "aclanthology.org",
+        "arxiv.org",
+        "openreview.net"
+      ],
+      "raw_hits_logged": 7,
+      "duplicates_collapsed": 3,
+      "unique_new_records_added": 4,
+      "notes": "Q3 targeted follow-up for inter-agent conformity and sycophancy propagation; merged arXiv:2506.01332 into ACL Findings 2025 (2025.findings-acl.265), arXiv:2604.02668 into SIGDIAL 2026 (2026.sigdial-1.56), and arXiv:2502.14529 with ACL Findings 2026 CORBA metadata. [Post-freeze disclosure: Query specialized post-v1.0 freeze with named systems (CONSENSAGENT, CORBA).]",
+      "post_freeze_specialization_disclosed": true
+    },
+    {
+      "search_id": "S06",
+      "protocol_query": "Q4",
+      "date": "2026-11-20",
+      "query_string_executed": "(\"LLM agent\" OR \"multi-agent\" OR \"agentic benchmark\") (\"pass^k\" OR \"pass@k\" OR \"reliability\" OR \"harness\" OR \"reward hacking\" OR \"benchmark leakage\" OR \"SWE-bench\" OR \"tau-bench\" OR \"WebArena\") 2023..2026",
+      "domains_targeted": [
+        "arxiv.org",
+        "openreview.net",
+        "proceedings.neurips.cc",
+        "aclanthology.org"
+      ],
+      "raw_hits_logged": 17,
+      "duplicates_collapsed": 4,
+      "unique_new_records_added": 13,
+      "notes": "Q4 evaluation validity, multi-run reliability, and harness audit search; merged preprint/archival pairs for tau-bench (ICLR 2025 EMki-p3GC + arXiv:2406.12045), Rabanser et al. (ICML 2026 + arXiv:2602.16666), PatchDiff (ICSE 2026 + arXiv:2503.15223), and VTFR (NeurIPS 2026 Workshop + arXiv:2611.18471); surfaced AgentDojo, InjecAgent, and ASB as out-of-scope single-agent security benchmarks (E7)."
+    },
+    {
+      "search_id": "S07",
+      "protocol_query": "Q5",
+      "date": "2026-11-20",
+      "query_string_executed": "(\"LLM\" OR \"large language model\") ((\"swarm intelligence\" OR \"classical MAS\" OR \"prompt chaining\") OR (\"selective escalation\" OR \"masrouter\" OR \"cascadedebate\" OR \"single-to-multi\")) 2023..2026",
+      "domains_targeted": [
+        "arxiv.org",
+        "openreview.net",
+        "aclanthology.org",
+        "proceedings.mlr.press",
+        "proceedings.neurips.cc"
+      ],
+      "raw_hits_logged": 14,
+      "duplicates_collapsed": 5,
+      "unique_new_records_added": 9,
+      "notes": "Q5 selective escalation vs. single-query routing and classical swarm gate; merged preprint/conference pairs for MasRouter (ACL 2025 + arXiv:2502.11133), CascadeDebate (2026.acl-industry.93 + arXiv:2604.12262), RouteLLM (ICLR 2025 + arXiv:2406.18665), AutoMix (NeurIPS 2024 + arXiv:2310.12963), and Hybrid LLM (ICLR 2024 + arXiv:2404.14618); corrected Model Swarms arXiv ID to 2410.11163 (ICML 2025, PMLR 267)."
+    },
+    {
+      "search_id": "S08",
+      "protocol_query": "Q6",
+      "date": "2026-11-20",
+      "query_string_executed": "(site:openreview.net OR site:aclanthology.org OR site:proceedings.neurips.cc OR site:proceedings.mlr.press OR site:dl.acm.org) \"multi-agent\" \"large language model\" (\"single-agent\" OR \"failure\" OR \"debate\" OR \"topology\") 2023..2026",
+      "domains_targeted": [
+        "openreview.net",
+        "aclanthology.org",
+        "proceedings.neurips.cc",
+        "proceedings.mlr.press",
+        "dl.acm.org"
+      ],
+      "raw_hits_logged": 12,
+      "duplicates_collapsed": 2,
+      "unique_new_records_added": 10,
+      "notes": "Q6 OpenReview public peer-review, rejection, and double-blind status verification across TMLR and NeurIPS/ICLR; merged arXiv:2505.21298 into La Malfa et al. (NeurIPS 2025 FfsxgSZW0c) and arXiv:2605.09965 into Xin et al. (TMLR SDkEq8Fzvl); logged TMLR rejections (7332 AgenticNet, 7253 Inducing Disagreement, 9844 Diversity Collapse), withdrawal (3hXEPbG0dh), and active under-review holds."
+    },
+    {
+      "search_id": "S09",
+      "protocol_query": "Q6",
+      "date": "2026-11-20",
+      "query_string_executed": "(site:ieeexplore.ieee.org OR site:link.springer.com OR site:openreview.net) \"multi-agent\" \"large language model\" (\"withdrawn\" OR \"rejected\" OR \"10.1109\" OR \"SwarmBench\" OR \"SCALE\" OR \"8079\") 2024..2026",
+      "domains_targeted": [
+        "ieeexplore.ieee.org",
+        "link.springer.com",
+        "openreview.net",
+        "arxiv.org"
+      ],
+      "raw_hits_logged": 8,
+      "duplicates_collapsed": 1,
+      "unique_new_records_added": 7,
+      "notes": "Q6 publisher paywall boundary audit and ICLR withdrawal tracking; confirmed two IEEE Xplore proceedings lack open-access mirrors (E5: Eberhardt 2025, Brazeau 2025), verified ARMeta IEEE COMPSAC open preprint (arXiv:2605.28321), and tracked ICLR withdrawals (SwarmBench, Peacemaker or Troublemaker, SCALE Sub #6097 merged with ACL 2025 resubmission note) plus TMLR 4567 rejection. [Post-freeze disclosure: Query specialized post-v1.0 freeze with named benchmarks/frameworks (SwarmBench, SCALE, 8079).]",
+      "post_freeze_specialization_disclosed": true
+    },
+    {
+      "search_id": "S10",
+      "protocol_query": "Snowball-Backward",
+      "date": "2026-11-20",
+      "query_string_executed": "Backward 1-hop reference screening from Section 3.4 anchor studies and competing 2024-2026 surveys (Motger 2607.26212, Wang IEEE TSE 2026, Ala'anzy AIRE 2026, ACM CSUR 2026 portfolio, Smit 2024, Wang 2024)",
+      "domains_targeted": [
+        "arxiv.org",
+        "dl.acm.org",
+        "link.springer.com",
+        "ieeexplore.ieee.org",
+        "proceedings.mlr.press"
+      ],
+      "raw_hits_logged": 13,
+      "duplicates_collapsed": 4,
+      "unique_new_records_added": 9,
+      "notes": "Added foundational Du et al. (ICML 2024, arXiv:2305.14325) plus 8 competing surveys across arXiv, IEEE TSE, AIRE, ACM CSUR, and Springer FCS; collapsed 4 overlapping references already captured in Q1-Q4."
+    },
+    {
+      "search_id": "S11",
+      "protocol_query": "Snowball-Forward",
+      "date": "2026-11-20",
+      "query_string_executed": "Forward 1-hop citation screening through 2026-11-20 anchored on Kim et al. (2512.08296), Smit et al. (2311.17371), MAST (2503.13657), AFlow (2410.10762), and tau-bench (2406.12045) via Semantic Scholar and open-web indexing",
+      "domains_targeted": [
+        "semanticscholar.org",
+        "arxiv.org",
+        "dl.acm.org",
+        "preprints.org"
+      ],
+      "raw_hits_logged": 8,
+      "duplicates_collapsed": 5,
+      "unique_new_records_added": 3,
+      "notes": "Surfaced 3 net-new citing works (Nguyen, Gupta, & Le Oct 2026 arXiv:2610.23246; Li et al. Sep 2026 Preprints.org Efficiency Survey; Xia et al. FSE 2025 Agentless arXiv:2407.01489); 5 forward citations (Tran & Kiela, AgentLocate, TraceElephant, BenchJack, VTFR) were already retrieved in Q1/Q3/Q4 and collapsed."
+    },
+    {
+      "search_id": "S12",
+      "protocol_query": "Targeted-Comparative",
+      "date": "2026-11-20",
+      "query_string_executed": "Targeted author/title/arXiv lookup for 12 landmark primary MAS-vs-SAS, debate, and sparse-graph studies (2402.05120, 2505.18286, 2508.17536, NeurIPS 2024 Estornell & Liu, 2605.00914 / CAIS 2026, 2602.04234, 2609.19759, 2310.02170, 2503.18891, 2410.08115, 2506.09033, 2406.14228)",
+      "domains_targeted": [
+        "arxiv.org",
+        "openreview.net",
+        "aclanthology.org",
+        "dl.acm.org"
+      ],
+      "raw_hits_logged": 12,
+      "duplicates_collapsed": 0,
+      "unique_new_records_added": 12,
+      "notes": "Dual-screened gap recovery (11 included, 1 excluded single-LLM router)."
+    },
+    {
+      "search_id": "S13",
+      "protocol_query": "Targeted-Security-Attribution",
+      "date": "2026-11-20",
+      "query_string_executed": "Targeted author/title/arXiv lookup for 4 multi-agent failure-attribution & topological security studies (VerifyMAS 2605.17467, Hagag et al. ICML 2026 PMLR 306, NetSafe ACL Findings 2025, G-Safeguard ACL 2025)",
+      "domains_targeted": [
+        "arxiv.org",
+        "proceedings.mlr.press",
+        "aclanthology.org"
+      ],
+      "raw_hits_logged": 4,
+      "duplicates_collapsed": 0,
+      "unique_new_records_added": 4,
+      "notes": "Dual-screened security & failure-attribution recovery (all 4 included)."
+    }
+  ],
+  "remediation_date": "2026-11-20"
+}

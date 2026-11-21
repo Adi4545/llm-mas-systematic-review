@@ -1,0 +1,945 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://llm-mas-systematic-review.local/schemas/extraction_schema_v1.0.json",
+  "title": "LLM Multi-Agent vs. Single-Agent Systematic Review Extraction Schema (v1.0)",
+  "description": "19-field standardized data extraction and quality appraisal schema for Deliverable C (Systematic Review Protocol v1.0, November 20, 2026). Enforces access-honest missingness sentinels ('not reported' and 'not verifiable from accessible open summary'), strict within-study paired comparison coding (Delta_MAS-SAS), 4-tier SAS baseline rigor classification, publication-status stratification, and QA1-QA7 appraisal.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "bibliographic_and_identifiers",
+    "source_provenance",
+    "year",
+    "publication_status",
+    "rq_mapping",
+    "objective",
+    "architecture_and_agent_count",
+    "coordination_and_communication_method",
+    "role_specialization",
+    "datasets_and_benchmarks",
+    "experimental_setup",
+    "baselines_and_rigor_tier",
+    "evaluation_metrics",
+    "reported_numerical_outcomes",
+    "variance_cis_and_stats",
+    "cost_and_latency",
+    "reported_successes_and_failures",
+    "limitations_and_validity_threats",
+    "quality_appraisal_and_evidence_provenance"
+  ],
+  "properties": {
+    "bibliographic_and_identifiers": {
+      "type": "object",
+      "description": "Field 01: Core bibliographic metadata and canonical persistent identifiers. Retains peer-reviewed archival record as primary when linked to a prior preprint.",
+      "additionalProperties": false,
+      "required": [
+        "study_id",
+        "title",
+        "authors",
+        "venue",
+        "doi",
+        "arxiv_id",
+        "openreview_id",
+        "acl_anthology_id",
+        "linked_preprint_or_prior_version_ids"
+      ],
+      "properties": {
+        "study_id": {
+          "type": "string",
+          "minLength": 3,
+          "description": "Unique canonical study key (e.g., 'Kim2026_ScienceScalingAgentSystems')."
+        },
+        "title": {
+          "type": "string",
+          "minLength": 3
+        },
+        "authors": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "description": "Ordered author list; use ['Anonymous'] strictly for double-blind Under Review records."
+        },
+        "venue": {
+          "type": "string",
+          "minLength": 2,
+          "description": "Journal, conference proceedings, workshop, or preprint server name."
+        },
+        "doi": {
+          "type": "string",
+          "description": "Verified DOI string (e.g., '10.1145/...') or missingness sentinel."
+        },
+        "arxiv_id": {
+          "type": "string",
+          "description": "Verified arXiv identifier (e.g., 'arXiv:2512.08296') or missingness sentinel."
+        },
+        "openreview_id": {
+          "type": "string",
+          "description": "Verified OpenReview forum hash or numbered submission ID (e.g., 'FfsxgSZW0c', 'TMLR Paper 7332') or missingness sentinel."
+        },
+        "acl_anthology_id": {
+          "type": "string",
+          "description": "Verified ACL Anthology identifier or missingness sentinel."
+        },
+        "linked_preprint_or_prior_version_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Deduplicated predecessor preprint IDs or prior review round records merged into this primary record."
+        }
+      }
+    },
+    "source_provenance": {
+      "type": "object",
+      "description": "Field 02: Verified open-web retrieval URL, access granularity, and extraction retrieval date.",
+      "additionalProperties": false,
+      "required": [
+        "verified_url",
+        "access_level",
+        "retrieval_date"
+      ],
+      "properties": {
+        "verified_url": {
+          "type": "string",
+          "format": "uri",
+          "description": "Direct verified URL inspected during screening/extraction."
+        },
+        "access_level": {
+          "type": "string",
+          "enum": [
+            "open_full_text_pdf",
+            "open_html_proceedings",
+            "open_preprint_mirror",
+            "open_summary_and_metadata_only",
+            "paywalled_abstract_only_excluded"
+          ],
+          "description": "Exact verified document access tier; governs use of 'not verifiable from accessible open summary'."
+        },
+        "retrieval_date": {
+          "type": "string",
+          "format": "date",
+          "description": "ISO-8601 retrieval/verification date (YYYY-MM-DD)."
+        }
+      }
+    },
+    "year": {
+      "type": "integer",
+      "minimum": 2023,
+      "maximum": 2026,
+      "description": "Field 03: Publication or public posting year within the primary eligibility window (2023-2026)."
+    },
+    "publication_status": {
+      "type": "string",
+      "description": "Field 04: Strictly verified publication status controlling synthesis stratification and sensitivity bounds.",
+      "enum": [
+        "Peer-reviewed journal",
+        "Peer-reviewed conference",
+        "Workshop",
+        "Preprint (arXiv / Preprints.org)",
+        "Under review",
+        "Withdrawn",
+        "Publicly rejected",
+        "Retracted"
+      ]
+    },
+    "rq_mapping": {
+      "type": "object",
+      "description": "Field 05: Mapping to RQ1-RQ4 and assigned synthesis track.",
+      "additionalProperties": false,
+      "required": [
+        "rqs_addressed",
+        "corpus_track"
+      ],
+      "properties": {
+        "rqs_addressed": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "enum": [
+              "RQ1",
+              "RQ2",
+              "RQ3",
+              "RQ4"
+            ]
+          }
+        },
+        "corpus_track": {
+          "type": "string",
+          "enum": [
+            "Primary Comparative Effectiveness & Topology (RQ1/RQ2)",
+            "Mechanistic Failure & Conformity Analysis (RQ3)",
+            "Evaluation Validity & Harness Reliability Audit (RQ4)",
+            "Documented Peer-Review Rejection-Case Audit Only (RQ4)"
+          ]
+        }
+      }
+    },
+    "objective": {
+      "type": "string",
+      "minLength": 10,
+      "description": "Field 06: Concise operational summary of the study's primary objective and empirical claim."
+    },
+    "architecture_and_agent_count": {
+      "type": "object",
+      "description": "Field 07: MAS architectural family, topology class, agent cardinality N, LLM backbones, and model heterogeneity.",
+      "additionalProperties": false,
+      "required": [
+        "system_names",
+        "topology_class",
+        "agent_count_n",
+        "backbone_models",
+        "model_heterogeneity"
+      ],
+      "properties": {
+        "system_names": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string"
+          }
+        },
+        "topology_class": {
+          "type": "string",
+          "enum": [
+            "Independent/Voting Ensemble",
+            "Sequential Chain/SOP",
+            "Centralized Star/Orchestrator-Worker",
+            "Dense All-to-All Debate",
+            "Adaptive Sparse/Learned DAG",
+            "Hybrid/Selective Escalation",
+            "Multiple Topologies Compared",
+            "Diagnostic/Benchmark Audit (N/A)"
+          ]
+        },
+        "agent_count_n": {
+          "oneOf": [
+            {
+              "type": "integer",
+              "minimum": 1
+            },
+            {
+              "type": "string",
+              "minLength": 1
+            }
+          ],
+          "description": "Number of LLM agents (e.g., 3, '2-1000+', 'N/A (Diagnostic Audit)', or missingness sentinel)."
+        },
+        "backbone_models": {
+          "oneOf": [
+            {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "string"
+              }
+            },
+            {
+              "$ref": "#/$defs/MissingValueString"
+            }
+          ]
+        },
+        "model_heterogeneity": {
+          "type": "string",
+          "enum": [
+            "Homogeneous",
+            "Heterogeneous",
+            "Both Tested",
+            "Not Applicable (Diagnostic Audit)",
+            "not reported",
+            "not verifiable from accessible open summary"
+          ]
+        }
+      }
+    },
+    "coordination_and_communication_method": {
+      "type": "object",
+      "description": "Field 08: Interaction mechanics, communication substrate/protocol, topology adaptation/pruning, and termination rules.",
+      "additionalProperties": false,
+      "required": [
+        "interaction_paradigm",
+        "communication_protocol",
+        "topology_optimization_or_pruning_method",
+        "termination_mechanism"
+      ],
+      "properties": {
+        "interaction_paradigm": {
+          "type": "string",
+          "enum": [
+            "Interactive Stateful Multi-Turn",
+            "Parallel Independent Sampling + Voting/Aggregation",
+            "Sequential Pipeline/SOP Handoff",
+            "Centralized Hub-and-Spoke Delegation",
+            "Learned Graph/Workflow Routing",
+            "Hybrid/Mixed Paradigms",
+            "Non-Comparative Diagnostic Audit",
+            "not reported",
+            "not verifiable from accessible open summary"
+          ]
+        },
+        "communication_protocol": {
+          "type": "string",
+          "minLength": 2,
+          "description": "Message/state exchange format (e.g., unstructured NL dialogue, structured JSON/SOP, shared datastore/substrate, codified pseudocode) or missingness sentinel."
+        },
+        "topology_optimization_or_pruning_method": {
+          "type": "string",
+          "minLength": 2,
+          "description": "Static fixed graph, MCTS workflow search, RL policy gradient, VGAE decoding, dropout/pruning, evolutionary, 'none', or missingness sentinel."
+        },
+        "termination_mechanism": {
+          "type": "string",
+          "minLength": 2,
+          "description": "Stopping criterion (e.g., fixed rounds R, majority consensus, verifier test pass, orchestrator decision) or missingness sentinel."
+        }
+      }
+    },
+    "role_specialization": {
+      "type": "object",
+      "description": "Field 09: Whether agents hold differentiated roles, personas, or asymmetric tools/execution privileges.",
+      "additionalProperties": false,
+      "required": [
+        "has_role_specialization",
+        "defined_roles",
+        "asymmetric_tool_or_privilege_split"
+      ],
+      "properties": {
+        "has_role_specialization": {
+          "oneOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "$ref": "#/$defs/MissingValueString"
+            }
+          ]
+        },
+        "defined_roles": {
+          "oneOf": [
+            {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            {
+              "$ref": "#/$defs/MissingValueString"
+            }
+          ]
+        },
+        "asymmetric_tool_or_privilege_split": {
+          "type": "string",
+          "minLength": 2,
+          "description": "Documents if specific agents hold privileged tools (e.g., code executor, web browser, verifier) absent in peers/SAS, 'none', or missingness sentinel."
+        }
+      }
+    },
+    "datasets_and_benchmarks": {
+      "type": "array",
+      "minItems": 1,
+      "description": "Field 10: Evaluated datasets/benchmarks, task structure classification, verifier regimes, and harness versions.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "benchmark_name",
+          "domain",
+          "task_structure_type",
+          "verifier_availability",
+          "harness_version_or_variant"
+        ],
+        "properties": {
+          "benchmark_name": {
+            "type": "string",
+            "minLength": 2
+          },
+          "domain": {
+            "type": "string",
+            "enum": [
+              "Math Reasoning",
+              "Logical/General QA",
+              "Code Generation/SWE",
+              "Interactive Tool-Use/Web/OS",
+              "Multi-Agent Social/Game/Grid",
+              "Diagnostic Trace Attribution",
+              "Mixed/Multi-Domain"
+            ]
+          },
+          "task_structure_type": {
+            "type": "string",
+            "enum": [
+              "Decomposable/Parallelizable",
+              "Sequential/State-Dependent",
+              "Context-Overflowing",
+              "Static Single-Turn QA/Code",
+              "Multi-Turn Interactive Sandbox",
+              "Mixed",
+              "not reported",
+              "not verifiable from accessible open summary"
+            ]
+          },
+          "verifier_availability": {
+            "type": "string",
+            "enum": [
+              "Deterministic/Unit-Test Verifier",
+              "Exact-Match/Objective Key",
+              "LLM-as-a-Judge",
+              "Unverified/Open-Ended",
+              "Mixed",
+              "not reported",
+              "not verifiable from accessible open summary"
+            ]
+          },
+          "harness_version_or_variant": {
+            "type": "string",
+            "minLength": 2,
+            "description": "Specific harness subset/patch (e.g., 'EvalPlus 80x', 'SWE-bench Verified', 'Strict Exact-Match') or missingness sentinel."
+          }
+        }
+      }
+    },
+    "experimental_setup": {
+      "type": "object",
+      "description": "Field 11: Experimental scale, prompt/tool parity controls, and decoding settings.",
+      "additionalProperties": false,
+      "required": [
+        "sample_or_trace_count",
+        "prompt_parity_status",
+        "tool_execution_parity_status",
+        "decoding_and_hyperparameters"
+      ],
+      "properties": {
+        "sample_or_trace_count": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Task instances, configurations, or traces evaluated, or missingness sentinel."
+        },
+        "prompt_parity_status": {
+          "type": "string",
+          "enum": [
+            "Matched/Parity Verified",
+            "Asymmetric/Unmatched (e.g., Zero-Shot SAS vs Role-Prompted MAS)",
+            "Not Applicable (Diagnostic Audit)",
+            "not reported",
+            "not verifiable from accessible open summary"
+          ]
+        },
+        "tool_execution_parity_status": {
+          "type": "string",
+          "enum": [
+            "Matched Tools/Feedback",
+            "Asymmetric Tools/Feedback Favoring MAS",
+            "Asymmetric Tools Favoring SAS",
+            "No External Tools",
+            "Not Applicable (Diagnostic Audit)",
+            "not reported",
+            "not verifiable from accessible open summary"
+          ]
+        },
+        "decoding_and_hyperparameters": {
+          "type": "string",
+          "minLength": 2,
+          "description": "Temperature, top-p, max tokens/thinking budget, or missingness sentinel."
+        }
+      }
+    },
+    "baselines_and_rigor_tier": {
+      "type": "object",
+      "description": "Field 12: Included SAS and MAS baselines, 4-tier SAS baseline rigor classification, and compute-matching status.",
+      "additionalProperties": false,
+      "required": [
+        "sas_baselines_included",
+        "mas_baselines_included",
+        "sas_baseline_rigor_tier",
+        "compute_matching_status"
+      ],
+      "properties": {
+        "sas_baselines_included": {
+          "oneOf": [
+            {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            {
+              "$ref": "#/$defs/MissingValueString"
+            }
+          ]
+        },
+        "mas_baselines_included": {
+          "oneOf": [
+            {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            {
+              "$ref": "#/$defs/MissingValueString"
+            }
+          ]
+        },
+        "sas_baseline_rigor_tier": {
+          "type": "string",
+          "enum": [
+            "Tier 1 (Compute/Token-Matched Strong SAS)",
+            "Tier 2 (Strong SAS, Unmatched Compute or Unamortized Search)",
+            "Tier 3 (Weak Zero-Shot Single-Pass SAS Only)",
+            "Tier 4 (Invalid or Absent LLM SAS Baseline)",
+            "N/A (Non-Comparative Diagnostic/Validity Study)"
+          ]
+        },
+        "compute_matching_status": {
+          "type": "string",
+          "enum": [
+            "Strictly Compute/Token-Matched",
+            "Partially Matched / Budget-Bounded",
+            "Unmatched Inference Compute",
+            "No SAS Baseline",
+            "Not Applicable (Diagnostic Audit)",
+            "not reported",
+            "not verifiable from accessible open summary"
+          ]
+        }
+      }
+    },
+    "evaluation_metrics": {
+      "type": "object",
+      "description": "Field 13: Outcome effectiveness metrics, diagnostic/validity metrics, and process proxy metrics (strictly separated).",
+      "additionalProperties": false,
+      "required": [
+        "effectiveness_metrics",
+        "diagnostic_or_validity_metrics",
+        "process_proxy_metrics"
+      ],
+      "properties": {
+        "effectiveness_metrics": {
+          "oneOf": [
+            {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            {
+              "$ref": "#/$defs/MissingValueString"
+            }
+          ]
+        },
+        "diagnostic_or_validity_metrics": {
+          "oneOf": [
+            {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            {
+              "$ref": "#/$defs/MissingValueString"
+            }
+          ]
+        },
+        "process_proxy_metrics": {
+          "oneOf": [
+            {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            {
+              "$ref": "#/$defs/MissingValueString"
+            }
+          ],
+          "description": "Process-only indicators (e.g., disagreement rate, message volume, edge density) kept distinct from task accuracy."
+        }
+      }
+    },
+    "reported_numerical_outcomes": {
+      "type": "object",
+      "description": "Field 14: Exact verbatim within-study paired MAS-vs-SAS deltas (no cross-paper pooling) and quantitative RQ2/RQ3/RQ4 diagnostic measurements.",
+      "additionalProperties": false,
+      "required": [
+        "paired_comparisons",
+        "diagnostic_or_topology_outcomes"
+      ],
+      "properties": {
+        "paired_comparisons": {
+          "type": "array",
+          "description": "Within-study paired MAS-vs-SAS outcome tuples; may be empty strictly for non-comparative RQ3/RQ4 diagnostic audits.",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "benchmark_and_backbone",
+              "mas_configuration",
+              "sas_comparator",
+              "mas_score",
+              "sas_score",
+              "delta_mas_minus_sas",
+              "compute_ratio_mas_over_sas",
+              "direction_verdict"
+            ],
+            "properties": {
+              "benchmark_and_backbone": {
+                "type": "string",
+                "minLength": 2
+              },
+              "mas_configuration": {
+                "type": "string",
+                "minLength": 2
+              },
+              "sas_comparator": {
+                "type": "string",
+                "minLength": 2
+              },
+              "mas_score": {
+                "oneOf": [
+                  {
+                    "type": "number"
+                  },
+                  {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                ]
+              },
+              "sas_score": {
+                "oneOf": [
+                  {
+                    "type": "number"
+                  },
+                  {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                ]
+              },
+              "delta_mas_minus_sas": {
+                "type": "string",
+                "minLength": 1,
+                "description": "Exact paired difference with unit (e.g., '-8.5 pp', '+6.6 pp') or missingness sentinel."
+              },
+              "compute_ratio_mas_over_sas": {
+                "oneOf": [
+                  {
+                    "type": "number",
+                    "minimum": 0
+                  },
+                  {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                ],
+                "description": "Ratio of MAS to SAS tokens/USD/calls (e.g., 1.0 for matched, 3.5, or missingness sentinel)."
+              },
+              "direction_verdict": {
+                "type": "string",
+                "enum": [
+                  "MAS > SAS",
+                  "MAS ≈ SAS",
+                  "MAS < SAS",
+                  "Mixed across budgets/subtasks",
+                  "not verifiable from accessible open summary"
+                ]
+              }
+            }
+          }
+        },
+        "diagnostic_or_topology_outcomes": {
+          "oneOf": [
+            {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            {
+              "$ref": "#/$defs/MissingValueString"
+            }
+          ],
+          "description": "Exact reported failure incidence, amplification multipliers, attribution accuracy, pass^k drops, VTFR, or topology savings."
+        }
+      }
+    },
+    "variance_cis_and_stats": {
+      "type": "object",
+      "description": "Field 15: Multi-run trial counts (k), pass^k reliability reporting, dispersion metrics, and hypothesis tests.",
+      "additionalProperties": false,
+      "required": [
+        "num_runs_or_seeds_k",
+        "pass_power_k_reported",
+        "dispersion_metrics_reported",
+        "significance_tests_and_p_values"
+      ],
+      "properties": {
+        "num_runs_or_seeds_k": {
+          "oneOf": [
+            {
+              "type": "integer",
+              "minimum": 1
+            },
+            {
+              "type": "string",
+              "minLength": 1
+            }
+          ]
+        },
+        "pass_power_k_reported": {
+          "oneOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "$ref": "#/$defs/MissingValueString"
+            }
+          ]
+        },
+        "dispersion_metrics_reported": {
+          "type": "string",
+          "minLength": 2,
+          "description": "SD, SE, 95% CI, IQR values/status, or missingness sentinel."
+        },
+        "significance_tests_and_p_values": {
+          "type": "string",
+          "minLength": 2,
+          "description": "Exact statistical tests, effect sizes, or p-values (e.g., kappa, regression beta/p), or missingness sentinel."
+        }
+      }
+    },
+    "cost_and_latency": {
+      "type": "object",
+      "description": "Field 16: Disaggregated inference token/USD/call cost, upfront amortized search/training cost, and wall-clock latency.",
+      "additionalProperties": false,
+      "required": [
+        "token_accounting",
+        "usd_cost_accounting",
+        "api_call_count",
+        "amortization_search_or_training_cost",
+        "wall_clock_latency"
+      ],
+      "properties": {
+        "token_accounting": {
+          "type": "string",
+          "minLength": 2
+        },
+        "usd_cost_accounting": {
+          "type": "string",
+          "minLength": 2
+        },
+        "api_call_count": {
+          "type": "string",
+          "minLength": 2
+        },
+        "amortization_search_or_training_cost": {
+          "type": "string",
+          "minLength": 2,
+          "description": "Upfront MCTS/RL/VGAE/prompt-search compute cost, 'None (static/zero-shot)', or missingness sentinel."
+        },
+        "wall_clock_latency": {
+          "type": "string",
+          "minLength": 2
+        }
+      }
+    },
+    "reported_successes_and_failures": {
+      "type": "object",
+      "description": "Field 17: Conditional success regimes, degradation conditions, documented failure mechanisms, and recovery deltas.",
+      "additionalProperties": false,
+      "required": [
+        "regimes_where_mas_succeeded",
+        "regimes_where_mas_degraded_or_failed",
+        "failure_mechanisms_documented",
+        "mitigation_and_recovery_delta"
+      ],
+      "properties": {
+        "regimes_where_mas_succeeded": {
+          "type": "string",
+          "minLength": 2
+        },
+        "regimes_where_mas_degraded_or_failed": {
+          "type": "string",
+          "minLength": 2
+        },
+        "failure_mechanisms_documented": {
+          "oneOf": [
+            {
+              "type": "array",
+              "minItems": 1,
+              "uniqueItems": true,
+              "items": {
+                "type": "string",
+                "enum": [
+                  "Error Amplification",
+                  "Conformity/Sycophancy Collapse",
+                  "Handoff Information Loss (DPI)",
+                  "Specification/Role Failure",
+                  "Termination/Verification Failure",
+                  "Spurious Temporal Coupling",
+                  "Prompt-Injection/Collusion Vulnerability",
+                  "Harness/Metric Artifact",
+                  "None Documented"
+                ]
+              }
+            },
+            {
+              "$ref": "#/$defs/MissingValueString"
+            }
+          ]
+        },
+        "mitigation_and_recovery_delta": {
+          "type": "string",
+          "minLength": 2
+        }
+      }
+    },
+    "limitations_and_validity_threats": {
+      "type": "object",
+      "description": "Field 18: Author-stated limitations, reviewer-identified validity threats, 6-class confounder flags, and publication/status caveats.",
+      "additionalProperties": false,
+      "required": [
+        "author_stated_limitations",
+        "threats_to_validity",
+        "six_class_confounder_flags",
+        "publication_bias_or_status_caveats"
+      ],
+      "properties": {
+        "author_stated_limitations": {
+          "type": "string",
+          "minLength": 2
+        },
+        "threats_to_validity": {
+          "type": "string",
+          "minLength": 2
+        },
+        "six_class_confounder_flags": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "enum": [
+              "C1: Unmatched Inference Compute/Tokens",
+              "C2: API Thinking-Budget / Hidden Reasoning Leak",
+              "C3: Process Proxy / Voting-as-Deliberation Conflation",
+              "C4: Asymmetric Prompting or Tool/Execution Feedback",
+              "C5: Exact-Match / Harness Fragility / Benchmark Leakage",
+              "C6: Unamortized Search/Training Cost Omission",
+              "None Observed",
+              "not verifiable from accessible open summary"
+            ]
+          }
+        },
+        "publication_bias_or_status_caveats": {
+          "type": "string",
+          "minLength": 2
+        }
+      }
+    },
+    "quality_appraisal_and_evidence_provenance": {
+      "type": "object",
+      "description": "Field 19: QA1-QA7 appraisal scores (2=Fully Met, 1=Partially Met, 0=Not Met/Unreported; max 14) and exact section/table/page provenance.",
+      "additionalProperties": false,
+      "required": [
+        "quality_appraisal",
+        "supporting_evidence_locations"
+      ],
+      "properties": {
+        "quality_appraisal": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "qa1_single_agent_baseline_rigor",
+            "qa2_cost_and_latency_accounting",
+            "qa3_amortization_transparency",
+            "qa4_multi_run_stochastic_reliability",
+            "qa5_benchmark_and_harness_integrity",
+            "qa6_reproducibility_code_prompts",
+            "qa7_claims_evidence_parity",
+            "total_raw_score",
+            "applicable_max_score",
+            "rigor_band"
+          ],
+          "properties": {
+            "qa1_single_agent_baseline_rigor": {
+              "oneOf": [
+                {
+                  "type": "integer",
+                  "enum": [0, 1, 2]
+                },
+                {
+                  "type": "string",
+                  "const": "N/A-Diagnostic"
+                }
+              ]
+            },
+            "qa2_cost_and_latency_accounting": {
+              "type": "integer",
+              "enum": [0, 1, 2]
+            },
+            "qa3_amortization_transparency": {
+              "type": "integer",
+              "enum": [0, 1, 2]
+            },
+            "qa4_multi_run_stochastic_reliability": {
+              "type": "integer",
+              "enum": [0, 1, 2]
+            },
+            "qa5_benchmark_and_harness_integrity": {
+              "type": "integer",
+              "enum": [0, 1, 2]
+            },
+            "qa6_reproducibility_code_prompts": {
+              "type": "integer",
+              "enum": [0, 1, 2]
+            },
+            "qa7_claims_evidence_parity": {
+              "type": "integer",
+              "enum": [0, 1, 2]
+            },
+            "total_raw_score": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 14
+            },
+            "applicable_max_score": {
+              "type": "integer",
+              "enum": [12, 14]
+            },
+            "rigor_band": {
+              "type": "string",
+              "enum": [
+                "High (>=78.0%; 11-14/14 or 10-12/12)",
+                "Moderate (42.5%-77.9%; 6-10/14 or 6-9/12)",
+                "Low (<42.5%; 0-5/14 or 0-5/12)"
+              ]
+            }
+          }
+        },
+        "supporting_evidence_locations": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 2
+          },
+          "description": "Exact sections, tables, figures, appendices, or page numbers supporting extracted data (or OpenReview rebuttal entry)."
+        }
+      }
+    }
+  },
+  "$defs": {
+    "MissingValueString": {
+      "type": "string",
+      "enum": [
+        "not reported",
+        "not verifiable from accessible open summary"
+      ],
+      "description": "Strict sentinel encoding distinguishing author omission ('not reported') from paywall/snippet access boundary ('not verifiable from accessible open summary')."
+    }
+  }
+}

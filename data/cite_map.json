@@ -1,0 +1,1209 @@
+{
+  "total": 124,
+  "by_num": {
+    "1": {
+      "num": 1,
+      "key": "SR078_tmlr7253_disagreement",
+      "study_id": "SR078",
+      "short_cite": "7253) (2025)",
+      "title": "Inducing Disagreement in Multi-Agent LLM Executive Teams: Only the Devil's Advocate Works",
+      "year": "2025"
+    },
+    "2": {
+      "num": 2,
+      "key": "SR077_tmlr7332_agenticnet",
+      "study_id": "SR077",
+      "short_cite": "7332) (2025)",
+      "title": "AgenticNet: Rethinking Multi-agent System Architectures with LLM-based Networks",
+      "year": "2025"
+    },
+    "3": {
+      "num": 3,
+      "key": "AbouAli2026_AIRE",
+      "study_id": null,
+      "short_cite": "Abou Ali et al. (2026)",
+      "title": "Agentic AI: a comprehensive survey of architectures, applications, and future directions",
+      "year": "2026"
+    },
+    "4": {
+      "num": 4,
+      "key": "SR049_alaanzy2026autonomous",
+      "study_id": "SR049",
+      "short_cite": "Ala'anzy et al. (2026)",
+      "title": "Autonomous agents and multi-agent systems: a comprehensive review",
+      "year": "2026"
+    },
+    "5": {
+      "num": 5,
+      "key": "Badica2025_arXiv_ContemporaryAgentTech",
+      "study_id": null,
+      "short_cite": "B\u0103dic\u0103 et al. (2025)",
+      "title": "Contemporary Agent Technology: LLM-Driven Advancements vs Classic Multi-Agent Systems",
+      "year": "2025"
+    },
+    "6": {
+      "num": 6,
+      "key": "SR089_2026",
+      "study_id": "SR089",
+      "short_cite": "Bertalani\u010d & Fortuna (2026)",
+      "title": "The Cost of Consensus: Isolated Self-Correction Prevails Over Unguided Homogeneous Multi-Agent Debate",
+      "year": "2026"
+    },
+    "7": {
+      "num": 7,
+      "key": "Borenstein2009_MetaAnalysis",
+      "study_id": null,
+      "short_cite": "Borenstein et al. (2009)",
+      "title": "Introduction to Meta-Analysis",
+      "year": "2009"
+    },
+    "8": {
+      "num": 8,
+      "key": "Brown2024_LanguageMonkeys",
+      "study_id": null,
+      "short_cite": "Brown et al. (2024)",
+      "title": "Large Language Monkeys: Scaling Inference Compute with Repeated Sampling",
+      "year": "2024"
+    },
+    "9": {
+      "num": 9,
+      "key": "SR021_cemri2025why",
+      "study_id": "SR021",
+      "short_cite": "Cemri et al. (2025)",
+      "title": "Why Do Multi-Agent LLM Systems Fail?",
+      "year": "2025"
+    },
+    "10": {
+      "num": 10,
+      "key": "SR020_chang2026cascadedebate",
+      "study_id": "SR020",
+      "short_cite": "Chang et al. (2026)",
+      "title": "CascadeDebate: Multi-Agent Deliberation for Cost-Aware LLM Cascades",
+      "year": "2026"
+    },
+    "11": {
+      "num": 11,
+      "key": "Chen2024_ReConcile",
+      "study_id": null,
+      "short_cite": "Chen et al. (2024)",
+      "title": "ReConcile: Round-Table Conference Improves Reasoning via Consensus among Diverse LLMs",
+      "year": "2024"
+    },
+    "12": {
+      "num": 12,
+      "key": "Chen2024_CompoundCalls",
+      "study_id": null,
+      "short_cite": "Chen et al. (2024)",
+      "title": "Are More LLM Calls All You Need? Towards Scaling Laws of Compound Inference Systems",
+      "year": "2024"
+    },
+    "13": {
+      "num": 13,
+      "key": "SR026_chen2026seeing",
+      "study_id": "SR026",
+      "short_cite": "Chen et al. (2026)",
+      "title": "Seeing the Whole Elephant: A Benchmark for Failure Attribution in LLM-based Multi-Agent Systems",
+      "year": "2026"
+    },
+    "14": {
+      "num": 14,
+      "key": "SR094_2025",
+      "study_id": "SR094",
+      "short_cite": "Chen et al. (2025)",
+      "title": "Optima: Optimizing Effectiveness and Efficiency for LLM-Based Multi-Agent Systems",
+      "year": "2025"
+    },
+    "15": {
+      "num": 15,
+      "key": "SR012_chen2026when",
+      "study_id": "SR012",
+      "short_cite": "Chen et al. (2026)",
+      "title": "When and Why Does Multi-Agent Debate Fail and Does It Really Underperform?",
+      "year": "2026"
+    },
+    "16": {
+      "num": 16,
+      "key": "SR087_2025",
+      "study_id": "SR087",
+      "short_cite": "Choi et al. (2025)",
+      "title": "Debate or Vote: Which Yields Better Decisions in Multi-Agent Large Language Models?",
+      "year": "2025"
+    },
+    "17": {
+      "num": 17,
+      "key": "SR029_choi2025empirical",
+      "study_id": "SR029",
+      "short_cite": "Choi et al. (2025)",
+      "title": "An Empirical Study of Group Conformity in Multi-Agent Systems",
+      "year": "2025"
+    },
+    "18": {
+      "num": 18,
+      "key": "Chowa2026_AIRE",
+      "study_id": null,
+      "short_cite": "Chowa et al. (2026)",
+      "title": "From language to action: a review of large language models as autonomous agents and tool users",
+      "year": "2026"
+    },
+    "19": {
+      "num": 19,
+      "key": "SR079_dai2026when",
+      "study_id": "SR079",
+      "short_cite": "Dai (2026)",
+      "title": "When Consensus Is Not Correctness: Diversity Collapse and Manufactured Overconfidence in Multi-Agent LLM Debate",
+      "year": "2026"
+    },
+    "20": {
+      "num": 20,
+      "key": "Dantas2026_SafeAgents",
+      "study_id": null,
+      "short_cite": "Dantas et al. (2026)",
+      "title": "Toward Safe LLM Agents: A Survey of Specification, Verification, and Enforcement",
+      "year": "2026"
+    },
+    "21": {
+      "num": 21,
+      "key": "Deng2025_CSUR_Security",
+      "study_id": null,
+      "short_cite": "Deng et al. (2025)",
+      "title": "AI Agents Under Threat: A Survey of Key Security Challenges and Future Pathways",
+      "year": "2025"
+    },
+    "22": {
+      "num": 22,
+      "key": "SR009_denisovblanch2026truthfulness",
+      "study_id": "SR009",
+      "short_cite": "Denisov-Blanch et al. (2026)",
+      "title": "Truthfulness Does Not Scale Like Reasoning: Why Polling Fails as a Proxy Verifier",
+      "year": "2026"
+    },
+    "23": {
+      "num": 23,
+      "key": "SR028_deshpande2025trail",
+      "study_id": "SR028",
+      "short_cite": "Deshpande et al. (2025)",
+      "title": "TRAIL: Trace Reasoning and Agentic Issue Localization",
+      "year": "2025"
+    },
+    "24": {
+      "num": 24,
+      "key": "SR052_du2026optimization",
+      "study_id": "SR052",
+      "short_cite": "Du et al. (2026)",
+      "title": "A Survey on the Optimization of Large Language Model-based Agents",
+      "year": "2026"
+    },
+    "25": {
+      "num": 25,
+      "key": "SR013_du2024improving",
+      "study_id": "SR013",
+      "short_cite": "Du et al. (2024)",
+      "title": "Improving Factuality and Reasoning in Language Models through Multiagent Debate",
+      "year": "2024"
+    },
+    "26": {
+      "num": 26,
+      "key": "SR039_elhattami2025webarena",
+      "study_id": "SR039",
+      "short_cite": "El Hattami et al. (2025)",
+      "title": "WebArena Verified: Reliable Evaluation for Web Agents",
+      "year": "2025"
+    },
+    "27": {
+      "num": 27,
+      "key": "SR088_2024",
+      "study_id": "SR088",
+      "short_cite": "Estornell & Liu (2024)",
+      "title": "Multi-LLM Debate: Framework, Principals, and Interventions",
+      "year": "2024"
+    },
+    "28": {
+      "num": 28,
+      "key": "SR057_feng2025modelswarms",
+      "study_id": "SR057",
+      "short_cite": "Feng et al. (2025)",
+      "title": "Model Swarms: Collaborative Search to Adapt LLM Experts via Swarm Intelligence",
+      "year": "2025"
+    },
+    "29": {
+      "num": 29,
+      "key": "SR055_gao2026selfevolving",
+      "study_id": "SR055",
+      "short_cite": "Gao et al. (2026)",
+      "title": "A Survey of Self-Evolving Agents: What, When, How, and Where to Evolve on the Path to Artificial Super Intelligence",
+      "year": "2026"
+    },
+    "30": {
+      "num": 30,
+      "key": "SR086_2025",
+      "study_id": "SR086",
+      "short_cite": "Gao et al. (2025)",
+      "title": "Single-agent or Multi-agent Systems? Why Not Both?",
+      "year": "2025"
+    },
+    "31": {
+      "num": 31,
+      "key": "SR050_geng2026scaling",
+      "study_id": "SR050",
+      "short_cite": "Geng et al. (2026)",
+      "title": "Scaling Up Multi-Agent Reinforcement Learning for Large Agent Teams and Long-Horizon Tasks: A Survey",
+      "year": "2026"
+    },
+    "32": {
+      "num": 32,
+      "key": "Guo2024_IJCAI",
+      "study_id": null,
+      "short_cite": "Guo et al. (2024)",
+      "title": "Large Language Model Based Multi-Agents: A Survey of Progress and Challenges",
+      "year": "2024"
+    },
+    "33": {
+      "num": 33,
+      "key": "Guyatt2008_GRADE",
+      "study_id": null,
+      "short_cite": "Guyatt et al. (2008)",
+      "title": "GRADE: an emerging consensus on rating quality of evidence and strength of recommendations",
+      "year": "2008"
+    },
+    "34": {
+      "num": 34,
+      "key": "SR098_2026",
+      "study_id": "SR098",
+      "short_cite": "Hagag et al. (2026)",
+      "title": "Architecture Matters for Multi-Agent Security",
+      "year": "2026"
+    },
+    "35": {
+      "num": 35,
+      "key": "SR051_he2026security",
+      "study_id": "SR051",
+      "short_cite": "He et al. (2026)",
+      "title": "The Emerged Security and Privacy of LLM Agent: A Survey with Case Studies",
+      "year": "2026"
+    },
+    "36": {
+      "num": 36,
+      "key": "Hong2024_MetaGPT",
+      "study_id": null,
+      "short_cite": "Hong et al. (2024)",
+      "title": "MetaGPT: Meta Programming for a Multi-Agent Collaborative Framework",
+      "year": "2024"
+    },
+    "37": {
+      "num": 37,
+      "key": "Hu2024_CSUR_GameAgents",
+      "study_id": null,
+      "short_cite": "Hu et al. (2026)",
+      "title": "A Survey on Large Language Model-Based Game Agents",
+      "year": "2026"
+    },
+    "38": {
+      "num": 38,
+      "key": "Huang2024_CannotSelfCorrect",
+      "study_id": null,
+      "short_cite": "Huang et al. (2024)",
+      "title": "Large Language Models Cannot Self-Correct Reasoning Yet",
+      "year": "2024"
+    },
+    "39": {
+      "num": 39,
+      "key": "Huang2026_TMLR_AgentMemory",
+      "study_id": null,
+      "short_cite": "Huang et al. (2026)",
+      "title": "A Survey of Agent Memory in the Second Half: Towards Self-Evolving and Long-Horizon Agents",
+      "year": "2026"
+    },
+    "40": {
+      "num": 40,
+      "key": "SR058_jimenezromero2025swarm",
+      "study_id": "SR058",
+      "short_cite": "Jimenez-Romero et al. (2025)",
+      "title": "Multi-agent systems powered by large language models: applications in swarm intelligence",
+      "year": "2025"
+    },
+    "41": {
+      "num": 41,
+      "key": "SR032_kapoor2025agents",
+      "study_id": "SR032",
+      "short_cite": "Kapoor et al. (2025)",
+      "title": "AI Agents That Matter",
+      "year": "2025"
+    },
+    "42": {
+      "num": 42,
+      "key": "SR031_kasprova2026too",
+      "study_id": "SR031",
+      "short_cite": "Kasprova et al. (2026)",
+      "title": "Too Polite to Disagree: Understanding Sycophancy Propagation in Multi-Agent Systems",
+      "year": "2026"
+    },
+    "43": {
+      "num": 43,
+      "key": "Ke2025_TMLR_LLMReasoning",
+      "study_id": null,
+      "short_cite": "Ke et al. (2025)",
+      "title": "A Survey of Frontiers in LLM Reasoning: Inference Scaling, Learning to Reason, and Agentic Systems",
+      "year": "2025"
+    },
+    "44": {
+      "num": 44,
+      "key": "Khan2026_Preprints_MASEvolution",
+      "study_id": null,
+      "short_cite": "Khan et al. (2026)",
+      "title": "Multi-Agent Systems and Their Evolution: A Comparative Survey",
+      "year": "2026"
+    },
+    "45": {
+      "num": 45,
+      "key": "Kim2026_USENIX_Security",
+      "study_id": null,
+      "short_cite": "Kim et al. (2026)",
+      "title": "SoK: Attack and Defense Landscape of Agentic AI Systems",
+      "year": "2026"
+    },
+    "46": {
+      "num": 46,
+      "key": "SR001_kim2026capable",
+      "study_id": "SR001",
+      "short_cite": "Kim et al. (2026)",
+      "title": "Capable language models can outgrow the benefits of collaboration",
+      "year": "2026"
+    },
+    "47": {
+      "num": 47,
+      "key": "Kitchenham2007",
+      "study_id": null,
+      "short_cite": "Kitchenham & Charters (2007)",
+      "title": "Guidelines for performing Systematic Literature Reviews in Software Engineering",
+      "year": "2007"
+    },
+    "48": {
+      "num": 48,
+      "key": "LaMalfa2025",
+      "study_id": null,
+      "short_cite": "La Malfa et al. (2025)",
+      "title": "Large Language Models Miss the Multi-agent Mark",
+      "year": "2025"
+    },
+    "49": {
+      "num": 49,
+      "key": "Li2023_CAMEL",
+      "study_id": null,
+      "short_cite": "Li et al. (2023)",
+      "title": "CAMEL: Communicative Agents for \"Mind\" Exploration of Large Language Model Society",
+      "year": "2023"
+    },
+    "50": {
+      "num": 50,
+      "key": "SR080_li2026harness",
+      "study_id": "SR080",
+      "short_cite": "Li et al. (2026)",
+      "title": "Agent Harness Engineering: A Survey",
+      "year": "2026"
+    },
+    "51": {
+      "num": 51,
+      "key": "SR085_2024",
+      "study_id": "SR085",
+      "short_cite": "Li et al. (2024)",
+      "title": "More Agents Is All You Need",
+      "year": "2024"
+    },
+    "52": {
+      "num": 52,
+      "key": "SR047_li2026efficiency",
+      "study_id": "SR047",
+      "short_cite": "Li et al. (2026)",
+      "title": "Efficiency in LLM Multi-Agent Systems: A Survey",
+      "year": "2026"
+    },
+    "53": {
+      "num": 53,
+      "key": "SR010_li2026rethinking",
+      "study_id": "SR010",
+      "short_cite": "Li et al. (2026)",
+      "title": "Rethinking Mixture-of-Agents: Is Mixing Different Large Language Models Beneficial?",
+      "year": "2026"
+    },
+    "54": {
+      "num": 54,
+      "key": "Liang2024_DivergentMAD",
+      "study_id": null,
+      "short_cite": "Liang et al. (2024)",
+      "title": "Encouraging Divergent Thinking in Large Language Models through Multi-Agent Debate",
+      "year": "2024"
+    },
+    "55": {
+      "num": 55,
+      "key": "SR092_2024",
+      "study_id": "SR092",
+      "short_cite": "Liu et al. (2024)",
+      "title": "A Dynamic LLM-Powered Agent Network for Task-Oriented Agent Collaboration",
+      "year": "2024"
+    },
+    "56": {
+      "num": 56,
+      "key": "Mallampati2026_Reliability",
+      "study_id": null,
+      "short_cite": "Mallampati & Nagoriya (2026)",
+      "title": "Coordination Reliability in LLM Multi-Agent Systems: Progress, Failure Detection, Recovery, and Termination",
+      "year": "2026"
+    },
+    "57": {
+      "num": 57,
+      "key": "SR035_mehta2025beyond",
+      "study_id": "SR035",
+      "short_cite": "Mehta (2025)",
+      "title": "Beyond Accuracy: A Multi-Dimensional Framework for Evaluating Enterprise Agentic AI Systems",
+      "year": "2025"
+    },
+    "58": {
+      "num": 58,
+      "key": "Mohammadi2025_KDD",
+      "study_id": null,
+      "short_cite": "Mohammadi et al. (2025)",
+      "title": "Evaluation and Benchmarking of LLM Agents: A Survey",
+      "year": "2025"
+    },
+    "59": {
+      "num": 59,
+      "key": "SR048_moslem2026dynamic",
+      "study_id": "SR048",
+      "short_cite": "Moslem & Kelleher (2026)",
+      "title": "Dynamic Model Routing and Cascading for Efficient LLM Inference: A Survey",
+      "year": "2026"
+    },
+    "60": {
+      "num": 60,
+      "key": "SR041_motger2026mad",
+      "study_id": "SR041",
+      "short_cite": "Motger et al. (2026)",
+      "title": "Multi-Agent Debate Strategies: Survey, Taxonomy, and Challenges",
+      "year": "2026"
+    },
+    "61": {
+      "num": 61,
+      "key": "SR004_nguyen2026think",
+      "study_id": "SR004",
+      "short_cite": "Nguyen et al. (2026)",
+      "title": "Think More or Read More? A Token-Budget Theory of Reasoning with Shared Context",
+      "year": "2026"
+    },
+    "62": {
+      "num": 62,
+      "key": "Page2021_PRISMA",
+      "study_id": null,
+      "short_cite": "Page et al. (2021)",
+      "title": "The PRISMA 2020 statement: an updated guideline for reporting systematic reviews",
+      "year": "2021"
+    },
+    "63": {
+      "num": 63,
+      "key": "SR030_pitre2025consensagent",
+      "study_id": "SR030",
+      "short_cite": "Pitre et al. (2025)",
+      "title": "CONSENSAGENT: Towards Efficient and Effective Consensus in Multi-Agent LLM Interactions Through Sycophancy Mitigation",
+      "year": "2025"
+    },
+    "64": {
+      "num": 64,
+      "key": "Plaat2025_JAIR",
+      "study_id": null,
+      "short_cite": "Plaat et al. (2025)",
+      "title": "Agentic Large Language Models, a Survey",
+      "year": "2025"
+    },
+    "65": {
+      "num": 65,
+      "key": "SR076_pulici2026madarl",
+      "study_id": "SR076",
+      "short_cite": "Pulici et al. (2026)",
+      "title": "MADA-RL: Multi-Agent Debate-Aware Reinforcement Learning for Parameter-Efficient Reasoning in Compact Models",
+      "year": "2026"
+    },
+    "66": {
+      "num": 66,
+      "key": "Qian2024_ChatDev",
+      "study_id": null,
+      "short_cite": "Qian et al. (2024)",
+      "title": "ChatDev: Communicative Agents for Software Development",
+      "year": "2024"
+    },
+    "67": {
+      "num": 67,
+      "key": "SR014_qian2025scaling",
+      "study_id": "SR014",
+      "short_cite": "Qian et al. (2025)",
+      "title": "Scaling Large Language Model-based Multi-Agent Collaboration",
+      "year": "2025"
+    },
+    "68": {
+      "num": 68,
+      "key": "SR097_2026",
+      "study_id": "SR097",
+      "short_cite": "Qiao et al. (2026)",
+      "title": "VerifyMAS: Hypothesis Verification for Failure Attribution in LLM-based Multi-Agent Systems",
+      "year": "2026"
+    },
+    "69": {
+      "num": 69,
+      "key": "SR034_rabanser2026towards",
+      "study_id": "SR034",
+      "short_cite": "Rabanser et al. (2026)",
+      "title": "Towards a Science of AI Agent Reliability",
+      "year": "2026"
+    },
+    "70": {
+      "num": 70,
+      "key": "Rahman2025_arXiv_LLMPoweredSwarms",
+      "study_id": null,
+      "short_cite": "Rahman et al. (2025)",
+      "title": "LLM-Powered Swarms: A New Frontier or a Conceptual Stretch?",
+      "year": "2025"
+    },
+    "71": {
+      "num": 71,
+      "key": "Rethlefsen2021_PRISMAS",
+      "study_id": null,
+      "short_cite": "Rethlefsen et al. (2021)",
+      "title": "PRISMA-S: an extension to the PRISMA Statement for Reporting Literature Searches in Systematic Reviews",
+      "year": "2021"
+    },
+    "72": {
+      "num": 72,
+      "key": "SR081_ruan2025swarmbench",
+      "study_id": "SR081",
+      "short_cite": "Ruan et al. (2025)",
+      "title": "Benchmarking LLMs' Swarm Intelligence",
+      "year": "2025"
+    },
+    "73": {
+      "num": 73,
+      "key": "SR040_sheshanarayana2026do",
+      "study_id": "SR040",
+      "short_cite": "Sheshanarayana & Goli (2026)",
+      "title": "Do Verifier Judgments Survive Abstraction? Measuring Verification Transport for LLM Agent Evaluation",
+      "year": "2026"
+    },
+    "74": {
+      "num": 74,
+      "key": "SR005_smit2024should",
+      "study_id": "SR005",
+      "short_cite": "Smit et al. (2024)",
+      "title": "Should we be going MAD? A Look at Multi-Agent Debate Strategies for LLMs",
+      "year": "2024"
+    },
+    "75": {
+      "num": 75,
+      "key": "Snell2025_TestTimeCompute",
+      "study_id": null,
+      "short_cite": "Snell et al. (2025)",
+      "title": "Scaling LLM Test-Time Compute Optimally can be More Effective than Scaling Model Parameters",
+      "year": "2025"
+    },
+    "76": {
+      "num": 76,
+      "key": "SR075_szlatincsan2026observe",
+      "study_id": "SR075",
+      "short_cite": "Szlatincs\u00e1n et al. (2026)",
+      "title": "Observe, Share, or Predict? Disentangling Partner Information in Embodied Multi-Agent Collaboration",
+      "year": "2026"
+    },
+    "77": {
+      "num": 77,
+      "key": "SR042_tillmann2025mad",
+      "study_id": "SR042",
+      "short_cite": "Tillmann (2025)",
+      "title": "Literature Review Of Multi-Agent Debate For Problem-Solving",
+      "year": "2025"
+    },
+    "78": {
+      "num": 78,
+      "key": "SR002_tran2026single",
+      "study_id": "SR002",
+      "short_cite": "Tran & Kiela (2026)",
+      "title": "Single-Agent LLMs Outperform Multi-Agent Systems on Multi-Hop Reasoning Under Equal Thinking Token Budgets",
+      "year": "2026"
+    },
+    "79": {
+      "num": 79,
+      "key": "Tran2025_MAS",
+      "study_id": null,
+      "short_cite": "Tran et al. (2025)",
+      "title": "Multi-Agent Collaboration Mechanisms: A Survey of LLMs",
+      "year": "2025"
+    },
+    "80": {
+      "num": 80,
+      "key": "SR038_wang2026do",
+      "study_id": "SR038",
+      "short_cite": "Wang et al. (2026)",
+      "title": "Do Androids Dream of Breaking the Game? Systematically Auditing AI Agent Benchmarks with BenchJack",
+      "year": "2026"
+    },
+    "81": {
+      "num": 81,
+      "key": "SR043_wang2026trajectory",
+      "study_id": "SR043",
+      "short_cite": "Wang et al. (2026)",
+      "title": "A Survey for LLM Agent Trajectory Analysis: From Failure Attribution to Enhancement",
+      "year": "2026"
+    },
+    "82": {
+      "num": 82,
+      "key": "SR011_wang2025mixture",
+      "study_id": "SR011",
+      "short_cite": "Wang et al. (2025)",
+      "title": "Mixture-of-Agents Enhances Large Language Model Capabilities",
+      "year": "2025"
+    },
+    "83": {
+      "num": 83,
+      "key": "SR053_wang2024autonomous",
+      "study_id": "SR053",
+      "short_cite": "Wang et al. (2024)",
+      "title": "A survey on large language model based autonomous agents",
+      "year": "2024"
+    },
+    "84": {
+      "num": 84,
+      "key": "SR006_wang2024rethinking",
+      "study_id": "SR006",
+      "short_cite": "Wang et al. (2024)",
+      "title": "Rethinking the Bounds of LLM Reasoning: Are Multi-Agent Discussions the Key?",
+      "year": "2024"
+    },
+    "85": {
+      "num": 85,
+      "key": "SR100_2025",
+      "study_id": "SR100",
+      "short_cite": "Wang et al. (2025)",
+      "title": "G-Safeguard: A Topology-Guided Security Lens and Treatment on LLM-based Multi-agent Systems",
+      "year": "2025"
+    },
+    "86": {
+      "num": 86,
+      "key": "SR027_wang2026triage",
+      "study_id": "SR027",
+      "short_cite": "Wang (2026)",
+      "title": "TRIAGE: Severity-Ranked Multi-Agent Failure Attribution",
+      "year": "2026"
+    },
+    "87": {
+      "num": 87,
+      "key": "Wang2023_SelfConsistency",
+      "study_id": null,
+      "short_cite": "Wang et al. (2023)",
+      "title": "Self-Consistency Improves Chain of Thought Reasoning in Language Models",
+      "year": "2023"
+    },
+    "88": {
+      "num": 88,
+      "key": "SR036_wang2026are",
+      "study_id": "SR036",
+      "short_cite": "Wang et al. (2026)",
+      "title": "Are \"Solved Issues\" in SWE-bench Really Solved Correctly? An Empirical Study",
+      "year": "2026"
+    },
+    "89": {
+      "num": 89,
+      "key": "SR093_2025",
+      "study_id": "SR093",
+      "short_cite": "Wang et al. (2025)",
+      "title": "AgentDropout: Dynamic Agent Elimination for Token-Efficient and High-Performing LLM-Based Multi-Agent Collaboration",
+      "year": "2025"
+    },
+    "90": {
+      "num": 90,
+      "key": "Wang2026_arXiv_ClassicalToFoundationMAS",
+      "study_id": null,
+      "short_cite": "Wang et al. (2026)",
+      "title": "Multi-Agent Systems: From Classical Paradigms to Large Foundation Model-Enabled Futures",
+      "year": "2026"
+    },
+    "91": {
+      "num": 91,
+      "key": "Wei2026_TMLR_AgenticReasoning",
+      "study_id": null,
+      "short_cite": "Wei et al. (2026)",
+      "title": "Agentic Reasoning for Large Language Models: A Survey",
+      "year": "2026"
+    },
+    "92": {
+      "num": 92,
+      "key": "SR008_wu2025can",
+      "study_id": "SR008",
+      "short_cite": "Wu et al. (2025)",
+      "title": "Can LLM Agents Really Debate? A Controlled Study of Multi-Agent Debate in Logical Reasoning",
+      "year": "2025"
+    },
+    "93": {
+      "num": 93,
+      "key": "Wu2024_AutoGen",
+      "study_id": null,
+      "short_cite": "Wu et al. (2024)",
+      "title": "AutoGen: Enabling Next-Gen LLM Applications via Multi-Agent Conversations",
+      "year": "2024"
+    },
+    "94": {
+      "num": 94,
+      "key": "SR065_xia2025agentless",
+      "study_id": "SR065",
+      "short_cite": "Xia et al. (2025)",
+      "title": "Agentless: Demystifying LLM-Based Software Engineering Agents",
+      "year": "2025"
+    },
+    "95": {
+      "num": 95,
+      "key": "SR025_xia2026who",
+      "study_id": "SR025",
+      "short_cite": "Xia et al. (2026)",
+      "title": "Who Broke the System? Failure Localization in LLM-Based Multi-Agent Systems",
+      "year": "2026"
+    },
+    "96": {
+      "num": 96,
+      "key": "SR003_xu2026rethinking",
+      "study_id": "SR003",
+      "short_cite": "Xu et al. (2026)",
+      "title": "Rethinking the Value of Multi-Agent Workflow: A Strong Single Agent Baseline",
+      "year": "2026"
+    },
+    "97": {
+      "num": 97,
+      "key": "SR046_yan2026beyond",
+      "study_id": "SR046",
+      "short_cite": "Yan et al. (2026)",
+      "title": "Beyond Self-Talk: A Communication-Centric Survey of LLM-Based Multi-Agent Systems",
+      "year": "2026"
+    },
+    "98": {
+      "num": 98,
+      "key": "SR083_yao2025peacemaker",
+      "study_id": "SR083",
+      "short_cite": "Yao et al. (2025)",
+      "title": "Peacemaker or Troublemaker: How Sycophancy Shapes Multi-Agent Debate",
+      "year": "2025"
+    },
+    "99": {
+      "num": 99,
+      "key": "SR033_yao2025taubench",
+      "study_id": "SR033",
+      "short_cite": "Yao et al. (2025)",
+      "title": "\u03c4-bench: A Benchmark for Tool-Agent-User Interaction in Real-World Domains",
+      "year": "2025"
+    },
+    "100": {
+      "num": 100,
+      "key": "SR044_yehudai2026evaluation",
+      "study_id": "SR044",
+      "short_cite": "Yehudai et al. (2026)",
+      "title": "Survey on Evaluation of LLM-based Agents",
+      "year": "2026"
+    },
+    "101": {
+      "num": 101,
+      "key": "SR099_2025",
+      "study_id": "SR099",
+      "short_cite": "Yu et al. (2025)",
+      "title": "NetSafe: Exploring the Topological Safety of Multi-agent Systems",
+      "year": "2025"
+    },
+    "102": {
+      "num": 102,
+      "key": "SR096_2025",
+      "study_id": "SR096",
+      "short_cite": "Yuan et al. (2025)",
+      "title": "EvoAgent: Towards Automatic Multi-Agent Generation via Evolutionary Algorithms",
+      "year": "2025"
+    },
+    "103": {
+      "num": 103,
+      "key": "SR091_2026",
+      "study_id": "SR091",
+      "short_cite": "Yuan et al. (2026)",
+      "title": "Rethinking Multi-Agent Collaboration: When More Is Less",
+      "year": "2026"
+    },
+    "104": {
+      "num": 104,
+      "key": "SR045_yue2026static",
+      "study_id": "SR045",
+      "short_cite": "Yue et al. (2026)",
+      "title": "From Static Templates to Dynamic Runtime Graphs: A Survey of Workflow Optimization for LLM Agents",
+      "year": "2026"
+    },
+    "105": {
+      "num": 105,
+      "key": "SR019_yue2025masrouter",
+      "study_id": "SR019",
+      "short_cite": "Yue et al. (2025)",
+      "title": "MasRouter: Learning to Route LLMs for Multi-Agent Systems",
+      "year": "2025"
+    },
+    "106": {
+      "num": 106,
+      "key": "SR016_zhang2025cut",
+      "study_id": "SR016",
+      "short_cite": "Zhang et al. (2025)",
+      "title": "Cut the Crap: An Economical Communication Pipeline for LLM-based Multi-Agent Systems",
+      "year": "2025"
+    },
+    "107": {
+      "num": 107,
+      "key": "SR017_zhang2025gdesigner",
+      "study_id": "SR017",
+      "short_cite": "Zhang et al. (2025)",
+      "title": "G-Designer: Architecting Multi-agent Communication Topologies via Graph Neural Networks",
+      "year": "2025"
+    },
+    "108": {
+      "num": 108,
+      "key": "SR023_zhang2026agentracer",
+      "study_id": "SR023",
+      "short_cite": "Zhang et al. (2026)",
+      "title": "AgenTracer: Who Is Inducing Failure in the LLM Agentic Systems?",
+      "year": "2026"
+    },
+    "109": {
+      "num": 109,
+      "key": "Zhang2026_TMLR_AgenticRL",
+      "study_id": null,
+      "short_cite": "Zhang et al. (2026)",
+      "title": "The Landscape of Agentic Reinforcement Learning for LLMs: A Survey",
+      "year": "2026"
+    },
+    "110": {
+      "num": 110,
+      "key": "SR007_zhang2025stop",
+      "study_id": "SR007",
+      "short_cite": "Zhang et al. (2025)",
+      "title": "Position: Stop Overvaluing Multi-Agent Debate\u2013-We Must Rethink Evaluation and Embrace Model Heterogeneity",
+      "year": "2025"
+    },
+    "111": {
+      "num": 111,
+      "key": "SR095_2025",
+      "study_id": "SR095",
+      "short_cite": "Zhang et al. (2025)",
+      "title": "Router-R1: Teaching LLMs Multi-Round Routing and Aggregation via Reinforcement Learning",
+      "year": "2025"
+    },
+    "112": {
+      "num": 112,
+      "key": "SR018_zhang2025aflow",
+      "study_id": "SR018",
+      "short_cite": "Zhang et al. (2025)",
+      "title": "AFlow: Automating Agentic Workflow Generation",
+      "year": "2025"
+    },
+    "113": {
+      "num": 113,
+      "key": "SR056_zhang2026generalist",
+      "study_id": "SR056",
+      "short_cite": "Zhang et al. (2026)",
+      "title": "Towards Generalist Game Agents: A Survey of Foundation Models in Virtual Worlds",
+      "year": "2026"
+    },
+    "114": {
+      "num": 114,
+      "key": "Zhang2026_CSUR_Generalizability",
+      "study_id": null,
+      "short_cite": "Zhang et al. (2026)",
+      "title": "Generalizability of Large Language Model-Based Agents: A Comprehensive Survey",
+      "year": "2026"
+    },
+    "115": {
+      "num": 115,
+      "key": "SR084_zhang2025selfplay",
+      "study_id": "SR084",
+      "short_cite": "Zhang et al. (2025)",
+      "title": "A Survey on Self-play Methods in Reinforcement Learning",
+      "year": "2025"
+    },
+    "116": {
+      "num": 116,
+      "key": "SR022_zhang2025which",
+      "study_id": "SR022",
+      "short_cite": "Zhang et al. (2025)",
+      "title": "Which Agent Causes Task Failures and When? On Automated Failure Attribution of LLM Multi-Agent Systems",
+      "year": "2025"
+    },
+    "117": {
+      "num": 117,
+      "key": "ICLR2025_SCALE_6097",
+      "study_id": null,
+      "short_cite": "Zhao et al. (2025)",
+      "title": "SCALE: Augmenting Content Analysis via LLM Agents and AI-Human Collaboration",
+      "year": "2025"
+    },
+    "118": {
+      "num": 118,
+      "key": "SR082_zhao2025scale",
+      "study_id": "SR082",
+      "short_cite": "Zhao et al. (2025)",
+      "title": "SCALE: Towards Collaborative Content Analysis in Social Science with Large Language Model Agents and Human Intervention",
+      "year": "2025"
+    },
+    "119": {
+      "num": 119,
+      "key": "SR090_2026",
+      "study_id": "SR090",
+      "short_cite": "Zhao et al. (2026)",
+      "title": "When Does Multi-Agent Collaboration Help? An Entropy Perspective",
+      "year": "2026"
+    },
+    "120": {
+      "num": 120,
+      "key": "SR069_zhou2026corba",
+      "study_id": "SR069",
+      "short_cite": "Zhou et al. (2026)",
+      "title": "CORBA: Contagious Recursive Blocking Attacks on Multi-Agent Systems Based on Large Language Models",
+      "year": "2026"
+    },
+    "121": {
+      "num": 121,
+      "key": "Zhu2026_AgentDebug",
+      "study_id": null,
+      "short_cite": "Zhu et al. (2026)",
+      "title": "Where LLM Agents Fail and How They Can Learn From Failures",
+      "year": "2026"
+    },
+    "122": {
+      "num": 122,
+      "key": "Zhu2026_FutureInternet",
+      "study_id": null,
+      "short_cite": "Zhu et al. (2026)",
+      "title": "LLM-Based Multi-Agent Orchestration: A Survey of Frameworks, Communication Protocols, and Emerging Patterns",
+      "year": "2026"
+    },
+    "123": {
+      "num": 123,
+      "key": "SR037_zhu2025establishing",
+      "study_id": "SR037",
+      "short_cite": "Zhu et al. (2025)",
+      "title": "Establishing Best Practices in Building Rigorous Agentic Benchmarks",
+      "year": "2025"
+    },
+    "124": {
+      "num": 124,
+      "key": "SR015_zhuge2024gptswarm",
+      "study_id": "SR015",
+      "short_cite": "Zhuge et al. (2024)",
+      "title": "GPTSwarm: Language Agents as Optimizable Graphs",
+      "year": "2024"
+    }
+  },
+  "by_key": {
+    "SR078_tmlr7253_disagreement": 1,
+    "SR077_tmlr7332_agenticnet": 2,
+    "AbouAli2026_AIRE": 3,
+    "SR049_alaanzy2026autonomous": 4,
+    "Badica2025_arXiv_ContemporaryAgentTech": 5,
+    "SR089_2026": 6,
+    "Borenstein2009_MetaAnalysis": 7,
+    "Brown2024_LanguageMonkeys": 8,
+    "SR021_cemri2025why": 9,
+    "SR020_chang2026cascadedebate": 10,
+    "Chen2024_ReConcile": 11,
+    "Chen2024_CompoundCalls": 12,
+    "SR026_chen2026seeing": 13,
+    "SR094_2025": 14,
+    "SR012_chen2026when": 15,
+    "SR087_2025": 16,
+    "SR029_choi2025empirical": 17,
+    "Chowa2026_AIRE": 18,
+    "SR079_dai2026when": 19,
+    "Dantas2026_SafeAgents": 20,
+    "Deng2025_CSUR_Security": 21,
+    "SR009_denisovblanch2026truthfulness": 22,
+    "SR028_deshpande2025trail": 23,
+    "SR052_du2026optimization": 24,
+    "SR013_du2024improving": 25,
+    "SR039_elhattami2025webarena": 26,
+    "SR088_2024": 27,
+    "SR057_feng2025modelswarms": 28,
+    "SR055_gao2026selfevolving": 29,
+    "SR086_2025": 30,
+    "SR050_geng2026scaling": 31,
+    "Guo2024_IJCAI": 32,
+    "Guyatt2008_GRADE": 33,
+    "SR098_2026": 34,
+    "SR051_he2026security": 35,
+    "Hong2024_MetaGPT": 36,
+    "Hu2024_CSUR_GameAgents": 37,
+    "Huang2024_CannotSelfCorrect": 38,
+    "Huang2026_TMLR_AgentMemory": 39,
+    "SR058_jimenezromero2025swarm": 40,
+    "SR032_kapoor2025agents": 41,
+    "SR031_kasprova2026too": 42,
+    "Ke2025_TMLR_LLMReasoning": 43,
+    "Khan2026_Preprints_MASEvolution": 44,
+    "Kim2026_USENIX_Security": 45,
+    "SR001_kim2026capable": 46,
+    "Kitchenham2007": 47,
+    "LaMalfa2025": 48,
+    "Li2023_CAMEL": 49,
+    "SR080_li2026harness": 50,
+    "SR085_2024": 51,
+    "SR047_li2026efficiency": 52,
+    "SR010_li2026rethinking": 53,
+    "Liang2024_DivergentMAD": 54,
+    "SR092_2024": 55,
+    "Mallampati2026_Reliability": 56,
+    "SR035_mehta2025beyond": 57,
+    "Mohammadi2025_KDD": 58,
+    "SR048_moslem2026dynamic": 59,
+    "SR041_motger2026mad": 60,
+    "SR004_nguyen2026think": 61,
+    "Page2021_PRISMA": 62,
+    "SR030_pitre2025consensagent": 63,
+    "Plaat2025_JAIR": 64,
+    "SR076_pulici2026madarl": 65,
+    "Qian2024_ChatDev": 66,
+    "SR014_qian2025scaling": 67,
+    "SR097_2026": 68,
+    "SR034_rabanser2026towards": 69,
+    "Rahman2025_arXiv_LLMPoweredSwarms": 70,
+    "Rethlefsen2021_PRISMAS": 71,
+    "SR081_ruan2025swarmbench": 72,
+    "SR040_sheshanarayana2026do": 73,
+    "SR005_smit2024should": 74,
+    "Snell2025_TestTimeCompute": 75,
+    "SR075_szlatincsan2026observe": 76,
+    "SR042_tillmann2025mad": 77,
+    "SR002_tran2026single": 78,
+    "Tran2025_MAS": 79,
+    "SR038_wang2026do": 80,
+    "SR043_wang2026trajectory": 81,
+    "SR011_wang2025mixture": 82,
+    "SR053_wang2024autonomous": 83,
+    "SR006_wang2024rethinking": 84,
+    "SR100_2025": 85,
+    "SR027_wang2026triage": 86,
+    "Wang2023_SelfConsistency": 87,
+    "SR036_wang2026are": 88,
+    "SR093_2025": 89,
+    "Wang2026_arXiv_ClassicalToFoundationMAS": 90,
+    "Wei2026_TMLR_AgenticReasoning": 91,
+    "SR008_wu2025can": 92,
+    "Wu2024_AutoGen": 93,
+    "SR065_xia2025agentless": 94,
+    "SR025_xia2026who": 95,
+    "SR003_xu2026rethinking": 96,
+    "SR046_yan2026beyond": 97,
+    "SR083_yao2025peacemaker": 98,
+    "SR033_yao2025taubench": 99,
+    "SR044_yehudai2026evaluation": 100,
+    "SR099_2025": 101,
+    "SR096_2025": 102,
+    "SR091_2026": 103,
+    "SR045_yue2026static": 104,
+    "SR019_yue2025masrouter": 105,
+    "SR016_zhang2025cut": 106,
+    "SR017_zhang2025gdesigner": 107,
+    "SR023_zhang2026agentracer": 108,
+    "Zhang2026_TMLR_AgenticRL": 109,
+    "SR007_zhang2025stop": 110,
+    "SR095_2025": 111,
+    "SR018_zhang2025aflow": 112,
+    "SR056_zhang2026generalist": 113,
+    "Zhang2026_CSUR_Generalizability": 114,
+    "SR084_zhang2025selfplay": 115,
+    "SR022_zhang2025which": 116,
+    "ICLR2025_SCALE_6097": 117,
+    "SR082_zhao2025scale": 118,
+    "SR090_2026": 119,
+    "SR069_zhou2026corba": 120,
+    "Zhu2026_AgentDebug": 121,
+    "Zhu2026_FutureInternet": 122,
+    "SR037_zhu2025establishing": 123,
+    "SR015_zhuge2024gptswarm": 124
+  },
+  "by_study_id": {
+    "SR078": 1,
+    "SR077": 2,
+    "SR049": 4,
+    "SR089": 6,
+    "SR021": 9,
+    "SR020": 10,
+    "SR026": 13,
+    "SR094": 14,
+    "SR012": 15,
+    "SR087": 16,
+    "SR029": 17,
+    "SR079": 19,
+    "SR009": 22,
+    "SR028": 23,
+    "SR052": 24,
+    "SR013": 25,
+    "SR039": 26,
+    "SR088": 27,
+    "SR057": 28,
+    "SR055": 29,
+    "SR086": 30,
+    "SR050": 31,
+    "SR098": 34,
+    "SR051": 35,
+    "SR058": 40,
+    "SR032": 41,
+    "SR031": 42,
+    "SR001": 46,
+    "SR080": 50,
+    "SR085": 51,
+    "SR047": 52,
+    "SR010": 53,
+    "SR092": 55,
+    "SR035": 57,
+    "SR048": 59,
+    "SR041": 60,
+    "SR004": 61,
+    "SR030": 63,
+    "SR076": 65,
+    "SR014": 67,
+    "SR097": 68,
+    "SR034": 69,
+    "SR081": 72,
+    "SR040": 73,
+    "SR005": 74,
+    "SR075": 76,
+    "SR042": 77,
+    "SR002": 78,
+    "SR038": 80,
+    "SR043": 81,
+    "SR011": 82,
+    "SR053": 83,
+    "SR006": 84,
+    "SR100": 85,
+    "SR027": 86,
+    "SR036": 88,
+    "SR093": 89,
+    "SR008": 92,
+    "SR065": 94,
+    "SR025": 95,
+    "SR003": 96,
+    "SR046": 97,
+    "SR083": 98,
+    "SR033": 99,
+    "SR044": 100,
+    "SR099": 101,
+    "SR096": 102,
+    "SR091": 103,
+    "SR045": 104,
+    "SR019": 105,
+    "SR016": 106,
+    "SR017": 107,
+    "SR023": 108,
+    "SR007": 110,
+    "SR095": 111,
+    "SR018": 112,
+    "SR056": 113,
+    "SR084": 115,
+    "SR022": 116,
+    "SR082": 118,
+    "SR090": 119,
+    "SR069": 120,
+    "SR037": 123,
+    "SR015": 124
+  }
+}

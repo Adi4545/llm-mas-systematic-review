@@ -1,0 +1,199 @@
+{
+  "status": "ALL AUDIT CHECKS PASSED",
+  "passed_count": 15,
+  "total_checks": 15,
+  "checks": {
+    "1_all_8_deliverables_exist_nonempty": {
+      "passed": true,
+      "details": {
+        "sizes_bytes": {
+          "Deliverable_A_Journal_Intelligence_Report.md": 18211,
+          "Deliverable_B_Topic_and_Novelty_Report.md": 21688,
+          "Deliverable_C_Systematic_Review_Protocol.md": 64744,
+          "Deliverable_D_Literature_Evidence_Register.md": 27416,
+          "Deliverable_E_Critical_Synthesis_Report.md": 27898,
+          "Deliverable_F_Final_Review_Manuscript.md": 198713,
+          "Deliverable_G_Evidence_and_Reproducibility_Appendix.md": 90998,
+          "Deliverable_H_Oral_Defense_and_Submission_Pack.md": 17887
+        },
+        "missing": []
+      }
+    },
+    "2_evidence_matrix_jsonschema_valid": {
+      "passed": true,
+      "details": {
+        "records": 59,
+        "errors": []
+      }
+    },
+    "3_prisma_arithmetic_consistent": {
+      "passed": true,
+      "details": {
+        "raw": 142,
+        "dup": 42,
+        "uniq": 100,
+        "sr_rows": 100,
+        "inc_rows": 59,
+        "qa_rows": 59,
+        "em_rows": 59,
+        "comp_studies": 34,
+        "comp_tuples": 87,
+        "qa3_1_eq_c6": true
+      }
+    },
+    "4_deliverable_f_abstract_compliance": {
+      "passed": true,
+      "details": {
+        "whitespace_words": 90,
+        "split_tokens": 100,
+        "zero_backticks": true
+      }
+    },
+    "5_deliverable_f_heading_hierarchy": {
+      "passed": true,
+      "details": {
+        "headings_found": [
+          "## 1. Introduction",
+          "## 2. Research Questions and Scope",
+          "## 3. Systematic Review Methodology",
+          "## 4. Core Concepts and Classical Boundaries",
+          "## 5. Empirical Synthesis (RQ1\u2013RQ4)",
+          "## 6. Evidence Grading, Architecture Map, and Decision Guide",
+          "## 7. Open Research Directions",
+          "## 8. Threats to Validity and Limitations",
+          "## 9. Conclusion",
+          "## 10. References",
+          "## 11. Declarations",
+          "## 12. Self-Contained Reproducibility & Evidence Appendix"
+        ]
+      }
+    },
+    "6_citation_reference_bibtex_1to1": {
+      "passed": true,
+      "details": {
+        "bib_entries": 124,
+        "unique_bib_keys": 124,
+        "ref_entries": 124,
+        "cited_nums": 124,
+        "backticked_citations": 0,
+        "stray_backticks_in_md": false,
+        "bib_leaks": [],
+        "braces_balanced": true
+      }
+    },
+    "7_zero_raw_internal_id_leaks": {
+      "passed": true,
+      "details": {
+        "leaks": []
+      }
+    },
+    "8_zero_colliding_labels_or_audience_slips": {
+      "passed": true,
+      "details": {
+        "collisions": [],
+        "bad_tone_hits": []
+      }
+    },
+    "9_zero_prose_ai_cliches": {
+      "passed": true,
+      "details": {
+        "cliche_hits": []
+      }
+    },
+    "10_zero_fabricated_similarity_or_acceptance_pct": {
+      "passed": true,
+      "details": {
+        "hits": {}
+      }
+    },
+    "11_deliverable_f_matches_verified_stats": {
+      "passed": true,
+      "details": {
+        "checked_tokens": [
+          "59 studies",
+          "87 cleaned paired comparisons",
+          "20.0%",
+          "46.7%",
+          "7.0%\u201345.2%",
+          "69.4%",
+          "-49.4 percentage points",
+          "-46.8 pp",
+          "-45.4",
+          "0.0154",
+          "0.0106",
+          "12/12",
+          "0/34",
+          "12/14",
+          "404",
+          "478",
+          "163/170",
+          "-6.54 pp",
+          "-4.88 pp",
+          "Moderate Certainty"
+        ],
+        "missing_tokens": []
+      }
+    },
+    "12_zero_ctrl_chars_and_table17_totals": {
+      "passed": true,
+      "details": {
+        "control_char_hits": {},
+        "table17_59_7_total_present": true
+      }
+    },
+    "13_docx_cleanliness_figures_and_parity": {
+      "passed": true,
+      "details": {
+        "Deliverable_F_Final_Review_Manuscript.docx": {
+          "paragraphs": 334,
+          "tables": 25,
+          "inline_shapes": 4,
+          "bad_tokens": [],
+          "missing_refs": [],
+          "has_section12_appendix": true,
+          "ok": true
+        },
+        "Deliverable_G_Evidence_and_Reproducibility_Appendix.docx": {
+          "paragraphs": 35,
+          "tables": 9,
+          "inline_shapes": 0,
+          "bad_tokens": [],
+          "missing_refs": [],
+          "has_section12_appendix": true,
+          "ok": true
+        },
+        "Deliverable_H_Oral_Defense_and_Submission_Pack.docx": {
+          "paragraphs": 78,
+          "tables": 0,
+          "inline_shapes": 0,
+          "bad_tokens": [],
+          "missing_refs": [],
+          "has_section12_appendix": true,
+          "ok": true
+        }
+      }
+    },
+    "14_section12_completeness_and_real_mermaid": {
+      "passed": true,
+      "details": {
+        "fig_embeds": 4,
+        "mermaid_blocks": 4,
+        "mermaid_min_lines": 6,
+        "q1_q6_present": true,
+        "app_b_rows": 59,
+        "app_c1_rows": 87,
+        "app_c2_rows": 34,
+        "app_e_rows": 41
+      }
+    },
+    "15_round2_referee_regression_and_bibtex_fixes": {
+      "passed": true,
+      "details": {
+        "leak_files": {},
+        "df_no_kim_paywall_claim": true,
+        "grade_parity_downgraded_moderate": true,
+        "bib_and_csv_fixes_ok": true
+      }
+    }
+  }
+}

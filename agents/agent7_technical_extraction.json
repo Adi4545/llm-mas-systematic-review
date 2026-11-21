@@ -1,0 +1,2442 @@
+{
+  "SR001": {
+    "objective": "Quantify conditional scaling principles governing when LLM-based multi-agent architectures outperform, match, or underperform single-agent systems across 180-260 controlled configurations on Finance-Agent, BrowseComp-Plus, PlanCraft, and WorkBench.",
+    "architecture_and_agent_count": {
+      "system_names": [
+        "Single-Agent System (SAS)",
+        "Independent MAS",
+        "Centralized MAS (Orchestrator-Subagents)",
+        "Decentralized MAS (Peer Debate)",
+        "Hybrid MAS"
+      ],
+      "topology_class": "Multiple Topologies Compared",
+      "agent_count_n": "not verifiable from accessible open summary",
+      "backbone_models": [
+        "GPT-5",
+        "GPT-5 nano",
+        "Claude Sonnet 4.5",
+        "Claude 3.7 Sonnet",
+        "Gemini-2.5 Pro",
+        "Gemini-2.0 Flash"
+      ],
+      "model_heterogeneity": "Both Tested"
+    },
+    "coordination_and_communication_method": {
+      "interaction_paradigm": "Hybrid/Mixed Paradigms",
+      "communication_protocol": "Standardized prompts, tools, and token budgets across 5 canonical architectures: Independent parallel execution without inter-agent messaging, Centralized orchestrator-subagent delegation, Decentralized peer-to-peer debate/voting, and Hybrid centralized-decentralized topology. [Planning/Memory/Verification: Centralized orchestrator serves as synthesis/verification bottleneck; Independent lacks verification layers; exact context-buffer mechanics not verifiable from accessible open summary.]",
+      "topology_optimization_or_pruning_method": "None (controlled grid comparing 5 fixed canonical architectures)",
+      "termination_mechanism": "not verifiable from accessible open summary"
+    },
+    "planning_memory_verification_notes": {
+      "planning_mechanism": "Orchestrator task decomposition in Centralized/Hybrid topologies; peer-to-peer coordination in Decentralized; isolated execution in Independent.",
+      "memory_and_state_sharing": "Prompt and token budgets held uniform across architectures; exact shared memory state rules not verifiable from accessible open summary.",
+      "verification_and_feedback": "Centralized orchestrator acts as a verification bottleneck dampening error amplification relative to unverified Independent agents."
+    },
+    "terminological_stratum": "Interactive / Stateful LLM-MAS",
+    "role_specialization": {
+      "has_role_specialization": true,
+      "defined_roles": [
+        "Orchestrator (Centralized and Hybrid MAS)",
+        "Subagent / Worker (Centralized and Hybrid MAS)",
+        "Peer Debater (Decentralized MAS)",
+        "Independent Solver (Independent MAS)"
+      ],
+      "asymmetric_tool_or_privilege_split": "Centralized orchestrator holds verification and final synthesis control over subagents; tools and prompts matched between SAS and MAS per open summary (per-benchmark tool details not verifiable from accessible open summary)."
+    },
+    "failure_mechanisms_and_mitigations": {
+      "regimes_where_mas_succeeded": "Decomposable/parallelizable tasks (e.g., Finance-Agent), low SAS capability regimes (<~45% baseline threshold), and heterogeneous Anthropic Claude centralized teams (weaker orchestrator + stronger subagents in Figure 4).",
+      "regimes_where_mas_degraded_or_failed": "Strict sequential planning tasks (PlanCraft), tool-heavy tasks under fixed token budgets (tool-coordination trade-off), capable SAS regimes (>~45% threshold), and OpenAI/Gemini heterogeneous centralized setups with weaker orchestrators.",
+      "failure_mechanisms_documented": [
+        "Error Amplification",
+        "Conformity/Sycophancy Collapse",
+        "Specification/Role Failure",
+        "Termination/Verification Failure"
+      ],
+      "mitigation_and_recovery_delta": "Centralized verification bottlenecks dampen error propagation compared to Independent MAS (which amplifies errors up to 17.2x); empirical capability-threshold gating avoids negative-return MAS overhead."
+    },
+    "architectural_limitations": {
+      "author_stated_limitations": "not verifiable from accessible open summary",
+      "threats_to_validity": "Archival Nature Machine Intelligence PDF is paywalled; agent counts N and full 260-configuration breakdown beyond Figure 4 and open arXiv:2512.08296 summary remain unverified in open text. Capability saturation (~45%) is a conditional empirical association specific to tested models and 4 tasks.",
+      "six_class_confounder_flags": [
+        "None Observed"
+      ],
+      "publication_bias_or_status_caveats": "Peer-reviewed journal (Nature Machine Intelligence Vol. 8, pp. 1157-1172); extracted via verified open preprint mirror arXiv:2512.08296 and open search summaries."
+    },
+    "supporting_evidence_locations": [
+      "https://doi.org/10.1038/s42256-026-01268-y (metadata)",
+      "https://arxiv.org/abs/2512.08296 (Abstract, Figure 4 Agent Heterogeneity Effects)",
+      "OpenReview / MIT / BERI open summaries of arXiv:2512.08296"
+    ]
+  },
+  "SR002": {
+    "objective": "Test whether single-agent LLMs match or outperform five MAS topologies on multi-hop reasoning (FRAMES, MuSiQue) when total thinking and generation token budgets (100-10,000 tokens) are strictly matched across 336 configurations, grounded in the Data Processing Inequality (DPI).",
+    "architecture_and_agent_count": {
+      "system_names": [
+        "Single-Agent System (SAS / SAS-L)",
+        "Sequential MAS",
+        "Subtask-Parallel MAS",
+        "Parallel-Roles MAS",
+        "Debate MAS",
+        "Ensemble MAS"
+      ],
+      "topology_class": "Multiple Topologies Compared",
+      "agent_count_n": "not verifiable from accessible open summary",
+      "backbone_models": [
+        "Qwen3",
+        "DeepSeek-R1-Distill-Llama",
+        "Gemini 2.5"
+      ],
+      "model_heterogeneity": "not verifiable from accessible open summary"
+    },
+    "coordination_and_communication_method": {
+      "interaction_paradigm": "Hybrid/Mixed Paradigms",
+      "communication_protocol": "Inter-agent natural-language message passing across Sequential handoffs, Subtask-parallel decomposition, Parallel specialized roles, multi-turn Debate, and Ensemble aggregation under matched total thinking-token budgets (100-10,000 tokens). [Planning/Memory/Verification: Formulated via Data Processing Inequality proving inter-agent message handoffs are lossy Markov transformations that cannot increase mutual information; audits Gemini 2.5 thinking-budget allocation artifacts.]",
+      "topology_optimization_or_pruning_method": "None (fixed canonical topologies compared under equal token budgets)",
+      "termination_mechanism": "Equalized total thinking-token budget ceiling (100-10,000 tokens); per-round stopping specifics not verifiable from accessible open summary."
+    },
+    "planning_memory_verification_notes": {
+      "planning_mechanism": "Task decomposition in Subtask-Parallel and Sequential topologies vs. extended continuous single-agent thinking chains.",
+      "memory_and_state_sharing": "Lossy inter-agent message passing (DPI bottleneck) vs. lossless unified internal single-agent context.",
+      "verification_and_feedback": "Audits API-level hidden thinking-budget leaks (Gemini 2.5 Appendix G); no external tool verifier module reported in open summary."
+    },
+    "terminological_stratum": "Interactive / Stateful LLM-MAS",
+    "role_specialization": {
+      "has_role_specialization": true,
+      "defined_roles": [
+        "Parallel Specialized Role Agents (Parallel-Roles MAS)",
+        "Subtask Workers (Subtask-Parallel MAS)",
+        "Sequential Stage Agents (Sequential MAS)",
+        "Debater Agents (Debate MAS)"
+      ],
+      "asymmetric_tool_or_privilege_split": "not verifiable from accessible open summary"
+    },
+    "failure_mechanisms_and_mitigations": {
+      "regimes_where_mas_succeeded": "Competitive or superior only when single-agent effective context utilization breaks down under severe context fragmentation, extreme input noise, or lost-in-the-middle attention dilution.",
+      "regimes_where_mas_degraded_or_failed": "Reasoning-depth-bound multi-hop logic tasks (FRAMES, MuSiQue) across 336 token-matched configurations (100-10,000 tokens), where SAS consistently matched or outperformed all 5 MAS architectures.",
+      "failure_mechanisms_documented": [
+        "Handoff Information Loss (DPI)",
+        "Harness/Metric Artifact"
+      ],
+      "mitigation_and_recovery_delta": "Allocating equivalent thinking-token budgets to extended single-agent reasoning eliminates DPI handoff loss; explicit API thinking-budget accounting removes Gemini 2.5 compute-leak artifacts."
+    },
+    "architectural_limitations": {
+      "author_stated_limitations": "not verifiable from accessible open summary",
+      "threats_to_validity": "Evaluates multi-hop reasoning benchmarks (FRAMES, MuSiQue) rather than tool-heavy SWE or embodied environments; exact agent counts N per topology and full Table 1 breakdowns require full PDF inspection.",
+      "six_class_confounder_flags": [
+        "C2: API Thinking-Budget / Hidden Reasoning Leak"
+      ],
+      "publication_bias_or_status_caveats": "Preprint (arXiv:2604.02460); not yet peer-reviewed archival."
+    },
+    "supporting_evidence_locations": [
+      "https://arxiv.org/abs/2604.02460 (Abstract, Section 4, Table 1, Section 5.1, Appendix G)"
+    ]
+  },
+  "SR003": {
+    "objective": "Show that a single LLM simulating multi-turn role-playing with KV-cache reuse matches homogeneous and automatically optimized MAS workflows across 7 benchmarks, and introduce OneFlow to automatically tailor workflows for single-agent execution.",
+    "architecture_and_agent_count": {
+      "system_names": [
+        "OneFlow (Single-Agent Multi-Turn Simulation)",
+        "AFlow (MAS Workflow Baseline)",
+        "Automated Heterogeneous MAS Baselines"
+      ],
+      "topology_class": "Multiple Topologies Compared",
+      "agent_count_n": "1 (OneFlow SAS) vs. Dynamic MAS workflows (exact N not verifiable from accessible open summary)",
+      "backbone_models": [
+        "GPT-4o",
+        "Claude 3.5 Haiku"
+      ],
+      "model_heterogeneity": "Both Tested"
+    },
+    "coordination_and_communication_method": {
+      "interaction_paradigm": "Hybrid/Mixed Paradigms",
+      "communication_protocol": "OneFlow collapses separate multi-agent invocations into sequential multi-turn persona transitions inside a single LLM context window, enabling Key-Value (KV) cache prefix reuse across turns; benchmarked against isolated-node MAS workflows. [Planning/Memory/Verification: Automated workflow compilation into unified single-LLM trajectory; shared KV-cache prefix memory eliminates re-prefill overhead; verification mechanics not verifiable from accessible open summary.]",
+      "topology_optimization_or_pruning_method": "OneFlow automated single-agent workflow tailoring vs. AFlow MCTS MAS workflow search",
+      "termination_mechanism": "not verifiable from accessible open summary"
+    },
+    "planning_memory_verification_notes": {
+      "planning_mechanism": "Algorithmic workflow tailoring converts multi-step DAG/role pipelines into sequential single-LLM conversational plans.",
+      "memory_and_state_sharing": "Unified single-context window exploiting KV-cache reuse vs. redundant inter-agent prompt re-encoding.",
+      "verification_and_feedback": "not verifiable from accessible open summary"
+    },
+    "terminological_stratum": "Interactive / Stateful LLM-MAS",
+    "role_specialization": {
+      "has_role_specialization": true,
+      "defined_roles": [
+        "Sequential Persona Shifts inside Single LLM (Planner, Coder, Critic, Executor)",
+        "Isolated Role-Prompted Nodes (MAS Baselines)"
+      ],
+      "asymmetric_tool_or_privilege_split": "Homogeneous MAS workflows differ only by system prompt, tools, and graph position, which OneFlow simulates sequentially within one LLM context."
+    },
+    "failure_mechanisms_and_mitigations": {
+      "regimes_where_mas_succeeded": "Truly heterogeneous workflows pairing distinct model architectures that cannot share KV caches.",
+      "regimes_where_mas_degraded_or_failed": "Homogeneous multi-agent workflows across 7 benchmarks (HumanEval, MBPP, GSM8K, MATH, DROP, TravelPlanner, etc.), which incur heavy token/KV-cache duplication without exceeding single-agent multi-turn accuracy.",
+      "failure_mechanisms_documented": [
+        "None Documented"
+      ],
+      "mitigation_and_recovery_delta": "OneFlow single-agent multi-turn simulation with KV-cache reuse matches homogeneous and optimized MAS accuracy at drastically lower inference cost."
+    },
+    "architectural_limitations": {
+      "author_stated_limitations": "Single-agent KV-cache simulation cannot natively capture truly heterogeneous multi-agent ecosystems combining distinct LLM families because different architectures cannot share KV caches.",
+      "threats_to_validity": "Upfront OneFlow tailoring search cost and full 7-benchmark numerical tables not verifiable from accessible open summary; concurrent ICLR 2026 Sub #14377 decision unconfirmed.",
+      "six_class_confounder_flags": [
+        "not verifiable from accessible open summary"
+      ],
+      "publication_bias_or_status_caveats": "Preprint (arXiv:2601.12307); ICLR 2026 submission outcome unconfirmed."
+    },
+    "supporting_evidence_locations": [
+      "https://arxiv.org/abs/2601.12307 (Abstract & arXiv HTML excerpts referencing DROP, TravelPlanner, Claude 3.5 Haiku, AFlow)"
+    ]
+  },
+  "SR004": {
+    "objective": "Develop a shared-context token-budget theory with a Condorcet jury model showing that reading peer debate messages steals internal generation headroom under fixed context windows W, evaluated across 980 configurations and 5 open LLMs.",
+    "architecture_and_agent_count": {
+      "system_names": [
+        "Multi-Agent Debate (MAD)",
+        "Self-Consistency (SC)",
+        "Iterative Self-Refinement"
+      ],
+      "topology_class": "Dense All-to-All Debate",
+      "agent_count_n": "not verifiable from accessible open summary",
+      "backbone_models": [
+        "Llama-3.2-3B",
+        "Qwen2.5-7B",
+        "Falcon3-7B",
+        "Gemma-2-9B",
+        "Gemma-3-12B"
+      ],
+      "model_heterogeneity": "Homogeneous"
+    },
+    "coordination_and_communication_method": {
+      "interaction_paradigm": "Interactive Stateful Multi-Turn",
+      "communication_protocol": "Agents read peer debate transcripts H = q + (n-1)m inside a shared fixed context window W, leaving remaining reasoning headroom g = W - H - c for generation. [Planning/Memory/Verification: Closed-form Condorcet jury prediction incorporating error correlation; shared context acts as finite zero-sum token pool; no external verifier.]",
+      "topology_optimization_or_pruning_method": "Closed-form token-budget formula predicting optimal agent count n and round count",
+      "termination_mechanism": "Context-headroom exhaustion cutoff (delta <= 0) or fixed round limit (exact round integers not verifiable from accessible open summary)."
+    },
+    "planning_memory_verification_notes": {
+      "planning_mechanism": "Analytical pre-selection of optimal group size n / rounds without costly grid search.",
+      "memory_and_state_sharing": "Shared context window W couples reading peer outputs directly to reduced internal generation space.",
+      "verification_and_feedback": "Majority voting / Condorcet aggregation; no external verifier module."
+    },
+    "terminological_stratum": "Interactive / Stateful LLM-MAS",
+    "role_specialization": {
+      "has_role_specialization": false,
+      "defined_roles": [],
+      "asymmetric_tool_or_privilege_split": "none"
+    },
+    "failure_mechanisms_and_mitigations": {
+      "regimes_where_mas_succeeded": "Only when accuracy ceiling gain from peer interaction strictly exceeds internal reasoning degradation from lost generation tokens under generous context windows.",
+      "regimes_where_mas_degraded_or_failed": "Tight shared context windows or large agent group sizes where reading peer outputs starves reasoning headroom (delta <= 0); Self-Consistency matched or beat MAD in 93% of 980 window/group-size configs.",
+      "failure_mechanisms_documented": [
+        "Error Amplification",
+        "Handoff Information Loss (DPI)"
+      ],
+      "mitigation_and_recovery_delta": "Closed-form budget formula avoids wasteful large-N debate; parallel Self-Consistency matches or outperforms MAD in 93% of 980 tested configurations."
+    },
+    "architectural_limitations": {
+      "author_stated_limitations": "not verifiable from accessible open summary",
+      "threats_to_validity": "Evaluated on 3B-12B instruction models under tight shared window caps W; generalizability to >100B frontier models with 128k+ context not established in open summary.",
+      "six_class_confounder_flags": [
+        "None Observed"
+      ],
+      "publication_bias_or_status_caveats": "Preprint (arXiv:2610.23246); surfaced via forward snowballing; not peer-reviewed."
+    },
+    "supporting_evidence_locations": [
+      "https://arxiv.org/abs/2610.23246 (Abstract, Section 4.1 Models, Data and Metrics)"
+    ]
+  },
+  "SR005": {
+    "objective": "Evaluate Multi-Agent Debate (MAD) strategies (Standard MAD, Multi-Persona, Society of Mind) against Self-Consistency and ensembling across reasoning and medical QA benchmarks, introducing agreement modulation.",
+    "architecture_and_agent_count": {
+      "system_names": [
+        "Standard MAD",
+        "Multi-Persona MAD",
+        "Society of Mind MAD"
+      ],
+      "topology_class": "Dense All-to-All Debate",
+      "agent_count_n": "not verifiable from accessible open summary",
+      "backbone_models": [
+        "GPT-3.5-Turbo",
+        "GPT-4",
+        "Llama-2",
+        "Vicuna"
+      ],
+      "model_heterogeneity": "not verifiable from accessible open summary"
+    },
+    "coordination_and_communication_method": {
+      "interaction_paradigm": "Interactive Stateful Multi-Turn",
+      "communication_protocol": "Multi-round natural-language peer critique and answer revision across T rounds with tunable agreement-modulation prompts controlling how readily agents concede to peers. [Planning/Memory/Verification: Round-wise transcript conditioning; agreement-level modulation acts as anti-conformity control; no external deterministic verifier.]",
+      "topology_optimization_or_pruning_method": "Hyperparameter tuning over agent count, debate rounds T, and agreement modulation",
+      "termination_mechanism": "Fixed debate rounds T (exact T values not verifiable from accessible open summary)."
+    },
+    "planning_memory_verification_notes": {
+      "planning_mechanism": "Iterative multi-round critique and stance revision.",
+      "memory_and_state_sharing": "Full conversational round transcripts exchanged across peers.",
+      "verification_and_feedback": "Agreement modulation tunes peer concession thresholds; no external test/tool oracle."
+    },
+    "terminological_stratum": "Interactive / Stateful LLM-MAS",
+    "role_specialization": {
+      "has_role_specialization": true,
+      "defined_roles": [
+        "Symmetric Debater (Standard / SoM MAD)",
+        "Multi-Persona Specialized Viewpoint Agents (Multi-Persona MAD)"
+      ],
+      "asymmetric_tool_or_privilege_split": "none"
+    },
+    "failure_mechanisms_and_mitigations": {
+      "regimes_where_mas_succeeded": "When rounds, agent count, persona framing, and agreement modulation are carefully tuned per target domain (e.g., tuned Multi-Persona setups).",
+      "regimes_where_mas_degraded_or_failed": "Out-of-the-box default MAD fails to outperform Self-Consistency or simple ensembling; unchecked debate loops trigger premature wrong consensus or propagate persuasive Round-1 hallucinations.",
+      "failure_mechanisms_documented": [
+        "Conformity/Sycophancy Collapse",
+        "Error Amplification"
+      ],
+      "mitigation_and_recovery_delta": "Dynamically modulating agent agreement levels prevents premature conformity and enables tuned MAD setups to surpass non-debate baselines (exact deltas not verifiable from accessible open summary)."
+    },
+    "architectural_limitations": {
+      "author_stated_limitations": "Severe hyperparameter fragility across datasets (tuned settings fail to generalize from math to MedQA) and high API/token cost vs. Self-Consistency.",
+      "threats_to_validity": "Evaluated on 2023-2024 model generations (GPT-3.5-Turbo, Llama-2, Vicuna); detailed per-table deltas require inspecting PMLR full PDF.",
+      "six_class_confounder_flags": [
+        "C1: Unmatched Inference Compute/Tokens"
+      ],
+      "publication_bias_or_status_caveats": "Peer-reviewed conference (ICML 2024, PMLR Vol. 235)."
+    },
+    "supporting_evidence_locations": [
+      "https://proceedings.mlr.press/v235/smit24a.html",
+      "https://arxiv.org/abs/2311.17371 (Abstract, Sections 1-3, Appendices)"
+    ]
+  },
+  "SR006": {
+    "objective": "Test whether multi-agent discussion frameworks (MAD, ReConcile, and proposed subgroup CMD) outperform strong few-shot Chain-of-Thought (CoT) single-agent baselines across reasoning benchmarks.",
+    "architecture_and_agent_count": {
+      "system_names": [
+        "MAD",
+        "ReConcile",
+        "CMD (Conquer-and-Merge Discussion)"
+      ],
+      "topology_class": "Multiple Topologies Compared",
+      "agent_count_n": "not verifiable from accessible open summary",
+      "backbone_models": [
+        "ChatGPT (GPT-3.5)",
+        "Gemini Pro"
+      ],
+      "model_heterogeneity": "Both Tested"
+    },
+    "coordination_and_communication_method": {
+      "interaction_paradigm": "Interactive Stateful Multi-Turn",
+      "communication_protocol": "Compares full-broadcast MAD, confidence-weighted round-table ReConcile, and subgroup-partitioned CMD (full text/rationales shared intra-group; lightweight answer/count summaries exchanged inter-group) concluding with majority voting and a tie-breaking Secretary. [Planning/Memory/Verification: CMD subgroup compression lowers token volume; Secretary handles ties; no external deterministic verifier.]",
+      "topology_optimization_or_pruning_method": "Subgroup hierarchical partitioning (CMD) replacing all-to-all inter-group full-text broadcast",
+      "termination_mechanism": "Predefined maximum rounds R followed by majority voting and Secretary synthesis."
+    },
+    "planning_memory_verification_notes": {
+      "planning_mechanism": "Conquer-and-Merge staged group discussion -> voting -> Secretary decision.",
+      "memory_and_state_sharing": "Full rationale sharing within subgroups; compressed summary-only propagation between subgroups.",
+      "verification_and_feedback": "ReConcile utilizes peer confidence scores; CMD uses majority vote + Secretary tie-breaking."
+    },
+    "terminological_stratum": "Interactive / Stateful LLM-MAS",
+    "role_specialization": {
+      "has_role_specialization": true,
+      "defined_roles": [
+        "Group Discussion Member",
+        "Tie-Breaking Secretary (CMD)",
+        "Symmetric Debater (MAD / ReConcile)"
+      ],
+      "asymmetric_tool_or_privilege_split": "Secretary role holds tie-breaking/final synthesis authority in CMD; no asymmetric external tools."
+    },
+    "failure_mechanisms_and_mitigations": {
+      "regimes_where_mas_succeeded": "Zero-shot prompting regimes lacking few-shot demonstrations, and mixed strong-weak model teams where weaker models learn from stronger peers.",
+      "regimes_where_mas_degraded_or_failed": "Once a single agent receives strong few-shot CoT demonstrations, the MAS advantage disappears; extra rounds plateau rapidly and allow confident wrong peers to sway correct agents.",
+      "failure_mechanisms_documented": [
+        "Error Amplification",
+        "Conformity/Sycophancy Collapse"
+      ],
+      "mitigation_and_recovery_delta": "CMD reduces inter-group token overhead relative to full-broadcast MAD, while strong few-shot CoT demonstrates that single-agent prompt engineering closes the zero-shot MAS gap."
+    },
+    "architectural_limitations": {
+      "author_stated_limitations": "High token/API cost and latency relative to single-agent CoT; persuasive wrong-peer propagation; sensitivity to prompt framing.",
+      "threats_to_validity": "Evaluated on GPT-3.5 and Gemini Pro; full ACL PDF table metrics not fully visible in open summary.",
+      "six_class_confounder_flags": [
+        "C1: Unmatched Inference Compute/Tokens",
+        "C4: Asymmetric Prompting or Tool/Execution Feedback"
+      ],
+      "publication_bias_or_status_caveats": "Peer-reviewed conference (ACL 2024 Main, 2024.acl-long.331)."
+    },
+    "supporting_evidence_locations": [
+      "https://aclanthology.org/2024.acl-long.331/",
+      "https://arxiv.org/abs/2402.18272 (Abstract & CMD pipeline overview)"
+    ]
+  },
+  "SR007": {
+    "objective": "Audit 5 representative MAD methods across 9 benchmarks and 4 foundational models against compute-matched CoT/Self-Consistency, and propose Heter-MAD to leverage cross-family model heterogeneity.",
+    "architecture_and_agent_count": {
+      "system_names": [
+        "Society of Minds (SoM)",
+        "Multi-Persona (MP)",
+        "Exchange-of-Thoughts (EoT)",
+        "ChatEval",
+        "AgentVerse",
+        "Heter-MAD"
+      ],
+      "topology_class": "Dense All-to-All Debate",
+      "agent_count_n": "not verifiable from accessible open summary",
+      "backbone_models": [
+        "GPT-4o-mini",
+        "Claude-3.5-Haiku",
+        "Llama-3.1-8B",
+        "Llama-3.1-70B"
+      ],
+      "model_heterogeneity": "Both Tested"
+    },
+    "coordination_and_communication_method": {
+      "interaction_paradigm": "Interactive Stateful Multi-Turn",
+      "communication_protocol": "Multi-round debate protocols spanning 5 MAD frameworks; Heter-MAD feeds outputs generated by heterogeneous LLM families into an agent's reasoning/debate loop to break homogeneous echo chambers. [Planning/Memory/Verification: Heterogeneous model outputs supply cross-distribution diversity; exact per-framework round/prompt parameters not verifiable from accessible open summary.]",
+      "topology_optimization_or_pruning_method": "None (evaluates 5 existing MAD architectures + model heterogeneity injection)",
+      "termination_mechanism": "not verifiable from accessible open summary"
+    },
+    "planning_memory_verification_notes": {
+      "planning_mechanism": "Iterative critique/discussion loops inherited from SoM, MP, EoT, ChatEval, and AgentVerse.",
+      "memory_and_state_sharing": "Heter-MAD exposes cross-model reasoning drafts to break single-model correlation.",
+      "verification_and_feedback": "Peer critique across heterogeneous model families; no external unit-test oracle beyond task benchmarks."
+    },
+    "terminological_stratum": "Interactive / Stateful LLM-MAS",
+    "role_specialization": {
+      "has_role_specialization": true,
+      "defined_roles": [
+        "Symmetric Debaters (SoM)",
+        "Persona/Role Critics & Evaluators (MP, ChatEval, AgentVerse)",
+        "Heterogeneous Model Peers (Heter-MAD)"
+      ],
+      "asymmetric_tool_or_privilege_split": "not verifiable from accessible open summary"
+    },
+    "failure_mechanisms_and_mitigations": {
+      "regimes_where_mas_succeeded": "Heterogeneous model teams (Heter-MAD) pairing distinct model families for genuine cognitive diversity.",
+      "regimes_where_mas_degraded_or_failed": "Homogeneous MAD frameworks across 9 benchmarks regularly fail to beat compute-matched CoT and Self-Consistency due to redundant pretraining distributions and groupthink.",
+      "failure_mechanisms_documented": [
+        "Conformity/Sycophancy Collapse",
+        "Error Amplification"
+      ],
+      "mitigation_and_recovery_delta": "Replacing homogeneous instances with heterogeneous backbones (Heter-MAD) mitigates echo-chamber error reinforcement and yields consistent gains (exact pp deltas extracted in Wave 4C)."
+    },
+    "architectural_limitations": {
+      "author_stated_limitations": "Prior MAD literature suffers from weak baselines, narrow task selection, and inconsistent agent/round setups; homogeneous MAD collapses into echo chambers.",
+      "threats_to_validity": "Concurrent NeurIPS 2025 Position Track Sub #148 (OpenReview:kfLtCPBset) decision badge unconfirmed in open search; retained conservatively as Preprint.",
+      "six_class_confounder_flags": [
+        "None Observed"
+      ],
+      "publication_bias_or_status_caveats": "Preprint (arXiv:2502.08788); OpenReview:kfLtCPBset acceptance status unconfirmed."
+    },
+    "supporting_evidence_locations": [
+      "https://arxiv.org/abs/2502.08788 (Abstract & alphaXiv/OpenReview summary)"
+    ]
+  },
+  "SR008": {
+    "objective": "Run a controlled factorial study of Multi-Agent Debate on verifiable Knight-Knave-Spy logic puzzles across 6 variables (team size, model composition, confidence visibility, debate order, debate depth, task difficulty) to isolate true deliberation from majority voting.",
+    "architecture_and_agent_count": {
+      "system_names": [
+        "Controlled Knight-Knave-Spy Multi-Agent Debate"
+      ],
+      "topology_class": "Dense All-to-All Debate",
+      "agent_count_n": "not verifiable from accessible open summary",
+      "backbone_models": "not verifiable from accessible open summary",
+      "model_heterogeneity": "Both Tested"
+    },
+    "coordination_and_communication_method": {
+      "interaction_paradigm": "Interactive Stateful Multi-Turn",
+      "communication_protocol": "Two-phase interaction: Phase 1 independent initial puzzle proposals followed by player-by-player multi-round natural-language debate loops with controlled toggles for self-reported confidence visibility and speaker ordering (using GPT and Qwen family variants; exact snapshots not verifiable from accessible open summary). [Planning/Memory/Verification: Verifiable logical deduction ground truth; tests confidence disclosure and majority-pressure dynamics.]",
+      "topology_optimization_or_pruning_method": "Controlled factorial ablation across 6 structural/cognitive variables",
+      "termination_mechanism": "Fixed debate depth (round count; exact integer values not verifiable from accessible open summary)."
+    },
+    "planning_memory_verification_notes": {
+      "planning_mechanism": "Step-wise logical deduction across sequential debate turns.",
+      "memory_and_state_sharing": "Shared dialogue history with optional self-confidence scores.",
+      "verification_and_feedback": "Ground-truth Knight-Knave-Spy logical verification at evaluation; validity-aligned arguments predict stance improvement."
+    },
+    "terminological_stratum": "Interactive / Stateful LLM-MAS",
+    "role_specialization": {
+      "has_role_specialization": false,
+      "defined_roles": [],
+      "asymmetric_tool_or_privilege_split": "none"
+    },
+    "failure_mechanisms_and_mitigations": {
+      "regimes_where_mas_succeeded": "Teams combining high intrinsic individual accuracy, heterogeneous model composition diversity, larger team sizes, and validity-aligned rationales capable of overturning early wrong consensus.",
+      "regimes_where_mas_degraded_or_failed": "Early incorrect consensus triggers numerical majority pressure suppressing minority correction; structural tweaks (speaker order, confidence visibility) yield minimal gains.",
+      "failure_mechanisms_documented": [
+        "Conformity/Sycophancy Collapse",
+        "Error Amplification"
+      ],
+      "mitigation_and_recovery_delta": "Prioritizing intrinsic agent capability, initial accuracy, team size, and model diversity outweighs turn-order or confidence-score prompt tweaks."
+    },
+    "architectural_limitations": {
+      "author_stated_limitations": "Controlled symbolic puzzle domain (Knight-Knave-Spy) limits generalization to noisy open-world tool tasks; poorly configured debates degenerate into majority echo chambers.",
+      "threats_to_validity": "Preprint (arXiv:2511.07784) / unconfirmed ARR/OpenReview decision; exact model snapshots and team-size N values absent from accessible open summary.",
+      "six_class_confounder_flags": [
+        "not verifiable from accessible open summary"
+      ],
+      "publication_bias_or_status_caveats": "Preprint (arXiv:2511.07784); ARR/OpenReview status unconfirmed."
+    },
+    "supporting_evidence_locations": [
+      "https://arxiv.org/abs/2511.07784 (Abstract & OpenReview summary)"
+    ]
+  },
+  "SR009": {
+    "objective": "Test whether crowd-wisdom polling, majority voting, and confidence-weighted consensus scaling up to 25x inference compute improve LLM factual truthfulness in unverified domains lacking deterministic verifiers.",
+    "architecture_and_agent_count": {
+      "system_names": [
+        "Crowd-Wisdom Inference Polling Collective",
+        "Confidence-Weighted Consensus Ensemble"
+      ],
+      "topology_class": "Independent/Voting Ensemble",
+      "agent_count_n": "Up to 25 (25x inference polling)",
+      "backbone_models": "not verifiable from accessible open summary",
+      "model_heterogeneity": "Both Tested"
+    },
+    "coordination_and_communication_method": {
+      "interaction_paradigm": "Parallel Independent Sampling + Voting/Aggregation",
+      "communication_protocol": "Parallel independent sampling / multi-model polling (up to 25x compute across OpenAI, Anthropic, Google, and Meta model families; exact snapshots not verifiable from accessible open summary) aggregated by majority vote or self-reported confidence weighting without multi-turn dialogue. [Planning/Memory/Verification: Specifically isolates unverified factual domains lacking external deterministic verifiers; demonstrates correlated error structures across LLM families.]",
+      "topology_optimization_or_pruning_method": "None (parallel polling up to 25x + confidence-weighted aggregation)",
+      "termination_mechanism": "Fixed polling sample budget (up to 25x)."
+    },
+    "planning_memory_verification_notes": {
+      "planning_mechanism": "None (independent parallel sampling).",
+      "memory_and_state_sharing": "None between sampled runs prior to post-hoc vote/confidence aggregation.",
+      "verification_and_feedback": "Explicitly tests absence of external verification; proves self-confidence fails to separate truth from falsehood."
+    },
+    "terminological_stratum": "Parallel / Voting LLM Collective",
+    "role_specialization": {
+      "has_role_specialization": false,
+      "defined_roles": [],
+      "asymmetric_tool_or_privilege_split": "none"
+    },
+    "failure_mechanisms_and_mitigations": {
+      "regimes_where_mas_succeeded": "Verified reasoning domains (math, coding) equipped with external deterministic verifiers or unit tests.",
+      "regimes_where_mas_degraded_or_failed": "Unverified truthfulness domains up to 25x polling: deeply correlated errors across LLM families cause consensus polling and confidence weighting to amplify shared misconceptions rather than cancel errors.",
+      "failure_mechanisms_documented": [
+        "Error Amplification",
+        "Termination/Verification Failure"
+      ],
+      "mitigation_and_recovery_delta": "Demonstrates internal polling/confidence weighting fails without external grounding (external retrieval/verification tools or error-decorrelating interventions required)."
+    },
+    "architectural_limitations": {
+      "author_stated_limitations": "LLMs are tuned for social prediction (predicting consensus outputs) rather than truth verification; internal confidence fails under uncertainty; overlapping pretraining creates correlated error priors.",
+      "threats_to_validity": "Evaluates parallel voting collectives rather than tool-grounded retrieval agents or stateful adversarial debates; exact model snapshots not exposed in accessible open summary.",
+      "six_class_confounder_flags": [
+        "None Observed"
+      ],
+      "publication_bias_or_status_caveats": "Peer-reviewed conference (ICML 2026; proceedings title Truthfulness Does Not Scale Like Reasoning)."
+    },
+    "supporting_evidence_locations": [
+      "https://arxiv.org/abs/2603.06612 (Abstract & ICML/OpenReview summary)"
+    ]
+  },
+  "SR010": {
+    "objective": "Challenge heterogeneous Mixture-of-Agents (Mixed-MoA) by introducing Self-MoA, demonstrating that sampling multiple outputs solely from the single top-performing LLM outperforms heterogeneous multi-model mixing on AlpacaEval 2.0, MMLU, CRUX, and MATH.",
+    "architecture_and_agent_count": {
+      "system_names": [
+        "Self-MoA",
+        "Sequential Self-MoA",
+        "Mixed-MoA (Heterogeneous MoA)"
+      ],
+      "topology_class": "Independent/Voting Ensemble",
+      "agent_count_n": 7,
+      "backbone_models": [
+        "WizardLM-2-8x22B",
+        "Qwen1.5-110B-Chat",
+        "Qwen1.5-72B-Chat",
+        "LLaMA-3-70B-Instruct",
+        "Mixtral-8x22B-Instruct-v0.1"
+      ],
+      "model_heterogeneity": "Both Tested"
+    },
+    "coordination_and_communication_method": {
+      "interaction_paradigm": "Parallel Independent Sampling + Voting/Aggregation",
+      "communication_protocol": "Standard Self-MoA / Mixed-MoA executes 6 parallel proposers independently followed by 1 aggregator synthesizer (7 forward passes); Sequential Self-MoA aggregates large sample batches iteratively on-the-fly. [Planning/Memory/Verification: Quality-filtered proposer sampling replaces cross-model diversity; aggregator synthesizes final output without external deterministic verifier.]",
+      "topology_optimization_or_pruning_method": "Prunes heterogeneous weaker proposers down to single best backbone (Self-MoA) + sequential batching",
+      "termination_mechanism": "Single-stage aggregation over 6 proposer samples (or fixed number of sequential sliding windows)."
+    },
+    "planning_memory_verification_notes": {
+      "planning_mechanism": "Single-step parallel proposal generation + final synthesis (or sequential sliding-window synthesis).",
+      "memory_and_state_sharing": "No inter-proposer communication; aggregator sees concatenated proposer drafts.",
+      "verification_and_feedback": "Aggregator model filters/synthesizes candidate drafts; no external tool verifier."
+    },
+    "terminological_stratum": "Parallel / Voting LLM Collective",
+    "role_specialization": {
+      "has_role_specialization": true,
+      "defined_roles": [
+        "Proposer (6 parallel candidate generators)",
+        "Aggregator (Qwen1.5-110B-Chat final synthesizer)"
+      ],
+      "asymmetric_tool_or_privilege_split": "Aggregator accesses all 6 proposer candidate outputs; proposers only see the input prompt."
+    },
+    "failure_mechanisms_and_mitigations": {
+      "regimes_where_mas_succeeded": "Self-MoA (WizardLM-2-8x22B proposers + Qwen1.5-110B-Chat aggregator) outperforms Mixed-MoA by +6.6% on AlpacaEval 2.0 (65.7% vs 59.1%) and +3.8% average across MMLU, CRUX, and MATH.",
+      "regimes_where_mas_degraded_or_failed": "Heterogeneous Mixed-MoA degrades when weaker models are mixed into the proposer pool, lowering average candidate quality fed to the aggregator.",
+      "failure_mechanisms_documented": [
+        "Error Amplification"
+      ],
+      "mitigation_and_recovery_delta": "Eliminating weaker heterogeneous models in favor of intra-model sampling from the best LLM (Self-MoA) yields +6.6 pp LC win rate on AlpacaEval 2.0 and +3.8 pp across MMLU/CRUX/MATH."
+    },
+    "architectural_limitations": {
+      "author_stated_limitations": "Quality-diversity trade-off limits benefits of heterogeneous model mixing when model quality varies across pools.",
+      "threats_to_validity": "Boundary stratum Parallel/Voting Collective rather than stateful interactive MAS; sequential Self-MoA trades serial latency for larger sample coverage.",
+      "six_class_confounder_flags": [
+        "C3: Process Proxy / Voting-as-Deliberation Conflation"
+      ],
+      "publication_bias_or_status_caveats": "Peer-reviewed journal (TMLR, OpenReview:SDY0kddnVO)."
+    },
+    "supporting_evidence_locations": [
+      "https://openreview.net/forum?id=SDY0kddnVO",
+      "https://arxiv.org/abs/2502.00674 (Abstract, Table 1 AlpacaEval 2.0 comparison)"
+    ]
+  },
+  "SR011": {
+    "objective": "Introduce Mixture-of-Agents (MoA), a layered heterogeneous multi-LLM ensemble (3-4 layers) where proposers generate candidate drafts conditioned on concatenated outputs from all agents in the preceding layer before final synthesis.",
+    "architecture_and_agent_count": {
+      "system_names": [
+        "Mixture-of-Agents (MoA)"
+      ],
+      "topology_class": "Independent/Voting Ensemble",
+      "agent_count_n": "not verifiable from accessible open summary",
+      "backbone_models": [
+        "Qwen1.5-72B",
+        "Qwen1.5-110B-Chat",
+        "Llama-3-70B-Instruct",
+        "Mixtral-8x22B-v0.1",
+        "WizardLM-8x22B",
+        "dbrx-instruct",
+        "GPT-4o",
+        "Claude 3.5"
+      ],
+      "model_heterogeneity": "Heterogeneous"
+    },
+    "coordination_and_communication_method": {
+      "interaction_paradigm": "Parallel Independent Sampling + Voting/Aggregation",
+      "communication_protocol": "Feed-forward 3-to-4 layer pipeline: each layer invokes multiple heterogeneous LLMs independently, concatenating all layer-(l-1) responses as auxiliary context into layer l before a final Aggregator synthesizes the output. [Planning/Memory/Verification: Layer-wise auxiliary context concatenation; relies on LLM 'collaborativeness' without external deterministic verifiers.]",
+      "topology_optimization_or_pruning_method": "Manual layer depth and heterogeneous model assignment per layer",
+      "termination_mechanism": "Fixed feed-forward layer depth (3-4 layers) ending at final Aggregator."
+    },
+    "planning_memory_verification_notes": {
+      "planning_mechanism": "Static layered feed-forward synthesis across 3-4 layers.",
+      "memory_and_state_sharing": "Concatenates full text responses from all agents in layer l-1 as auxiliary input to layer l.",
+      "verification_and_feedback": "Aggregator model filters/synthesizes intermediate responses; no external programmatic verifier."
+    },
+    "terminological_stratum": "Parallel / Voting LLM Collective",
+    "role_specialization": {
+      "has_role_specialization": true,
+      "defined_roles": [
+        "Proposer (Early/Intermediate Layers)",
+        "Aggregator (Final Layer, e.g., Qwen1.5-110B-Chat)"
+      ],
+      "asymmetric_tool_or_privilege_split": "Final aggregator receives full accumulated auxiliary responses from all upstream proposers; no asymmetric external tools."
+    },
+    "failure_mechanisms_and_mitigations": {
+      "regimes_where_mas_succeeded": "Open-ended instruction following and chat evaluation (AlpacaEval 2.0, MT-Bench, FLASK) where open-weight MoA surpassed single-pass GPT-4o.",
+      "regimes_where_mas_degraded_or_failed": "High multi-layer latency, token-length explosion from concatenating all prior layer outputs, error entrenchment if the aggregator fails to catch early proposer hallucinations, and suboptimality vs. single-best Self-MoA (SR010).",
+      "failure_mechanisms_documented": [
+        "Error Amplification"
+      ],
+      "mitigation_and_recovery_delta": "Assigning strong instruction-following LLMs (Qwen1.5-110B-Chat, GPT-4, Claude 3.5) as final aggregators improves error filtering (later outperformed by Self-MoA SR010)."
+    },
+    "architectural_limitations": {
+      "author_stated_limitations": "High time-to-first-token and total inference latency across sequential layers, explosive token consumption from context concatenation, error propagation from early proposers, and heterogeneous orchestration complexity.",
+      "threats_to_validity": "Benchmarks layered multi-model ensemble primarily against single-pass single-model runs without compute-matched Best-of-N or Self-MoA controls (subsequently demonstrated by SR010).",
+      "six_class_confounder_flags": [
+        "C1: Unmatched Inference Compute/Tokens",
+        "C3: Process Proxy / Voting-as-Deliberation Conflation"
+      ],
+      "publication_bias_or_status_caveats": "Peer-reviewed conference (ICLR 2025, OpenReview:PhMrGCMIRL)."
+    },
+    "supporting_evidence_locations": [
+      "https://openreview.net/forum?id=PhMrGCMIRL",
+      "https://arxiv.org/abs/2406.04692 (Abstract & ICLR/Weaviate architecture summaries)"
+    ]
+  },
+  "SR012": {
+    "objective": "Diagnose why competitive (CopMAD) and consensus-seeking (CosMAD) debate protocols suffer 'debate hacking' and underperform single agents, and propose Collaborative Multi-Agent Debate (ColMAD) framed as a non-zero-sum game feeding a judge/verifier.",
+    "architecture_and_agent_count": {
+      "system_names": [
+        "ColMAD",
+        "CopMAD",
+        "CosMAD"
+      ],
+      "topology_class": "Dense All-to-All Debate",
+      "agent_count_n": "not verifiable from accessible open summary",
+      "backbone_models": "not verifiable from accessible open summary",
+      "model_heterogeneity": "not verifiable from accessible open summary"
+    },
+    "coordination_and_communication_method": {
+      "interaction_paradigm": "Interactive Stateful Multi-Turn",
+      "communication_protocol": "Game-theoretically structured multi-round natural-language debate (evaluated across GPT, Qwen, Llama, and Claude family variants; exact snapshots not verifiable from accessible open summary) where debater agents share complementary, truthful critiques under non-zero-sum ColMAD incentives so a downstream Judge/Verifier can adjudicate. [Planning/Memory/Verification: Explicit downstream Judge/Verifier model adjudicates evidence surfaced by collaborative debaters, overcoming zero-sum CopMAD cheap-talk and CosMAD premature consensus.]",
+      "topology_optimization_or_pruning_method": "Game-theoretic incentive-protocol redesign (non-zero-sum ColMAD vs. CopMAD/CosMAD)",
+      "termination_mechanism": "Multi-round debate followed by Judge/Verifier decision (exact round count not verifiable from accessible open summary)."
+    },
+    "planning_memory_verification_notes": {
+      "planning_mechanism": "Non-zero-sum collaborative evidence surfacing across debate rounds.",
+      "memory_and_state_sharing": "Shared debate arguments exposed to peer debaters and final Judge/Verifier.",
+      "verification_and_feedback": "Dedicated Judge/Verifier agent adjudicates debater critiques for scalable oversight and error detection."
+    },
+    "terminological_stratum": "Interactive / Stateful LLM-MAS",
+    "role_specialization": {
+      "has_role_specialization": true,
+      "defined_roles": [
+        "Collaborative Debater (ColMAD)",
+        "Judge / Verifier"
+      ],
+      "asymmetric_tool_or_privilege_split": "Judge/Verifier holds final adjudication authority over debaters' arguments."
+    },
+    "failure_mechanisms_and_mitigations": {
+      "regimes_where_mas_succeeded": "Error detection, reasoning, and scalable oversight under compute-matched budgets where ColMAD stays stable across rounds and beats legacy MAD by up to +10 pp as well as SAS baselines.",
+      "regimes_where_mas_degraded_or_failed": "CopMAD collapses into zero-sum cheap-talk persuasion (misleading rhetoric to 'win'); CosMAD collapses into premature consensus discarding informative disagreement ('debate hacking').",
+      "failure_mechanisms_documented": [
+        "Conformity/Sycophancy Collapse",
+        "Specification/Role Failure",
+        "Termination/Verification Failure"
+      ],
+      "mitigation_and_recovery_delta": "Non-zero-sum ColMAD protocol yields up to +10 percentage points gain over CopMAD/CosMAD on error detection and consistent gains over compute-matched SAS."
+    },
+    "architectural_limitations": {
+      "author_stated_limitations": "not verifiable from accessible open summary",
+      "threats_to_validity": "Metadata correction flagged: data/included_studies.csv lists arXiv:2510.18375 (which is an unrelated quantum superflow physics paper); true arXiv preprint verified as arXiv:2510.20963. Exact agent counts N and model snapshots require inspecting full PDF.",
+      "six_class_confounder_flags": [
+        "None Observed"
+      ],
+      "publication_bias_or_status_caveats": "Peer-reviewed conference (ICML 2026); open preprint verified at arXiv:2510.20963 (NOT 2510.18375)."
+    },
+    "supporting_evidence_locations": [
+      "https://arxiv.org/abs/2510.20963 (Abstract & OpenReview/ICML summary; CSV arXiv:2510.18375 verified incorrect)"
+    ]
+  },
+  "SR013": {
+    "objective": "Introduce the Society-of-Minds multiagent debate framework in which black-box LLM instances iteratively critique and revise peer responses across rounds to improve factuality and reasoning.",
+    "architecture_and_agent_count": {
+      "system_names": [
+        "Society-of-Minds Multiagent Debate (MAD)"
+      ],
+      "topology_class": "Dense All-to-All Debate",
+      "agent_count_n": 3,
+      "backbone_models": [
+        "ChatGPT (GPT-3.5)",
+        "Google Bard"
+      ],
+      "model_heterogeneity": "Both Tested"
+    },
+    "coordination_and_communication_method": {
+      "interaction_paradigm": "Interactive Stateful Multi-Turn",
+      "communication_protocol": "All-to-all natural-language broadcast across rounds: Round 0 independent responses followed by multi-round peer review where each agent reads all peers' latest solutions, critiques unsupported claims, and updates its stance. [Planning/Memory/Verification: Pure natural-language peer cross-checking without external deterministic verifiers or structured external memory.]",
+      "topology_optimization_or_pruning_method": "None (fixed all-to-all broadcast across N agents and R rounds)",
+      "termination_mechanism": "Fixed number of debate rounds (default 2 rounds)."
+    },
+    "planning_memory_verification_notes": {
+      "planning_mechanism": "Iterative multi-round response refinement.",
+      "memory_and_state_sharing": "Broadcasts peer text responses across all agents per round.",
+      "verification_and_feedback": "Mutual natural-language critique without external deterministic verifier."
+    },
+    "terminological_stratum": "Interactive / Stateful LLM-MAS",
+    "role_specialization": {
+      "has_role_specialization": false,
+      "defined_roles": [],
+      "asymmetric_tool_or_privilege_split": "none"
+    },
+    "failure_mechanisms_and_mitigations": {
+      "regimes_where_mas_succeeded": "Arithmetic/math reasoning, chess/strategic games, and factual QA (especially heterogeneous ChatGPT + Bard cross-model pairing) vs. single-pass baselines.",
+      "regimes_where_mas_degraded_or_failed": "High multi-round API/token overhead; shared factual blind spots can amplify groupthink misconceptions; sensitive to neutral prompt framing.",
+      "failure_mechanisms_documented": [
+        "Conformity/Sycophancy Collapse",
+        "Error Amplification"
+      ],
+      "mitigation_and_recovery_delta": "Cross-model pairing (ChatGPT + Bard) and increasing agent count/rounds improve accuracy over single-pass baselines (though lacking compute-matched Self-Consistency in original baseline)."
+    },
+    "architectural_limitations": {
+      "author_stated_limitations": "High computational/token cost across agents and rounds; shared bias reinforcement; sensitivity to debate prompt framing.",
+      "threats_to_validity": "Lacks compute-matched Self-Consistency SAS baseline (subsequently flagged as C1 confounder by SR005, SR006, SR007).",
+      "six_class_confounder_flags": [
+        "C1: Unmatched Inference Compute/Tokens"
+      ],
+      "publication_bias_or_status_caveats": "Peer-reviewed conference (ICML 2024, PMLR Vol. 235)."
+    },
+    "supporting_evidence_locations": [
+      "https://arxiv.org/abs/2305.14325 (Abstract, ICML 2024 summary & GitHub project page)"
+    ]
+  },
+  "SR014": {
+    "objective": "Introduce MacNet (Multi-Agent Collaboration Network) using DAG topologies and hierarchical Markovian memory to scale LLM collaboration past 1,000 agents across Chain, Star, Tree, Mesh, Layered, Random, and Small-World graphs.",
+    "architecture_and_agent_count": {
+      "system_names": [
+        "MacNet (Multi-Agent Collaboration Network)"
+      ],
+      "topology_class": "Multiple Topologies Compared",
+      "agent_count_n": "2-1000+",
+      "backbone_models": "not verifiable from accessible open summary",
+      "model_heterogeneity": "not verifiable from accessible open summary"
+    },
+    "coordination_and_communication_method": {
+      "interaction_paradigm": "Interactive Stateful Multi-Turn",
+      "communication_protocol": "Directed Acyclic Graph (DAG) executed in strict topological order; each directed edge triggers a local actor-critic dual-agent interaction, passing forward only the distilled final artifact. [Planning/Memory/Verification: Topological-sort DAG control; hierarchical memory separates Short-Term local dialogue memory from Markovian Long-Term memory (artifact-only propagation) to prevent context explosion; edge-level critic feedback.]",
+      "topology_optimization_or_pruning_method": "Comparative evaluation of static graph families (Chain, Star, Tree, Mesh, Layered, Random, Small-World DAGs)",
+      "termination_mechanism": "Completion of DAG topological traversal across all nodes and edges."
+    },
+    "planning_memory_verification_notes": {
+      "planning_mechanism": "Topological-order execution over acyclic directed interaction graphs.",
+      "memory_and_state_sharing": "Two-tier hierarchical memory: local Short-Term dialogue buffer inside actor-critic edges; Markovian Long-Term memory propagating strictly final artifacts downstream to avert context overflow.",
+      "verification_and_feedback": "Edge-assigned Critic agents review and refine Actor node outputs locally."
+    },
+    "terminological_stratum": "Interactive / Stateful LLM-MAS",
+    "role_specialization": {
+      "has_role_specialization": true,
+      "defined_roles": [
+        "Actor (Node Solution Generator)",
+        "Critic (Directed-Edge Reviewer)"
+      ],
+      "asymmetric_tool_or_privilege_split": "not verifiable from accessible open summary"
+    },
+    "failure_mechanisms_and_mitigations": {
+      "regimes_where_mas_succeeded": "Irregular and small-world DAG topologies exhibit logistic (S-shaped) collaborative scaling past 1,000 agents and outperform regular topologies (Chain/Star/Tree/Mesh), CoT, AutoGPT, GPTSwarm, and AgentVerse on MMLU, HumanEval, and SRDD.",
+      "regimes_where_mas_degraded_or_failed": "Naive full-history forwarding triggers context-window explosion beyond a handful of agents; regular rigid graph topologies underperform irregular small-world graphs.",
+      "failure_mechanisms_documented": [
+        "None Documented"
+      ],
+      "mitigation_and_recovery_delta": "Acyclic DAG structure prevents infinite loops and Markovian artifact-only long-term memory eliminates context explosion to unlock >1,000-agent scaling."
+    },
+    "architectural_limitations": {
+      "author_stated_limitations": "not verifiable from accessible open summary",
+      "threats_to_validity": "Scaling to >1,000 agents entails massive aggregate inference token budgets without equal-token single-agent Best-of-N/SC parity; exact backbone models not exposed in accessed open summary.",
+      "six_class_confounder_flags": [
+        "C1: Unmatched Inference Compute/Tokens"
+      ],
+      "publication_bias_or_status_caveats": "Peer-reviewed conference (ICLR 2025, OpenReview:K3n5jPkrU6)."
+    },
+    "supporting_evidence_locations": [
+      "https://openreview.net/forum?id=K3n5jPkrU6",
+      "https://arxiv.org/abs/2406.07155 (Abstract & HuggingFace/Moonlight technical summaries)"
+    ]
+  },
+  "SR015": {
+    "objective": "Model LLM agents and multi-agent teams as optimizable computational graphs (GPTSwarm) combining node-level prompt optimization with REINFORCE policy-gradient edge topology optimization.",
+    "architecture_and_agent_count": {
+      "system_names": [
+        "GPTSwarm"
+      ],
+      "topology_class": "Adaptive Sparse/Learned DAG",
+      "agent_count_n": "not verifiable from accessible open summary",
+      "backbone_models": [
+        "GPT-4"
+      ],
+      "model_heterogeneity": "Both Tested"
+    },
+    "coordination_and_communication_method": {
+      "interaction_paradigm": "Learned Graph/Workflow Routing",
+      "communication_protocol": "Nested computational DAGs where nodes perform LLM prompting, tool/API calls, or multimodal operations and probabilistic edges route intermediate outputs (tested with GPT-4 and Llama variants). [Planning/Memory/Verification: Edge connectivity parameterized as a probabilistic policy updated via REINFORCE; node-level prompt optimizer refines local instructions; requires automated task reward/verifier signal.]",
+      "topology_optimization_or_pruning_method": "REINFORCE policy-gradient edge optimization + automated node-level prompt optimization",
+      "termination_mechanism": "DAG traversal completion within fixed rollout/optimization budget."
+    },
+    "planning_memory_verification_notes": {
+      "planning_mechanism": "Hierarchical nested graph composition with RL-learned edge routing.",
+      "memory_and_state_sharing": "Information passes along active directed graph edges between computational nodes.",
+      "verification_and_feedback": "Automated benchmark reward signals drive REINFORCE updates; edge pruning isolates detrimental/adversarial agents."
+    },
+    "terminological_stratum": "Interactive / Stateful LLM-MAS",
+    "role_specialization": {
+      "has_role_specialization": true,
+      "defined_roles": [
+        "Composite Agent Subgraphs",
+        "Tool / ReAct Execution Nodes",
+        "Prompt-Tuned Reasoning Nodes"
+      ],
+      "asymmetric_tool_or_privilege_split": "Individual nodes encapsulate heterogeneous tool, API, or multimodal privileges."
+    },
+    "failure_mechanisms_and_mitigations": {
+      "regimes_where_mas_succeeded": "HumanEval (node optimization lifts ReAct from 0.76 to 0.88), MMLU (edge optimization prunes adversarial agents), GAIA, and Mini Crosswords.",
+      "regimes_where_mas_degraded_or_failed": "Super-exponential search space explosion with node count N, heavy rollout API cost for REINFORCE, overfitting to training tasks, downstream error propagation along bad edges, and breakdown on open-ended tasks lacking automated rewards.",
+      "failure_mechanisms_documented": [
+        "Error Amplification",
+        "Prompt-Injection/Collusion Vulnerability",
+        "Termination/Verification Failure"
+      ],
+      "mitigation_and_recovery_delta": "REINFORCE edge optimization filters adversarial/detrimental nodes on MMLU and node prompt optimization lifts HumanEval ReAct from 0.76 to 0.88."
+    },
+    "architectural_limitations": {
+      "author_stated_limitations": "High rollout API/compute cost, combinatorial edge search explosion, benchmark overfitting, upstream hallucination amplification, and dependence on clear automated reward signals.",
+      "threats_to_validity": "Upfront REINFORCE rollout search costs are unamortized in standard test-time accuracy comparisons.",
+      "six_class_confounder_flags": [
+        "C1: Unmatched Inference Compute/Tokens",
+        "C6: Unamortized Search/Training Cost Omission"
+      ],
+      "publication_bias_or_status_caveats": "Peer-reviewed conference (ICML 2024 Oral, PMLR Vol. 235)."
+    },
+    "supporting_evidence_locations": [
+      "https://proceedings.mlr.press/v235/zhuge24a.html",
+      "https://arxiv.org/abs/2402.16823 (Abstract & ICML/alphaXiv summaries)"
+    ]
+  },
+  "SR016": {
+    "objective": "Introduce AgentPrune, a one-shot low-rank spatial-temporal graph pruning pipeline that eliminates redundant and adversarial inter-agent communication edges to cut token overhead by 28.1%-72.8%.",
+    "architecture_and_agent_count": {
+      "system_names": [
+        "AgentPrune",
+        "AutoGen (RoundRobinGroupChat + AgentPrune)",
+        "GPTSwarm (+ AgentPrune)"
+      ],
+      "topology_class": "Adaptive Sparse/Learned DAG",
+      "agent_count_n": "not verifiable from accessible open summary",
+      "backbone_models": [
+        "GPT-4"
+      ],
+      "model_heterogeneity": "not verifiable from accessible open summary"
+    },
+    "coordination_and_communication_method": {
+      "interaction_paradigm": "Learned Graph/Workflow Routing",
+      "communication_protocol": "Models MAS communication as a spatial-temporal graph (spatial edges = intra-round messages; temporal edges = cross-round historical forwarding) pruned via a one-shot low-rank graph mask, integrating plug-and-play into AutoGen and GPTSwarm (GPT-4 plus open-source backbones). [Planning/Memory/Verification: Temporal edges govern historical memory retention; one-shot spatial-temporal mask blocks noisy/poisoned paths.]",
+      "topology_optimization_or_pruning_method": "One-shot low-rank spatial-temporal graph pruning mask",
+      "termination_mechanism": "not verifiable from accessible open summary"
+    },
+    "planning_memory_verification_notes": {
+      "planning_mechanism": "One-shot structural sparsity mask applied prior to/over standard MAS rounds.",
+      "memory_and_state_sharing": "Temporal edges explicitly control cross-round history sharing.",
+      "verification_and_feedback": "Edge pruning defends against poisoned/adversarial agent injections; no separate verifier model."
+    },
+    "terminological_stratum": "Interactive / Stateful LLM-MAS",
+    "role_specialization": {
+      "has_role_specialization": true,
+      "defined_roles": [
+        "Role-Specialized Plugin Agents (inherited from AutoGen / GPTSwarm configurations)"
+      ],
+      "asymmetric_tool_or_privilege_split": "not verifiable from accessible open summary"
+    },
+    "failure_mechanisms_and_mitigations": {
+      "regimes_where_mas_succeeded": "Cuts prompt/completion tokens 28.1%-72.8% (e.g., USD cost ~$43.7 -> ~$5.6) while preserving accuracy and defending against malicious agent poisoning across reasoning, math, and code.",
+      "regimes_where_mas_degraded_or_failed": "Coarse graph-level structural pruning lacks per-query instance granularity and cannot adapt mid-conversation; risk of over-pruning helpful verification arguments on GSM8K/HumanEval.",
+      "failure_mechanisms_documented": [
+        "Prompt-Injection/Collusion Vulnerability",
+        "Error Amplification"
+      ],
+      "mitigation_and_recovery_delta": "One-shot spatial-temporal edge pruning isolates adversarial communication paths and trims 28.1%-72.8% token overhead vs. unpruned dense MAS."
+    },
+    "architectural_limitations": {
+      "author_stated_limitations": "Structural graph-level pruning lacks per-message instance filtering and dynamic mid-execution adaptation; sensitive to sparsity calibration.",
+      "threats_to_validity": "Mask calibration/optimization cost unamortized; baseline savings primarily measured relative to unpruned dense MAS rather than matched-token SAS.",
+      "six_class_confounder_flags": [
+        "C6: Unamortized Search/Training Cost Omission"
+      ],
+      "publication_bias_or_status_caveats": "Peer-reviewed conference (ICLR 2025, OpenReview:LkzuPorQ5L)."
+    },
+    "supporting_evidence_locations": [
+      "https://openreview.net/forum?id=LkzuPorQ5L",
+      "https://arxiv.org/abs/2410.02506 (Abstract, Sections 1, 3, 4)"
+    ]
+  },
+  "SR017": {
+    "objective": "Introduce G-Designer, which uses a Variational Graph Auto-Encoder (VGAE) conditioned on agent nodes and a task-specific virtual node to decode sparse, task-adaptive, adversarially robust MAS communication graphs.",
+    "architecture_and_agent_count": {
+      "system_names": [
+        "G-Designer"
+      ],
+      "topology_class": "Adaptive Sparse/Learned DAG",
+      "agent_count_n": "not verifiable from accessible open summary",
+      "backbone_models": [
+        "GPT-4"
+      ],
+      "model_heterogeneity": "not verifiable from accessible open summary"
+    },
+    "coordination_and_communication_method": {
+      "interaction_paradigm": "Learned Graph/Workflow Routing",
+      "communication_protocol": "VGAE encodes structural agent attributes plus a semantic task-specific virtual node to decode a sparsity-regularized, query-adaptive communication graph across MMLU, GSM8K, MultiArith, SVAMP, AQuA, and HumanEval. [Planning/Memory/Verification: Task-conditioned VGAE synthesis; lacks cumulative cross-task topology memory; relies on task performance rewards.]",
+      "topology_optimization_or_pruning_method": "Variational Graph Auto-Encoder (VGAE) decoding with sparsity regularization and task virtual node",
+      "termination_mechanism": "not verifiable from accessible open summary"
+    },
+    "planning_memory_verification_notes": {
+      "planning_mechanism": "Pre-execution VGAE topology generation conditioned on query semantics.",
+      "memory_and_state_sharing": "Lacks cumulative cross-task memory of structural designs across disparate tasks.",
+      "verification_and_feedback": "Sparsity regularization and proxy/RL feedback enforce robustness against adversarial agents."
+    },
+    "terminological_stratum": "Interactive / Stateful LLM-MAS",
+    "role_specialization": {
+      "has_role_specialization": true,
+      "defined_roles": [
+        "Task-Specific Virtual Node",
+        "Communicating MAS Agent Nodes"
+      ],
+      "asymmetric_tool_or_privilege_split": "not verifiable from accessible open summary"
+    },
+    "failure_mechanisms_and_mitigations": {
+      "regimes_where_mas_succeeded": "Outperforms Chain, Star, Complete, GPTSwarm, DyLAN, AutoGen, and CoT/ComplexCoT on MMLU (84.50%) and HumanEval (89.90% pass@1) while cutting redundant tokens and resisting agent-rooted attacks.",
+      "regimes_where_mas_degraded_or_failed": "O(N^2) adjacency scaling for large agent pools; decoded topology remains static within a single execution; out-of-distribution generalization bottlenecks; unstable proxy rewards.",
+      "failure_mechanisms_documented": [
+        "Prompt-Injection/Collusion Vulnerability",
+        "Error Amplification"
+      ],
+      "mitigation_and_recovery_delta": "Sparsity-regularized task-adaptive VGAE graphs suppress adversarial propagation and cut token consumption vs. static dense MAS."
+    },
+    "architectural_limitations": {
+      "author_stated_limitations": "Training-data OOD bottlenecks, pre-execution encoding/decoding latency, static topology mid-conversation, O(N^2) adjacency scaling, proxy-reward instability, and lack of cumulative cross-task memory.",
+      "threats_to_validity": "VGAE training/rollout compute cost is not cleanly amortized against single-agent baselines in open summary; Table 1 compares single-pass CoT/ComplexCoT rather than token-matched SC.",
+      "six_class_confounder_flags": [
+        "C6: Unamortized Search/Training Cost Omission"
+      ],
+      "publication_bias_or_status_caveats": "Peer-reviewed conference (ICML 2025, PMLR Vol. 267)."
+    },
+    "supporting_evidence_locations": [
+      "https://proceedings.mlr.press/v267/zhang25cu.html",
+      "https://arxiv.org/abs/2410.11782 (Abstract, Table 1)"
+    ]
+  },
+  "SR018": {
+    "objective": "Automate agentic workflow construction (AFlow) via soft-mixed-probability Monte Carlo Tree Search (MCTS) over executable Python workflow graphs composed of LLM operators across 6 coding, math, and QA benchmarks.",
+    "architecture_and_agent_count": {
+      "system_names": [
+        "AFlow"
+      ],
+      "topology_class": "Adaptive Sparse/Learned DAG",
+      "agent_count_n": "Dynamic per discovered workflow graph",
+      "backbone_models": [
+        "GPT-4o",
+        "Claude",
+        "DeepSeek",
+        "Llama variants"
+      ],
+      "model_heterogeneity": "Both Tested"
+    },
+    "coordination_and_communication_method": {
+      "interaction_paradigm": "Learned Graph/Workflow Routing",
+      "communication_protocol": "Executable code-represented workflows linking reusable operator nodes (ContextualGenerate, CodeGenerate, Format, Review, Revise, Ensemble, Test/Programmer) via branching and iterative loops. [Planning/Memory/Verification: MCTS tree-structured experience memory backpropagates validation scores; explicit Test/Programmer execution and Review/Revise verification operators.]",
+      "topology_optimization_or_pruning_method": "Monte Carlo Tree Search (MCTS) with soft mixed-probability selection and LLM code expansion",
+      "termination_mechanism": "MCTS search iteration budget + workflow program exit/test-pass control flow."
+    },
+    "planning_memory_verification_notes": {
+      "planning_mechanism": "Offline dataset-level MCTS search over code control flows (sequences, branches, loops).",
+      "memory_and_state_sharing": "Tree-structured MCTS experience memory stores execution feedback across search iterations.",
+      "verification_and_feedback": "Explicit Review/Revise critique loops and Test/Programmer code-execution verification operators."
+    },
+    "terminological_stratum": "Interactive / Stateful LLM-MAS",
+    "role_specialization": {
+      "has_role_specialization": true,
+      "defined_roles": [
+        "Optimizer LLM (workflow mutator)",
+        "ContextualGenerate / CodeGenerate",
+        "Format",
+        "Review / Revise",
+        "Ensemble",
+        "Test / Programmer"
+      ],
+      "asymmetric_tool_or_privilege_split": "Test/Programmer operator accesses Python execution and unit-test verification sandbox."
+    },
+    "failure_mechanisms_and_mitigations": {
+      "regimes_where_mas_succeeded": "HotpotQA, DROP, HumanEval, MBPP, GSM8K, and MATH, enabling cheaper open/smaller models to surpass GPT-4o at lower test-time inference cost.",
+      "regimes_where_mas_degraded_or_failed": "Expensive upfront validation-set execution during MCTS expansion; dependence on human-crafted operators for peak speed; dataset-level static graphs cannot adapt to novel runtime edge cases.",
+      "failure_mechanisms_documented": [
+        "Termination/Verification Failure"
+      ],
+      "mitigation_and_recovery_delta": "Even stripped of predefined operators, AFlow autonomously evolves verification/ensemble structures (~93.1% in ablation); Test and Review/Revise operators curb single-pass errors."
+    },
+    "architectural_limitations": {
+      "author_stated_limitations": "Reliance on predefined operator primitives biases generalization to open-world tasks; high MCTS validation evaluation cost; a priori static dataset-level code graphs lack runtime instance adaptability.",
+      "threats_to_validity": "Subsequently audited by SR003 (OneFlow), showing single-LLM multi-turn simulation with KV-cache reuse matches AFlow without multi-instance API cost; MCTS upfront search cost requires amortization break-even.",
+      "six_class_confounder_flags": [
+        "C6: Unamortized Search/Training Cost Omission"
+      ],
+      "publication_bias_or_status_caveats": "Peer-reviewed conference (ICLR 2025 Oral, OpenReview:z5uVAKwmjf)."
+    },
+    "supporting_evidence_locations": [
+      "https://openreview.net/forum?id=z5uVAKwmjf",
+      "https://arxiv.org/abs/2410.10762 (Abstract, MCTS & Operators sections, GitHub repo)"
+    ]
+  },
+  "SR019": {
+    "objective": "Introduce MasRouter, a policy-gradient cascaded controller that dynamically routes collaboration topology (Chain, Tree, Graph, Debate), progressively allocates agent count/roles, and assigns heterogeneous LLM backbones per query.",
+    "architecture_and_agent_count": {
+      "system_names": [
+        "MasRouter"
+      ],
+      "topology_class": "Adaptive Sparse/Learned DAG",
+      "agent_count_n": "Dynamic per query (determined by progressive Role Allocator)",
+      "backbone_models": [
+        "gpt-4o-mini",
+        "claude-3.5-haiku",
+        "llama-3.1-70b",
+        "gemini-1.5-flash",
+        "DeepSeek-V3"
+      ],
+      "model_heterogeneity": "Heterogeneous"
+    },
+    "coordination_and_communication_method": {
+      "interaction_paradigm": "Learned Graph/Workflow Routing",
+      "communication_protocol": "3-stage cascaded controller: (1) variational latent collaboration-mode determiner (Chain, Tree, Graph, LLM-Debate), (2) sequential probabilistic role allocator, (3) multinomial per-role LLM router trained via policy gradients. [Planning/Memory/Verification: Joint cost-accuracy policy-gradient routing; no separate external verifier module reported in open summary.]",
+      "topology_optimization_or_pruning_method": "Variational latent mode selection + progressive role allocation + multinomial backbone routing",
+      "termination_mechanism": "Inherited from routed collaboration topology (Chain/Tree/Graph/Debate); exact default max turns not verifiable from accessible open summary."
+    },
+    "planning_memory_verification_notes": {
+      "planning_mechanism": "Query-conditioned 3-layer cascaded controller dynamically constructs team size, roles, and graph topology.",
+      "memory_and_state_sharing": "Sequential role allocator conditions each new role on previously allocated roles.",
+      "verification_and_feedback": "Policy-gradient reward balances downstream accuracy against token/USD inference cost."
+    },
+    "terminological_stratum": "Interactive / Stateful LLM-MAS",
+    "role_specialization": {
+      "has_role_specialization": true,
+      "defined_roles": [
+        "Cascaded Controller Router",
+        "Dynamically Allocated Domain Roles (e.g., Analyst, Programmer, Tester, Mathematician)"
+      ],
+      "asymmetric_tool_or_privilege_split": "Asymmetric backbone LLM capacity allocation across roles (lightweight LLMs for simple formatting/syntax; frontier LLMs for core reasoning)."
+    },
+    "failure_mechanisms_and_mitigations": {
+      "regimes_where_mas_succeeded": "HumanEval, MBPP, and reasoning tasks; also plugs into MacNet to cut inference overhead while preserving task performance.",
+      "regimes_where_mas_degraded_or_failed": "Preliminary controller routing latency, multi-stage policy-gradient optimization instability, sensitivity to changing backbone API prices/availability, and suboptimal routing on extreme OOD queries.",
+      "failure_mechanisms_documented": [
+        "Specification/Role Failure"
+      ],
+      "mitigation_and_recovery_delta": "Jointly routing mode, role count, and heterogeneous LLMs substantially lowers inference overhead compared to static frontier MAS and single-agent routers (RouterDC)."
+    },
+    "architectural_limitations": {
+      "author_stated_limitations": "Controller decision latency, coupled 3-stage RL training instability, dependence on pre-profiled LLM backbone pricing/endpoints, and OOD generalization limits.",
+      "threats_to_validity": "Upfront policy-gradient training compute requires amortization accounting; primarily compares against static MAS and single-agent routers rather than equal-token extended single-agent CoT.",
+      "six_class_confounder_flags": [
+        "C6: Unamortized Search/Training Cost Omission"
+      ],
+      "publication_bias_or_status_caveats": "Peer-reviewed conference (ACL 2025 Main, 2025.acl-long.757)."
+    },
+    "supporting_evidence_locations": [
+      "https://aclanthology.org/2025.acl-long.757/",
+      "https://arxiv.org/abs/2502.11133 (Abstract, Tables 1, 2, 10, 11)"
+    ]
+  },
+  "SR020": {
+    "objective": "Introduce CascadeDebate, inserting lightweight N=4 role-specialized multi-agent deliberation selectively at confidence escalation boundaries in cost-aware LLM cascades across 5 science/medical/knowledge benchmarks.",
+    "architecture_and_agent_count": {
+      "system_names": [
+        "CascadeDebate"
+      ],
+      "topology_class": "Hybrid/Selective Escalation",
+      "agent_count_n": "1 (single-model stage) / 4 (deliberation stage) -> human fallback",
+      "backbone_models": [
+        "Llama-3.2-1B-Instruct",
+        "Llama-3.2-3B-Instruct",
+        "Qwen2.5-1.5B-Instruct",
+        "Qwen2.5-3B-Instruct"
+      ],
+      "model_heterogeneity": "Both Tested"
+    },
+    "coordination_and_communication_method": {
+      "interaction_paradigm": "Hybrid/Mixed Paradigms",
+      "communication_protocol": "Alternating architecture: single-model inference (S_single) on odd stages and N=4 specialized role-prompted deliberation (S_multi) on even stages triggered only in marginal confidence zones, aggregating multi-agent confidence via Phi_multi = P(agreement). [Planning/Memory/Verification: Online threshold optimizer adapts confidence boundaries to distribution shifts; majority-vote agreement acts as confidence gate.]",
+      "topology_optimization_or_pruning_method": "Online confidence-threshold optimizer gating selective SAS->MAS escalation",
+      "termination_mechanism": "Commit immediately if confidence threshold is met at S_single or S_multi; otherwise escalate to larger model tier or final human fallback."
+    },
+    "planning_memory_verification_notes": {
+      "planning_mechanism": "Dynamic difficulty-adaptive test-time escalation routing.",
+      "memory_and_state_sharing": "Online threshold optimizer tracks confidence-cost frontier across query stream.",
+      "verification_and_feedback": "Majority vote agreement P(agreement) inside N=4 deliberation stage; human expert fallback."
+    },
+    "terminological_stratum": "Hybrid / Selective Escalation (SAS-to-MAS)",
+    "role_specialization": {
+      "has_role_specialization": true,
+      "defined_roles": [
+        "Confidence Threshold Router",
+        "Science Roles (Experimental Scientist, Misconception Detector, etc.)",
+        "Medical Roles (Clinical Reasoning, Evidence-Based Medicine, etc.)",
+        "Human Expert Fallback"
+      ],
+      "asymmetric_tool_or_privilege_split": "Router controls tier escalation; human expert serves as ultimate oracle tier."
+    },
+    "failure_mechanisms_and_mitigations": {
+      "regimes_where_mas_succeeded": "ARC-Easy, ARC-Challenge, MMLU, MedQA, and MedMCQA under cost-aware budgets, outperforming standard single-model cascades and always-on multi-agent deliberation.",
+      "regimes_where_mas_degraded_or_failed": "Always-on MAS wastes compute on easy queries; single-model cascades incur costly premature escalations due to single-model under-confidence on borderline queries.",
+      "failure_mechanisms_documented": [
+        "Termination/Verification Failure"
+      ],
+      "mitigation_and_recovery_delta": "Selective boundary deliberation resolves borderline ambiguity within cheaper tiers and avoids premature escalation (exact Table 1 accuracy/cost deltas extracted in Wave 4C)."
+    },
+    "architectural_limitations": {
+      "author_stated_limitations": "not verifiable from accessible open summary",
+      "threats_to_validity": "Evaluated on compact 1B-3B models and multiple-choice science/medical benchmarks; agreement probability Phi_multi = P(agreement) remains vulnerable to correlated consensus errors if applied to unverified domains (SR009, SR079).",
+      "six_class_confounder_flags": [
+        "C3: Process Proxy / Voting-as-Deliberation Conflation"
+      ],
+      "publication_bias_or_status_caveats": "Peer-reviewed conference (ACL 2026 Industry Track, 2026.acl-industry.93)."
+    },
+    "supporting_evidence_locations": [
+      "https://aclanthology.org/2026.acl-industry.93/",
+      "https://arxiv.org/abs/2604.12262 (Abstract, Table 1, OpenReview summary)"
+    ]
+  },
+  "SR021": {
+    "objective": "Establish the 14-mode Multi-Agent System Failure Taxonomy (MAST) across 1,642 annotated execution traces spanning 7 MAS frameworks (MetaGPT, ChatDev, AG2, HyperAgent, AppWorld, Magentic-One, OpenManus).",
+    "architecture_and_agent_count": {
+      "system_names": [
+        "MAST-Data (auditing MetaGPT, ChatDev, AG2, HyperAgent, AppWorld, Magentic-One, OpenManus)"
+      ],
+      "topology_class": "Diagnostic/Benchmark Audit (N/A)",
+      "agent_count_n": "N/A (Diagnostic Audit)",
+      "backbone_models": [
+        "GPT-4",
+        "Claude 3",
+        "Qwen2.5",
+        "CodeLlama"
+      ],
+      "model_heterogeneity": "Not Applicable (Diagnostic Audit)"
+    },
+    "coordination_and_communication_method": {
+      "interaction_paradigm": "Non-Comparative Diagnostic Audit",
+      "communication_protocol": "Diagnostic trace annotation across 7 MAS frameworks in coding, math, and agentic workflows (150 human-annotated traces achieving Cohen's kappa=0.88 scaled via validated LLM-as-a-Judge). [Planning/Memory/Verification: Documents FM-1.4 loss of history, FM-2.1 conversation reset, FM-2.4 information withholding, FM-3.2/3.3 missing or monoculture verification across audited MAS.]",
+      "topology_optimization_or_pruning_method": "None (diagnostic failure taxonomy)",
+      "termination_mechanism": "N/A (Diagnostic Audit — catalogs FM-1.5 Unaware of Termination Conditions and FM-3.1 Premature Termination)"
+    },
+    "planning_memory_verification_notes": {
+      "planning_mechanism": "Audits orchestration/specification failures (FM-1.1–1.5, FM-2.3 task derailment, FM-2.6 reasoning-action mismatch).",
+      "memory_and_state_sharing": "Exposes FM-1.4 loss of conversation history, FM-2.1 conversation reset, and FM-2.4 information withholding.",
+      "verification_and_feedback": "Exposes FM-3.2 incomplete verification (common even in passing runs) and FM-3.3 monoculture verification blind spots."
+    },
+    "terminological_stratum": "Non-Comparative Diagnostic / Validity Study",
+    "role_specialization": {
+      "has_role_specialization": true,
+      "defined_roles": [
+        "Audited MAS Roles (SOP/Orchestrator/Worker roles across 7 frameworks)",
+        "LLM-as-a-Judge Trace Annotator"
+      ],
+      "asymmetric_tool_or_privilege_split": "Audited MAS frameworks assign tools asymmetrically; MAST flags missing isolated execution-sandbox verifiers."
+    },
+    "failure_mechanisms_and_mitigations": {
+      "regimes_where_mas_succeeded": "N/A (diagnostic failure audit; shows FM-3.2 verification omissions appear even in successful traces while FM-1.5 and FM-2.4 distinguish failed traces).",
+      "regimes_where_mas_degraded_or_failed": "41%-86%+ task failure rates across audited MAS frameworks caused by 14 modes across System Design (FM-1.1–1.5), Inter-Agent Misalignment (FM-2.1–2.6), and Task Verification (FM-3.1–3.3).",
+      "failure_mechanisms_documented": [
+        "Specification/Role Failure",
+        "Termination/Verification Failure",
+        "Handoff Information Loss (DPI)",
+        "Error Amplification",
+        "Conformity/Sycophancy Collapse"
+      ],
+      "mitigation_and_recovery_delta": "Intervention experiments confirm superficial prompt/role tuning is insufficient; structural fixes (transactional state management, deterministic routing, decoupled sandbox verifiers) are required."
+    },
+    "architectural_limitations": {
+      "author_stated_limitations": "Prompt-level patches fail to resolve structural orchestration, state-loss, and monoculture-verification failures; requires rigorous software-engineering state/verification architectures.",
+      "threats_to_validity": "Automated scaling beyond 150 human traces via LLM-as-a-Judge can inherit judge blind spots; non-comparative audit lacking SAS baseline.",
+      "six_class_confounder_flags": [
+        "None Observed"
+      ],
+      "publication_bias_or_status_caveats": "Peer-reviewed conference (NeurIPS 2025 Datasets & Benchmarks Track)."
+    },
+    "supporting_evidence_locations": [
+      "https://arxiv.org/abs/2503.13657 (Abstract, FM-1.1 to FM-3.3 taxonomy, MAST-Data 1,642 traces)"
+    ]
+  },
+  "SR022": {
+    "objective": "Formulate automated failure attribution ('Who&When'), release human-annotated failure logs across 127 hand-crafted (Magentic-One) and algorithm-generated (Captain-Agent) MAS, and evaluate All-at-Once, Step-by-Step, and Binary Search attributors.",
+    "architecture_and_agent_count": {
+      "system_names": [
+        "Who&When Benchmark (Magentic-One & Captain-Agent failure logs)",
+        "All-at-Once / Step-by-Step / Binary Search Attributors"
+      ],
+      "topology_class": "Diagnostic/Benchmark Audit (N/A)",
+      "agent_count_n": "N/A (Diagnostic Audit)",
+      "backbone_models": [
+        "GPT-4o",
+        "OpenAI o1",
+        "DeepSeek-R1"
+      ],
+      "model_heterogeneity": "Not Applicable (Diagnostic Audit)"
+    },
+    "coordination_and_communication_method": {
+      "interaction_paradigm": "Non-Comparative Diagnostic Audit",
+      "communication_protocol": "Evaluates 3 automated log-inspection protocols (All-at-Once full log, Step-by-Step incremental, Binary Search trace bisection) over 127 MAS failure traces. [Planning/Memory/Verification: Exposes difficulty of causal attribution across long interleaved traces where downstream agents mask upstream mistakes.]",
+      "topology_optimization_or_pruning_method": "None (diagnostic failure attribution benchmark)",
+      "termination_mechanism": "N/A (Diagnostic Audit)"
+    },
+    "planning_memory_verification_notes": {
+      "planning_mechanism": "Tests bisecting/incremental log-search strategies for offline root-cause debugging.",
+      "memory_and_state_sharing": "Long failure log ingestion exposes context masking across agent handoffs.",
+      "verification_and_feedback": "Human expert ground-truth agent+step attribution labels (15%-30% inter-annotator uncertainty)."
+    },
+    "terminological_stratum": "Non-Comparative Diagnostic / Validity Study",
+    "role_specialization": {
+      "has_role_specialization": true,
+      "defined_roles": [
+        "Audited MAS Roles (Magentic-One Orchestrator/Workers; Captain-Agent dynamic teams)",
+        "Automated Failure Attributor LLM"
+      ],
+      "asymmetric_tool_or_privilege_split": "Audited MAS frameworks employ specialized agent roles/tools."
+    },
+    "failure_mechanisms_and_mitigations": {
+      "regimes_where_mas_succeeded": "N/A (diagnostic attribution benchmark).",
+      "regimes_where_mas_degraded_or_failed": "Best automated attributor reached 53.5% agent-level and only 14.2% step-level accuracy; frontier reasoning models (o1, DeepSeek-R1) failed practical localization (some methods below random chance).",
+      "failure_mechanisms_documented": [
+        "Error Amplification",
+        "Handoff Information Loss (DPI)",
+        "Termination/Verification Failure"
+      ],
+      "mitigation_and_recovery_delta": "Establishes Who&When diagnostic benchmark spurring counterfactual/multi-perspective/triage methods (SR023, SR025, SR027)."
+    },
+    "architectural_limitations": {
+      "author_stated_limitations": "15%-30% human inter-annotator uncertainty on isolating a single decisive error step; severe step-level degradation across compounding handoffs.",
+      "threats_to_validity": "Single-step attribution formulation later challenged by SR027 (TRIAGE: 59.3% council disagreement due to multi-error cascades) and SR026 (TraceElephant: partial observability limits).",
+      "six_class_confounder_flags": [
+        "C5: Exact-Match / Harness Fragility / Benchmark Leakage"
+      ],
+      "publication_bias_or_status_caveats": "Peer-reviewed conference (ICML 2025, PMLR Vol. 267)."
+    },
+    "supporting_evidence_locations": [
+      "https://proceedings.mlr.press/v267/zhang25cq.html",
+      "https://arxiv.org/abs/2505.00212 (Abstract & Who&When benchmark summary)"
+    ]
+  },
+  "SR023": {
+    "objective": "Introduce AgenTracer, combining counterfactual replay and fault injection to synthesize TracerTraj and train AgenTracer-8B via multi-granular RL for step- and agent-level fault attribution plus feedback into MetaGPT and MaAS.",
+    "architecture_and_agent_count": {
+      "system_names": [
+        "AgenTracer",
+        "AgenTracer-8B (auditing Who&When, TracerTraj, MetaGPT, MaAS)"
+      ],
+      "topology_class": "Diagnostic/Benchmark Audit (N/A)",
+      "agent_count_n": "N/A (Diagnostic Audit)",
+      "backbone_models": [
+        "AgenTracer-8B",
+        "Gemini-2.5-Pro",
+        "Claude-4-Sonnet",
+        "DeepSeek-R1"
+      ],
+      "model_heterogeneity": "Not Applicable (Diagnostic Audit)"
+    },
+    "coordination_and_communication_method": {
+      "interaction_paradigm": "Non-Comparative Diagnostic Audit",
+      "communication_protocol": "Offline counterfactual replay replaces suspect agent actions with oracle guidance to isolate decisive error steps; trained AgenTracer-8B plugs into MetaGPT/MaAS as actionable corrective feedback. [Planning/Memory/Verification: Causal counterfactual replay serves as automated trajectory verifier; multi-granular RL optimizes both agent- and step-level accuracy.]",
+      "topology_optimization_or_pruning_method": "Multi-granular RL fine-tuning of 8B fault-tracing model",
+      "termination_mechanism": "Oracle outcome flip under counterfactual step substitution."
+    },
+    "planning_memory_verification_notes": {
+      "planning_mechanism": "Counterfactual intervention search over MAS trajectories; closed-loop self-correction feedback to MetaGPT/MaAS.",
+      "memory_and_state_sharing": "Requires reproducible trajectory replay checkpoints.",
+      "verification_and_feedback": "Counterfactual outcome verification plus RL reward at agent and step granularities."
+    },
+    "terminological_stratum": "Non-Comparative Diagnostic / Validity Study",
+    "role_specialization": {
+      "has_role_specialization": true,
+      "defined_roles": [
+        "Counterfactual Replay / Fault-Injection Annotator",
+        "AgenTracer-8B Fault Localizer",
+        "Audited MAS Roles (MetaGPT, MaAS)"
+      ],
+      "asymmetric_tool_or_privilege_split": "Counterfactual annotator accesses oracle step guidance and replayable execution state."
+    },
+    "failure_mechanisms_and_mitigations": {
+      "regimes_where_mas_succeeded": "AgenTracer-8B outperforms Gemini-2.5-Pro, Claude-4-Sonnet, and DeepSeek-R1 on Who&When and delivers self-correction performance gains when integrated with MetaGPT and MaAS.",
+      "regimes_where_mas_degraded_or_failed": "Zero-shot proprietary and reasoning LLMs score <10% on decisive failure attribution in long verbose MAS traces.",
+      "failure_mechanisms_documented": [
+        "Error Amplification",
+        "Specification/Role Failure",
+        "Termination/Verification Failure"
+      ],
+      "mitigation_and_recovery_delta": "Multi-granular RL attribution + actionable diagnostic feedback improves MetaGPT and MaAS self-correction (exact numerical deltas extracted in Wave 4C)."
+    },
+    "architectural_limitations": {
+      "author_stated_limitations": "not verifiable from accessible open summary",
+      "threats_to_validity": "Counterfactual replay requires deterministic/reproducible environments and upfront annotation/RL training compute not amortized in open summary; later outperformed by AgentLocate (SR025).",
+      "six_class_confounder_flags": [
+        "C6: Unamortized Search/Training Cost Omission"
+      ],
+      "publication_bias_or_status_caveats": "Peer-reviewed conference (ICLR 2026)."
+    },
+    "supporting_evidence_locations": [
+      "https://arxiv.org/abs/2509.03312 (Abstract & TracerTraj/AgenTracer-8B summary)"
+    ]
+  },
+  "SR025": {
+    "objective": "Introduce AgentLocate, a confidence-aware multi-perspective failure localization pipeline with iterative lightweight judge fine-tuning evaluated on Who&When and Aegis-Bench.",
+    "architecture_and_agent_count": {
+      "system_names": [
+        "AgentLocate"
+      ],
+      "topology_class": "Diagnostic/Benchmark Audit (N/A)",
+      "agent_count_n": "N/A (Diagnostic Audit)",
+      "backbone_models": [
+        "GPT-4o",
+        "Qwen2.5-7B-Instruct",
+        "Llama-8B",
+        "Mistral-7B"
+      ],
+      "model_heterogeneity": "Not Applicable (Diagnostic Audit)"
+    },
+    "coordination_and_communication_method": {
+      "interaction_paradigm": "Non-Comparative Diagnostic Audit",
+      "communication_protocol": "Primary LLM Judge attributes agent+step -> independent multi-perspective Evaluators assess trace from diverse angles -> confidence-aware aggregation filters noise and updates Judge via lightweight fine-tuning across refinement rounds. [Planning/Memory/Verification: Multi-perspective evaluator committee + confidence-weighted aggregation verifies Judge attributions.]",
+      "topology_optimization_or_pruning_method": "Confidence-aware multi-perspective aggregation + lightweight iterative Judge fine-tuning",
+      "termination_mechanism": "Fixed Judge-Evaluator refinement rounds (Tables 11-12; exact round count not verifiable from accessible open summary)."
+    },
+    "planning_memory_verification_notes": {
+      "planning_mechanism": "Iterative multi-perspective trace critique and Judge adaptation.",
+      "memory_and_state_sharing": "Aggregated multi-evaluator feedback distilled into lightweight Judge updates.",
+      "verification_and_feedback": "Confidence-aware aggregation reconciles divergent root-cause views."
+    },
+    "terminological_stratum": "Non-Comparative Diagnostic / Validity Study",
+    "role_specialization": {
+      "has_role_specialization": true,
+      "defined_roles": [
+        "Primary Failure-Localization Judge",
+        "Multi-Perspective Independent Evaluators"
+      ],
+      "asymmetric_tool_or_privilege_split": "Primary Judge integrates evaluator critiques and undergoes iterative fine-tuning."
+    },
+    "failure_mechanisms_and_mitigations": {
+      "regimes_where_mas_succeeded": "Outperforms counterfactual replay (AgenTracer) and agent-level baselines (AEGIS) on Who&When (Algorithm-Generated and Hand-Crafted subsets) and Aegis-Bench.",
+      "regimes_where_mas_degraded_or_failed": "Prior baselines drop sharply when moving from coarse agent-level to granular step-level localization under diffuse causal responsibility.",
+      "failure_mechanisms_documented": [
+        "Error Amplification",
+        "Specification/Role Failure"
+      ],
+      "mitigation_and_recovery_delta": "Confidence-aware multi-perspective verification + iterative fine-tuning elevates step- and agent-level localization accuracy over AgenTracer (exact Tables 1-3 deltas in Wave 4C)."
+    },
+    "architectural_limitations": {
+      "author_stated_limitations": "Diffuse causal responsibility across interdependent agents and inherent multi-perspective ambiguity where multiple root causes are legitimately plausible.",
+      "threats_to_validity": "Diagnostic localization framework rather than live task-execution MAS; iterative evaluator calls and judge fine-tuning add diagnostic compute overhead.",
+      "six_class_confounder_flags": [
+        "None Observed"
+      ],
+      "publication_bias_or_status_caveats": "Peer-reviewed conference (COLM 2026)."
+    },
+    "supporting_evidence_locations": [
+      "https://arxiv.org/abs/2607.07989 (Abstract, Section 4, Tables 1, 2, 3, 9, 11, 12)"
+    ]
+  },
+  "SR026": {
+    "objective": "Release TraceElephant (220 expert-annotated MAS failure traces with reproducible environments across Magentic-One and Captain-Agent) and demonstrate that full-trace observability raises step-level attribution accuracy by +76% over partial output logs.",
+    "architecture_and_agent_count": {
+      "system_names": [
+        "TraceElephant Benchmark (auditing Magentic-One & Captain-Agent)"
+      ],
+      "topology_class": "Diagnostic/Benchmark Audit (N/A)",
+      "agent_count_n": "N/A (Diagnostic Audit)",
+      "backbone_models": "not verifiable from accessible open summary",
+      "model_heterogeneity": "Not Applicable (Diagnostic Audit)"
+    },
+    "coordination_and_communication_method": {
+      "interaction_paradigm": "Non-Comparative Diagnostic Audit",
+      "communication_protocol": "Full-trace logging schema recording exact step prompts, context messages, tool outputs, environment states, and system configs across centrally orchestrated Magentic-One and dynamically assembled Captain-Agent on GAIA and AssistantBench. [Planning/Memory/Verification: Exposes how missing input/environment logs confound fault attribution.]",
+      "topology_optimization_or_pruning_method": "None (diagnostic observability benchmark)",
+      "termination_mechanism": "N/A (Diagnostic Audit)"
+    },
+    "planning_memory_verification_notes": {
+      "planning_mechanism": "Audits both manual central orchestration (Magentic-One) and dynamic meta-controller team assembly (Captain-Agent).",
+      "memory_and_state_sharing": "Demonstrates that hidden prompt/context/tool-output inputs in partial logs blind downstream causal attribution.",
+      "verification_and_feedback": "220 expert-annotated traces with reproducible execution environments."
+    },
+    "terminological_stratum": "Non-Comparative Diagnostic / Validity Study",
+    "role_specialization": {
+      "has_role_specialization": true,
+      "defined_roles": [
+        "Audited MAS Roles (Magentic-One Orchestrator/Workers; Captain-Agent Meta-Controller/Dynamic Team)"
+      ],
+      "asymmetric_tool_or_privilege_split": "Audited frameworks separate orchestrator/meta-controller planning from tool-executing worker agents."
+    },
+    "failure_mechanisms_and_mitigations": {
+      "regimes_where_mas_succeeded": "Full step-input and environment-state observability enables accurate causal localization (+76% step-level gain over partial output logs).",
+      "regimes_where_mas_degraded_or_failed": "Partial-observation logs (outputs only) obscure whether errors stem from faulty reasoning or corrupted upstream inputs/tool returns across asynchronous loops.",
+      "failure_mechanisms_documented": [
+        "Handoff Information Loss (DPI)",
+        "Error Amplification",
+        "Specification/Role Failure"
+      ],
+      "mitigation_and_recovery_delta": "Full-trace provenance logging raises step-level attribution accuracy by +76% relative to partial output logs."
+    },
+    "architectural_limitations": {
+      "author_stated_limitations": "Labor-intensive manual annotation of long asynchronous MAS traces and developer debugging friction.",
+      "threats_to_validity": "Covers 220 traces across 2 frameworks (Magentic-One, Captain-Agent) on GAIA/AssistantBench; exact evaluator LLMs not listed in accessed open summary.",
+      "six_class_confounder_flags": [
+        "C5: Exact-Match / Harness Fragility / Benchmark Leakage"
+      ],
+      "publication_bias_or_status_caveats": "Peer-reviewed conference (ACL 2026)."
+    },
+    "supporting_evidence_locations": [
+      "https://arxiv.org/abs/2604.22708 (Abstract & TraceElephant repository summary)"
+    ]
+  },
+  "SR027": {
+    "objective": "Reframe single-step MAS failure attribution into severity-ranked diagnostic triage (TriageBench, 1,184 intervention candidates) via TRIAGE, a zero-shot cascade combining suspicion scoring, structural-impact graphs, and simulated repair replay.",
+    "architecture_and_agent_count": {
+      "system_names": [
+        "TRIAGE",
+        "TriageBench"
+      ],
+      "topology_class": "Diagnostic/Benchmark Audit (N/A)",
+      "agent_count_n": "N/A (Diagnostic Audit)",
+      "backbone_models": "not verifiable from accessible open summary",
+      "model_heterogeneity": "Not Applicable (Diagnostic Audit)"
+    },
+    "coordination_and_communication_method": {
+      "interaction_paradigm": "Non-Comparative Diagnostic Audit",
+      "communication_protocol": "Zero-shot 3-stage diagnostic cascade (tested across GPT, Claude, Gemini, and Qwen family judges; exact snapshots not verifiable from accessible open summary): (1) single-call LLM suspicion scoring (rho), (2) lightweight structural-impact dependency graph tracking downstream error propagation, (3) repair-patch generation + LLM-simulated replay. [Planning/Memory/Verification: Exposes 59.3% LLM-council disagreement with Who&When single-step labels; simulated replay estimates counterfactual uplift.]",
+      "topology_optimization_or_pruning_method": "Cost-aware cascade filtering candidate steps prior to simulated replay",
+      "termination_mechanism": "Top-K severity-ranked intervention list with repair patches."
+    },
+    "planning_memory_verification_notes": {
+      "planning_mechanism": "Structural-impact dependency graph maps cross-agent propagation pathways.",
+      "memory_and_state_sharing": "Full failed trace evaluation bounded by evaluator context windows.",
+      "verification_and_feedback": "LLM-simulated counterfactual replay estimates whether patching a candidate step flips task failure."
+    },
+    "terminological_stratum": "Non-Comparative Diagnostic / Validity Study",
+    "role_specialization": {
+      "has_role_specialization": true,
+      "defined_roles": [
+        "Suspicion Scorer Judge",
+        "Structural-Impact Graph Analyzer",
+        "Patch Generator & Replay Simulator",
+        "LLM Council Annotator (TriageBench)"
+      ],
+      "asymmetric_tool_or_privilege_split": "none"
+    },
+    "failure_mechanisms_and_mitigations": {
+      "regimes_where_mas_succeeded": "Standalone suspicion scoring hits 41.8% top-1 on Who&When (+14.0 pp); full TRIAGE cascade reaches 73.9% top-5 on Who&When (vs 42.4% top-1) and 93.2% top-10 on multi-error TRAIL (vs 56.8% top-1).",
+      "regimes_where_mas_degraded_or_failed": "Rigid single-step root-cause labeling breaks down on multi-error cascading traces where an LLM council disagrees with original gold single-step labels in 59.3% of traces.",
+      "failure_mechanisms_documented": [
+        "Error Amplification",
+        "Harness/Metric Artifact"
+      ],
+      "mitigation_and_recovery_delta": "Severity-ranked top-K triage with structural-impact graph and simulated repair replay recovers 73.9% top-5 on Who&When and 93.2% top-10 on TRAIL."
+    },
+    "architectural_limitations": {
+      "author_stated_limitations": "Reliance on frontier LLM proxies risks evaluator hallucinations; inherent ground-truth ambiguity; cross-model evaluator-vs-trace confounds; context-window cost on very long traces.",
+      "threats_to_validity": "Simulated LLM replay approximates rather than executes real environment re-runs; short-paper format.",
+      "six_class_confounder_flags": [
+        "C5: Exact-Match / Harness Fragility / Benchmark Leakage"
+      ],
+      "publication_bias_or_status_caveats": "Peer-reviewed conference (AACL-IJCNLP 2026 Short Papers, ACL:2026.aacl-short.347)."
+    },
+    "supporting_evidence_locations": [
+      "https://aclanthology.org/2026.aacl-short.347/",
+      "OpenReview / TriageBench summary"
+    ]
+  },
+  "SR028": {
+    "objective": "Introduce TRAIL (Trace Reasoning and Agentic Issue Localization), a 3-category/9-subcategory/20+ leaf error taxonomy and 148 human-annotated long execution traces (841 errors, >200k avg tokens up to 6M tokens from GAIA and SWE-bench).",
+    "architecture_and_agent_count": {
+      "system_names": [
+        "TRAIL Benchmark (auditing GAIA & SWE-bench single- and multi-agent traces)"
+      ],
+      "topology_class": "Diagnostic/Benchmark Audit (N/A)",
+      "agent_count_n": "N/A (Diagnostic Audit)",
+      "backbone_models": [
+        "Gemini-2.5-Pro"
+      ],
+      "model_heterogeneity": "Not Applicable (Diagnostic Audit)"
+    },
+    "coordination_and_communication_method": {
+      "interaction_paradigm": "Non-Comparative Diagnostic Audit",
+      "communication_protocol": "Long-context trace auditing (>200k avg tokens, max 6M tokens) categorizing Reasoning (hallucinations, info processing, decision/formatting), Planning & Coordination (task decomposition, multi-agent delegation/communication), and System Execution faults. [Planning/Memory/Verification: Exposes failure of long-context LLMs to trace compound causal errors across interleaved reasoning and tool logs.]",
+      "topology_optimization_or_pruning_method": "None (diagnostic error taxonomy & trace dataset)",
+      "termination_mechanism": "N/A (Diagnostic Audit)"
+    },
+    "planning_memory_verification_notes": {
+      "planning_mechanism": "Audits Planning & Coordination errors (task decomposition and multi-agent communication/delegation breakdowns).",
+      "memory_and_state_sharing": "Evaluates ultra-long context trace ingestion (200k-6M tokens) exposing trace-reasoning bottlenecks.",
+      "verification_and_feedback": "Expert human annotation (~110 min/trace across 148 traces, 841 errors)."
+    },
+    "terminological_stratum": "Non-Comparative Diagnostic / Validity Study",
+    "role_specialization": {
+      "has_role_specialization": "not verifiable from accessible open summary",
+      "defined_roles": "not verifiable from accessible open summary",
+      "asymmetric_tool_or_privilege_split": "not verifiable from accessible open summary"
+    },
+    "failure_mechanisms_and_mitigations": {
+      "regimes_where_mas_succeeded": "N/A (diagnostic trace-localization benchmark).",
+      "regimes_where_mas_degraded_or_failed": "Even best long-context model Gemini-2.5-Pro achieves only 11% accuracy on TRAIL trace localization across long agentic/multi-agent trajectories.",
+      "failure_mechanisms_documented": [
+        "Error Amplification",
+        "Specification/Role Failure",
+        "Termination/Verification Failure"
+      ],
+      "mitigation_and_recovery_delta": "Baseline audit only; subsequent TRIAGE cascade (SR027) achieved 93.2% top-10 localization on TRAIL."
+    },
+    "architectural_limitations": {
+      "author_stated_limitations": "Massive context lengths (200k-6M tokens) induce high latency/cost and exceed many LLM limits; origin ambiguity in cascading chains; static taxonomies lag evolving agent protocols.",
+      "threats_to_validity": "Preprint (arXiv:2505.08638); combines single-agent and multi-agent traces from GAIA and SWE-bench without MAS-vs-SAS comparative outcomes.",
+      "six_class_confounder_flags": [
+        "None Observed"
+      ],
+      "publication_bias_or_status_caveats": "Preprint (arXiv:2505.08638); not peer-reviewed."
+    },
+    "supporting_evidence_locations": [
+      "https://arxiv.org/abs/2505.08638 (Abstract & Patronus AI / Moonlight summaries)"
+    ]
+  },
+  "SR029": {
+    "objective": "Quantify numerical-majority and high-capability group conformity (spiral of silence / polarization) across >2,500 multi-agent LLM debates on socially contentious topics starting from neutral stances.",
+    "architecture_and_agent_count": {
+      "system_names": [
+        "Multi-Agent Group Conformity Debate Simulator"
+      ],
+      "topology_class": "Dense All-to-All Debate",
+      "agent_count_n": "not verifiable from accessible open summary",
+      "backbone_models": [
+        "Qwen-7B",
+        "Qwen-14B"
+      ],
+      "model_heterogeneity": "Both Tested"
+    },
+    "coordination_and_communication_method": {
+      "interaction_paradigm": "Interactive Stateful Multi-Turn",
+      "communication_protocol": "Multi-round natural-language opinion debates (including GPT and Claude variants alongside Qwen-7B/14B; exact full model list not verifiable from accessible open summary) where initially neutral/centrist agents observe ongoing peer stances and update positions over rounds. [Planning/Memory/Verification: Open-ended social discourse without deterministic external verifier; tracks stance drift as a function of numerical majority and model-capability asymmetry.]",
+      "topology_optimization_or_pruning_method": "Controlled ablations of majority-minority split and peer capability tiers",
+      "termination_mechanism": "Fixed debate rounds (exact round integer not verifiable from accessible open summary)."
+    },
+    "planning_memory_verification_notes": {
+      "planning_mechanism": "None (sequential stance updates across debate rounds).",
+      "memory_and_state_sharing": "Full ongoing debate dialogue transcript shared among participants.",
+      "verification_and_feedback": "No external truth verifier; tracks conformity shift rates statistically."
+    },
+    "terminological_stratum": "Interactive / Stateful LLM-MAS",
+    "role_specialization": {
+      "has_role_specialization": false,
+      "defined_roles": [],
+      "asymmetric_tool_or_privilege_split": "none"
+    },
+    "failure_mechanisms_and_mitigations": {
+      "regimes_where_mas_succeeded": "N/A (mechanistic conformity audit rather than task-accuracy optimization).",
+      "regimes_where_mas_degraded_or_failed": "Initially neutral agents conform systematically over rounds to numerical majorities and disproportionately defer to higher-capability peers (e.g., Qwen-14B pulling Qwen-7B), amplifying echo chambers.",
+      "failure_mechanisms_documented": [
+        "Conformity/Sycophancy Collapse",
+        "Prompt-Injection/Collusion Vulnerability"
+      ],
+      "mitigation_and_recovery_delta": "Recommends enforcing viewpoint diversity, breaking uniform majority clusters, and neutral moderation/transparency controls (empirical mitigation delta not reported in open summary)."
+    },
+    "architectural_limitations": {
+      "author_stated_limitations": "Evaluated on socially contentious topics lacking objective ground truth; vulnerable to strategic seeding of coordinated or high-capability majority personas.",
+      "threats_to_validity": "Measures opinion/stance conformity rather than verifiable objective reasoning accuracy.",
+      "six_class_confounder_flags": [
+        "None Observed"
+      ],
+      "publication_bias_or_status_caveats": "Peer-reviewed conference (Findings of ACL 2025, 2025.findings-acl.265)."
+    },
+    "supporting_evidence_locations": [
+      "https://aclanthology.org/2025.findings-acl.265/",
+      "https://arxiv.org/abs/2506.01332 (Abstract & methodology summary)"
+    ]
+  },
+  "SR030": {
+    "objective": "Mitigate sycophancy and unproductive multi-round stalling in multi-agent LLM debate via CONSENSAGENT, dynamically refining prompts mid-interaction based on confidence, round consistency, and central memory across 6 reasoning datasets.",
+    "architecture_and_agent_count": {
+      "system_names": [
+        "CONSENSAGENT"
+      ],
+      "topology_class": "Dense All-to-All Debate",
+      "agent_count_n": "not verifiable from accessible open summary",
+      "backbone_models": "not verifiable from accessible open summary",
+      "model_heterogeneity": "not verifiable from accessible open summary"
+    },
+    "coordination_and_communication_method": {
+      "interaction_paradigm": "Interactive Stateful Multi-Turn",
+      "communication_protocol": "Multi-round peer debate over 6 datasets (incl. GSM8K, MMLU, StrategyQA) and 3 LLM families (GPT, Llama, Mistral variants; exact snapshots not verifiable from accessible open summary), monitored by a central memory tracking round consistency and confidence; dynamic prompt refinement activates mid-debate to suppress polite capitulation. [Planning/Memory/Verification: Central memory monitors stall/sycophancy signals and triggers anti-sycophancy prompt injection.]",
+      "topology_optimization_or_pruning_method": "Dynamic interaction-triggered prompt refinement curbing redundant debate rounds",
+      "termination_mechanism": "Consensus reached within 1-2 rounds after dynamic prompt-optimization trigger."
+    },
+    "planning_memory_verification_notes": {
+      "planning_mechanism": "Dynamic mid-interaction prompt adaptation triggered by stall/sycophancy detection.",
+      "memory_and_state_sharing": "Central memory tracks agent confidence and round-by-round answer consistency.",
+      "verification_and_feedback": "Anti-sycophancy prompt refinement enforces critical scrutiny of peer claims."
+    },
+    "terminological_stratum": "Interactive / Stateful LLM-MAS",
+    "role_specialization": {
+      "has_role_specialization": false,
+      "defined_roles": [],
+      "asymmetric_tool_or_privilege_split": "Central memory controller monitors round consistency and confidence across peer agents."
+    },
+    "failure_mechanisms_and_mitigations": {
+      "regimes_where_mas_succeeded": "6 reasoning datasets (incl. GSM8K, MMLU, StrategyQA) across 3 LLM families: reduces post-trigger convergence to 1-2 rounds while boosting accuracy over SAS and standard MAD.",
+      "regimes_where_mas_degraded_or_failed": "Baseline unguided MAD degrades into sycophantic 'yes-men' loops requiring excessive rounds while reinforcing peer errors.",
+      "failure_mechanisms_documented": [
+        "Conformity/Sycophancy Collapse",
+        "Error Amplification"
+      ],
+      "mitigation_and_recovery_delta": "Dynamic anti-sycophancy prompt refinement stabilizes consensus in 1-2 rounds post-trigger and raises debate accuracy (exact Tables 2-3 numerical deltas extracted in Wave 4C)."
+    },
+    "architectural_limitations": {
+      "author_stated_limitations": "Multi-agent reliability remains heavily sensitive to prompt engineering; unsteered multi-turn interactions revert to sycophancy.",
+      "threats_to_validity": "Exact agent count N, exact model snapshot versions, and SAS compute-matching details not verifiable from accessible open ACL summary.",
+      "six_class_confounder_flags": [
+        "not verifiable from accessible open summary"
+      ],
+      "publication_bias_or_status_caveats": "Peer-reviewed conference (Findings of ACL 2025, 2025.findings-acl.1141)."
+    },
+    "supporting_evidence_locations": [
+      "https://aclanthology.org/2025.findings-acl.1141/",
+      "Virginia Tech / ACL Anthology abstract & Tables 2-3 summary"
+    ]
+  },
+  "SR031": {
+    "objective": "Measure sycophancy propagation in a 6-agent heterogeneous discussion framework across 6 open-source LLMs (Llama-3.1/3.2, Qwen-2.5) and test whether static/dynamic peer sycophancy priors halt error cascades (+10.5 pp absolute gain).",
+    "architecture_and_agent_count": {
+      "system_names": [
+        "6-Agent Sycophancy-Prior Discussion Framework"
+      ],
+      "topology_class": "Dense All-to-All Debate",
+      "agent_count_n": 6,
+      "backbone_models": [
+        "Llama-3.1-8B-Instruct",
+        "Llama-3.2-3B-Instruct",
+        "Qwen-2.5-3B-Instruct",
+        "Qwen-2.5-7B-Instruct",
+        "Qwen-2.5-14B-Instruct",
+        "Qwen-2.5-32B-Instruct"
+      ],
+      "model_heterogeneity": "Heterogeneous"
+    },
+    "coordination_and_communication_method": {
+      "interaction_paradigm": "Interactive Stateful Multi-Turn",
+      "communication_protocol": "Round 0 independent judgments followed by multi-round peer review where all 6 agents inspect peers' latest answers paired with static pre-discussion or dynamic online peer sycophancy rankings/priors (requiring no per-question ground truth). [Planning/Memory/Verification: Explicit peer sycophancy credibility priors down-weight overly deferential peers during belief updating.]",
+      "topology_optimization_or_pruning_method": "Peer credibility weighting via static/dynamic sycophancy priors (graph edges unchanged)",
+      "termination_mechanism": "Fixed multi-round discussion (exact round count not verifiable from accessible open summary)."
+    },
+    "planning_memory_verification_notes": {
+      "planning_mechanism": "Multi-round stance revision weighted by explicit peer sycophancy rankings.",
+      "memory_and_state_sharing": "Shared latest peer answers plus computed static/dynamic sycophancy credibility scores.",
+      "verification_and_feedback": "Dynamic online or static pre-discussion sycophancy priors curb polite error cascades without ground-truth labels."
+    },
+    "terminological_stratum": "Interactive / Stateful LLM-MAS",
+    "role_specialization": {
+      "has_role_specialization": false,
+      "defined_roles": [],
+      "asymmetric_tool_or_privilege_split": "Agents span asymmetric parameter scales (3B to 32B) and carry heterogeneous peer sycophancy prior scores."
+    },
+    "failure_mechanisms_and_mitigations": {
+      "regimes_where_mas_succeeded": "MMLU subsets (law, business ethics, math, ML, biology) when agents receive peer sycophancy priors, preventing deferential peers from driving premature consensus.",
+      "regimes_where_mas_degraded_or_failed": "Baseline discussions without sycophancy priors suffer polite deference cascades where sycophancy-prone agents amplify early errors.",
+      "failure_mechanisms_documented": [
+        "Conformity/Sycophancy Collapse",
+        "Error Amplification"
+      ],
+      "mitigation_and_recovery_delta": "Injecting static or dynamic peer sycophancy priors suppresses discussion sycophancy and boosts final accuracy by +10.5 percentage points absolute."
+    },
+    "architectural_limitations": {
+      "author_stated_limitations": "not verifiable from accessible open summary",
+      "threats_to_validity": "Evaluated on multiple-choice MMLU subsets across 3B-32B open-weights models; transferability to open-ended code/tool MAS and >70B frontier models remains unverified in open summary.",
+      "six_class_confounder_flags": [
+        "None Observed"
+      ],
+      "publication_bias_or_status_caveats": "Peer-reviewed conference (SIGDIAL 2026, 2026.sigdial-1.56)."
+    },
+    "supporting_evidence_locations": [
+      "https://aclanthology.org/2026.sigdial-1.56/",
+      "https://arxiv.org/abs/2604.02668 (Abstract & experimental setup)"
+    ]
+  },
+  "SR032": {
+    "objective": "Audit cost-blindness, missing holdouts, weak simple baselines, and reproducibility failures in AI agent benchmarks, proposing Cost-vs-Accuracy Pareto frontiers and joint fixed-vs-variable optimization (DSPy/Optuna).",
+    "architecture_and_agent_count": {
+      "system_names": [
+        "Agent Evaluation Audit (Reflexion, LATS, Simple Retries / Warming / Escalation)"
+      ],
+      "topology_class": "Diagnostic/Benchmark Audit (N/A)",
+      "agent_count_n": "N/A (Diagnostic Audit)",
+      "backbone_models": "not verifiable from accessible open summary",
+      "model_heterogeneity": "Not Applicable (Diagnostic Audit)"
+    },
+    "coordination_and_communication_method": {
+      "interaction_paradigm": "Non-Comparative Diagnostic Audit",
+      "communication_protocol": "Evaluates agentic benchmarks along Cost-vs-Accuracy Pareto frontiers, disentangling fixed tuning costs (DSPy/Optuna) from variable inference costs and auditing held-out generalization vs. shortcut memorization. [Planning/Memory/Verification: Shows simple retries, temperature warming, and cost-tiered escalation match intricate reflection/tree-search agents at a fraction of cost.]",
+      "topology_optimization_or_pruning_method": "Joint fixed-vs-variable cost Pareto optimization (DSPy / Optuna)",
+      "termination_mechanism": "N/A (Diagnostic Audit)"
+    },
+    "planning_memory_verification_notes": {
+      "planning_mechanism": "Audits complex planning/reflection scaffolds (LATS, Reflexion) against simple retry/escalation baselines.",
+      "memory_and_state_sharing": "Exposes hard-coded public benchmark shortcut overfitting (e.g., site-specific URLs).",
+      "verification_and_feedback": "Advocates secret/dynamic holdout sets and cost-normalized Pareto evaluation."
+    },
+    "terminological_stratum": "Non-Comparative Diagnostic / Validity Study",
+    "role_specialization": {
+      "has_role_specialization": false,
+      "defined_roles": [],
+      "asymmetric_tool_or_privilege_split": "none"
+    },
+    "failure_mechanisms_and_mitigations": {
+      "regimes_where_mas_succeeded": "Simple cost-aware baselines (retries, warming, model escalation) achieve Pareto optimality over intricate reflection/planning scaffolds.",
+      "regimes_where_mas_degraded_or_failed": "Accuracy-only leaderboards mask orders-of-magnitude cost inflation, overfitting on public benchmarks without holdouts, and irreproducible script/prompt drift.",
+      "failure_mechanisms_documented": [
+        "Harness/Metric Artifact"
+      ],
+      "mitigation_and_recovery_delta": "Pareto frontier evaluation, secret holdout sets, and simple cost-matched baselines prevent false SOTA claims."
+    },
+    "architectural_limitations": {
+      "author_stated_limitations": "Benchmarks conflate model-capability evaluation with deployment efficiency and lack standardized evaluation scripts and secret holdouts.",
+      "threats_to_validity": "Audits primarily single-agent/tree-search frameworks rather than N>=2 interactive MAS, though methodology directly diagnoses MAS-vs-SAS confounding (C1, C5, C6).",
+      "six_class_confounder_flags": [
+        "None Observed"
+      ],
+      "publication_bias_or_status_caveats": "Peer-reviewed journal (TMLR)."
+    },
+    "supporting_evidence_locations": [
+      "https://arxiv.org/abs/2407.01502 (Abstract & Princeton NormalTech summary)"
+    ]
+  },
+  "SR033": {
+    "objective": "Introduce tau-bench (Retail and Airline customer-service domains) coupling a tool-using agent, hidden-goal LLM user simulator, and markdown policy rules, and define pass^k to expose ~60% multi-trial consistency collapse.",
+    "architecture_and_agent_count": {
+      "system_names": [
+        "tau-bench Benchmark (Tool Agent + LLM User Simulator)"
+      ],
+      "topology_class": "Diagnostic/Benchmark Audit (N/A)",
+      "agent_count_n": "N/A (Diagnostic Audit)",
+      "backbone_models": [
+        "GPT-4o"
+      ],
+      "model_heterogeneity": "Not Applicable (Diagnostic Audit)"
+    },
+    "coordination_and_communication_method": {
+      "interaction_paradigm": "Non-Comparative Diagnostic Audit",
+      "communication_protocol": "Multi-turn tool-agent-user conversation constrained by markdown policy rulebooks; automated grading compares final database state against ground-truth goal state plus policy-mandated outputs. [Planning/Memory/Verification: Exposes long-horizon constraint forgetting, tool-error loops, and policy violations; introduces pass^k requiring k/k independent trial successes.]",
+      "topology_optimization_or_pruning_method": "None (evaluation benchmark)",
+      "termination_mechanism": "User simulator completion signal or turn limit."
+    },
+    "planning_memory_verification_notes": {
+      "planning_mechanism": "Multi-turn tool calling under written policy constraints.",
+      "memory_and_state_sharing": "Long-horizon conversational state tracking across dynamic user simulator turns.",
+      "verification_and_feedback": "Final database state + policy-compliance grading; pass^k consistency metric."
+    },
+    "terminological_stratum": "Non-Comparative Diagnostic / Validity Study",
+    "role_specialization": {
+      "has_role_specialization": true,
+      "defined_roles": [
+        "Tool-Equipped Service Agent (read/write DB APIs)",
+        "Hidden-Goal Customer User Simulator"
+      ],
+      "asymmetric_tool_or_privilege_split": "Service agent holds read/write database APIs and policy guidelines; user simulator holds hidden user goals."
+    },
+    "failure_mechanisms_and_mitigations": {
+      "regimes_where_mas_succeeded": "N/A (diagnostic reliability benchmark).",
+      "regimes_where_mas_degraded_or_failed": "GPT-4o reaches pass^1 < 50% overall and drops to pass^8 < 25% in Retail due to policy violations, tool-error loops, phrasing sensitivity, and long-horizon drift.",
+      "failure_mechanisms_documented": [
+        "Specification/Role Failure",
+        "Termination/Verification Failure",
+        "Harness/Metric Artifact"
+      ],
+      "mitigation_and_recovery_delta": "pass^k consistency metric reveals stochastic reliability decay invisible under pass@1 (subsequently audited by SR037 ABC for empty-output grading bugs)."
+    },
+    "architectural_limitations": {
+      "author_stated_limitations": "Agents violate complex rulebooks, fail to recover from tool errors, and forget constraints over multi-turn interactions.",
+      "threats_to_validity": "Audited by SR037 (ABC) as containing empty/trivial-response grading flaws causing up to 38% overestimation in specific configurations; evaluates 1 service agent + 1 user simulator rather than N>=2 peer MAS.",
+      "six_class_confounder_flags": [
+        "C5: Exact-Match / Harness Fragility / Benchmark Leakage"
+      ],
+      "publication_bias_or_status_caveats": "Peer-reviewed conference (ICLR 2025, OpenReview:EMki-p3GC)."
+    },
+    "supporting_evidence_locations": [
+      "https://openreview.net/forum?id=EMki-p3GC",
+      "https://arxiv.org/abs/2406.12045 (Abstract & HuggingFace/HoneyHive summaries)"
+    ]
+  },
+  "SR034": {
+    "objective": "Decompose AI agent operational dependability beyond raw accuracy into 12 concrete reliability metrics across Consistency, Robustness, Predictability, and Safety, proving reliability gains severely lag capability gains.",
+    "architecture_and_agent_count": {
+      "system_names": [
+        "12-Metric Agent Reliability Evaluation Framework"
+      ],
+      "topology_class": "Diagnostic/Benchmark Audit (N/A)",
+      "agent_count_n": "N/A (Diagnostic Audit)",
+      "backbone_models": "not verifiable from accessible open summary",
+      "model_heterogeneity": "Not Applicable (Diagnostic Audit)"
+    },
+    "coordination_and_communication_method": {
+      "interaction_paradigm": "Non-Comparative Diagnostic Audit",
+      "communication_protocol": "Evaluates frontier agents across complementary benchmarks using 12 metrics covering cross-run Consistency, perturbation Robustness, uncertainty/graceful-failure Predictability, and error-severity Safety. [Planning/Memory/Verification: Exposes sharp decoupling between benchmark accuracy progress and operational dependability.]",
+      "topology_optimization_or_pruning_method": "None (diagnostic reliability audit)",
+      "termination_mechanism": "N/A (Diagnostic Audit)"
+    },
+    "planning_memory_verification_notes": {
+      "planning_mechanism": "Evaluates operational predictability and uncertainty calibration in agent execution.",
+      "memory_and_state_sharing": "N/A (diagnostic audit across agent benchmarks).",
+      "verification_and_feedback": "12 safety-engineering-inspired operational reliability metrics."
+    },
+    "terminological_stratum": "Non-Comparative Diagnostic / Validity Study",
+    "role_specialization": {
+      "has_role_specialization": false,
+      "defined_roles": [],
+      "asymmetric_tool_or_privilege_split": "none"
+    },
+    "failure_mechanisms_and_mitigations": {
+      "regimes_where_mas_succeeded": "N/A (diagnostic reliability audit).",
+      "regimes_where_mas_degraded_or_failed": "Across frontier models, reliability improvements lag dramatically behind accuracy progress: agents fail unpredictably, break under minor perturbations, and vary erratically across runs.",
+      "failure_mechanisms_documented": [
+        "Harness/Metric Artifact",
+        "Termination/Verification Failure"
+      ],
+      "mitigation_and_recovery_delta": "Provides 12-metric dependability decomposition exposing hidden operational risks masked by single-number accuracy."
+    },
+    "architectural_limitations": {
+      "author_stated_limitations": "Capability scaling alone fails to produce dependable deployment behavior without explicit consistency, robustness, predictability, and safety engineering.",
+      "threats_to_validity": "Exact evaluated model snapshots, benchmark names, and per-metric numerical tables not fully exposed in accessible open summary.",
+      "six_class_confounder_flags": [
+        "None Observed"
+      ],
+      "publication_bias_or_status_caveats": "Peer-reviewed conference (ICML 2026)."
+    },
+    "supporting_evidence_locations": [
+      "https://arxiv.org/abs/2602.16666 (Abstract & Princeton NormalTech summary)"
+    ]
+  },
+  "SR035": {
+    "objective": "Audit 12 major agentic benchmarks and evaluate 6 leading agents across 300 enterprise tasks with CLEAR (Cost, Latency, Efficacy, Assurance, Reliability), exposing 50x cost variance, 4.4x-10.8x accuracy-only cost penalties, and 60%->25% 8-run decay.",
+    "architecture_and_agent_count": {
+      "system_names": [
+        "CLEAR Enterprise Evaluation Framework (auditing 12 benchmarks & 6 agents)"
+      ],
+      "topology_class": "Diagnostic/Benchmark Audit (N/A)",
+      "agent_count_n": "N/A (Diagnostic Audit)",
+      "backbone_models": "not verifiable from accessible open summary",
+      "model_heterogeneity": "Not Applicable (Diagnostic Audit)"
+    },
+    "coordination_and_communication_method": {
+      "interaction_paradigm": "Non-Comparative Diagnostic Audit",
+      "communication_protocol": "Audits 12 benchmarks (SWE-bench, WebArena, AgentBench, GAIA, ToolLLM, tau-bench, WorkArena, Mind2Web, OSWorld, InterCode, BFCL, etc.) and evaluates 6 agents on 300 enterprise tasks across Cost, Latency, Efficacy, Assurance, and 8-run Reliability, validated against N=15 enterprise experts. [Planning/Memory/Verification: Exposes multi-step stochastic compounding and guardrail/policy violations.]",
+      "topology_optimization_or_pruning_method": "None (enterprise evaluation framework)",
+      "termination_mechanism": "N/A (Diagnostic Audit)"
+    },
+    "planning_memory_verification_notes": {
+      "planning_mechanism": "Evaluates multi-step enterprise workflow stability across 8 repeated executions.",
+      "memory_and_state_sharing": "N/A (enterprise benchmark audit).",
+      "verification_and_feedback": "Assurance dimension checks policy/security guardrails; human expert validation (rho=0.83 vs 0.41)."
+    },
+    "terminological_stratum": "Non-Comparative Diagnostic / Validity Study",
+    "role_specialization": {
+      "has_role_specialization": false,
+      "defined_roles": [],
+      "asymmetric_tool_or_privilege_split": "none"
+    },
+    "failure_mechanisms_and_mitigations": {
+      "regimes_where_mas_succeeded": "CLEAR multi-dimensional scoring predicts production deployment success at rho=0.83 vs. rho=0.41 for accuracy-only evaluation.",
+      "regimes_where_mas_degraded_or_failed": "Accuracy-only selection causes 50x cost variance, 4.4x-10.8x unnecessary spend, and 60%->25% 8-run reliability collapse.",
+      "failure_mechanisms_documented": [
+        "Harness/Metric Artifact",
+        "Error Amplification"
+      ],
+      "mitigation_and_recovery_delta": "Cost- and reliability-aware CLEAR selection avoids 4.4x-10.8x cost inflation while doubling production-readiness correlation."
+    },
+    "architectural_limitations": {
+      "author_stated_limitations": "Academic benchmarks omit latency, enterprise policy compliance, security assurance, cost ceilings, and multi-run reliability.",
+      "threats_to_validity": "Preprint (arXiv:2511.14136); exact identities/models of the 6 evaluated agent architectures not exposed in accessible open summary.",
+      "six_class_confounder_flags": [
+        "None Observed"
+      ],
+      "publication_bias_or_status_caveats": "Preprint (arXiv:2511.14136); not peer-reviewed."
+    },
+    "supporting_evidence_locations": [
+      "https://arxiv.org/abs/2511.14136 (Abstract & Section 2 benchmark audit summary)"
+    ]
+  },
+  "SR036": {
+    "objective": "Audit plausible patches from CodeStory, LearnByInteract, and OpenHands across all 500 SWE-bench Verified tasks using wider developer tests and PatchDiff differential testing, exposing 29.6% behavioral divergence and 6.2-6.4 pp score inflation.",
+    "architecture_and_agent_count": {
+      "system_names": [
+        "PatchDiff (auditing CodeStory, LearnByInteract, OpenHands)"
+      ],
+      "topology_class": "Diagnostic/Benchmark Audit (N/A)",
+      "agent_count_n": "N/A (Diagnostic Audit)",
+      "backbone_models": "not verifiable from accessible open summary",
+      "model_heterogeneity": "Not Applicable (Diagnostic Audit)"
+    },
+    "coordination_and_communication_method": {
+      "interaction_paradigm": "Non-Comparative Diagnostic Audit",
+      "communication_protocol": "4-stage differential testing pipeline (call-trace target identification -> contextual code extraction -> LLM diagnostic test synthesis comparing generated vs. ground-truth oracle patches -> flakiness filtering). [Planning/Memory/Verification: Exposes weak unit-test coverage and over-engineering/divergent patches passing SWE-bench Verified.]",
+      "topology_optimization_or_pruning_method": "None (differential verification audit)",
+      "termination_mechanism": "Execution of differential test suite."
+    },
+    "planning_memory_verification_notes": {
+      "planning_mechanism": "Call-trace target identification and differential test synthesis.",
+      "memory_and_state_sharing": "Extracts full surrounding repository context for test synthesis.",
+      "verification_and_feedback": "Differential execution comparing agent patch against developer ground-truth oracle patch."
+    },
+    "terminological_stratum": "Non-Comparative Diagnostic / Validity Study",
+    "role_specialization": {
+      "has_role_specialization": false,
+      "defined_roles": [],
+      "asymmetric_tool_or_privilege_split": "PatchDiff accesses ground-truth oracle patches and full repository developer test suites."
+    },
+    "failure_mechanisms_and_mitigations": {
+      "regimes_where_mas_succeeded": "Exposes 7.8% wider-repo test failures and 29.6% behavioral divergence (28.6% definitively wrong on manual inspection: CodeStory 29.3%, LearnByInteract 32.2%, OpenHands 27.2% suspicious rates).",
+      "regimes_where_mas_degraded_or_failed": "Sparse benchmark unit tests and underspecified issue prompts inflate SWE-bench Verified resolve rates by 6.2-6.4 absolute percentage points.",
+      "failure_mechanisms_documented": [
+        "Harness/Metric Artifact",
+        "Termination/Verification Failure"
+      ],
+      "mitigation_and_recovery_delta": "Execution-driven differential testing (PatchDiff) catches plausible-but-incorrect patches responsible for 6.2-6.4 pp benchmark inflation."
+    },
+    "architectural_limitations": {
+      "author_stated_limitations": "Requires flakiness/qualification filtering of LLM-generated tests and access to ground-truth oracle patches (benchmark auditing tool rather than live test-time oracle).",
+      "threats_to_validity": "Evaluates 3 SWE issue-solving frameworks on SWE-bench Verified; exact underlying LLM snapshots for test generation and the 3 audited agents not exposed in open summary.",
+      "six_class_confounder_flags": [
+        "C5: Exact-Match / Harness Fragility / Benchmark Leakage"
+      ],
+      "publication_bias_or_status_caveats": "Peer-reviewed conference (ICSE 2026 Research Track)."
+    },
+    "supporting_evidence_locations": [
+      "https://arxiv.org/abs/2503.15223 (Abstract & EmergentMind/Moonlight quantitative summaries)"
+    ]
+  },
+  "SR037": {
+    "objective": "Audit Task Validity, Outcome Validity, and Reporting across major agentic benchmarks (CVE-Bench, tau-bench, KernelBench, SWE-bench Verified, WebArena, BIRD, SWE-Lancer) and introduce the Agentic Benchmark Checklist (ABC).",
+    "architecture_and_agent_count": {
+      "system_names": [
+        "Agentic Benchmark Checklist (ABC)"
+      ],
+      "topology_class": "Diagnostic/Benchmark Audit (N/A)",
+      "agent_count_n": "N/A (Diagnostic Audit)",
+      "backbone_models": "not verifiable from accessible open summary",
+      "model_heterogeneity": "Not Applicable (Diagnostic Audit)"
+    },
+    "coordination_and_communication_method": {
+      "interaction_paradigm": "Non-Comparative Diagnostic Audit",
+      "communication_protocol": "Systematic benchmark-design checklist auditing task solvability shortcuts (Task Validity), automated grader/oracle correctness (Outcome Validity), and transparent reporting (Benchmark Reporting). [Planning/Memory/Verification: Exposes oracle flaws skewing agent scores up to 100% relative (e.g., tau-bench empty responses yielding up to 38% overestimation).]",
+      "topology_optimization_or_pruning_method": "None (benchmark validation checklist)",
+      "termination_mechanism": "N/A (Diagnostic Audit)"
+    },
+    "planning_memory_verification_notes": {
+      "planning_mechanism": "N/A (benchmark evaluation audit).",
+      "memory_and_state_sharing": "N/A (benchmark evaluation audit).",
+      "verification_and_feedback": "Audits reward/grader oracle flaws (empty-response passes, fragile tests, incomplete fuzzing, brittle string matching)."
+    },
+    "terminological_stratum": "Non-Comparative Diagnostic / Validity Study",
+    "role_specialization": {
+      "has_role_specialization": false,
+      "defined_roles": [],
+      "asymmetric_tool_or_privilege_split": "none"
+    },
+    "failure_mechanisms_and_mitigations": {
+      "regimes_where_mas_succeeded": "Applying ABC to CVE-Bench mitigated grader flaws and cut performance overestimation by 33%.",
+      "regimes_where_mas_degraded_or_failed": "Flawed task setup and grader design skew reported agent scores up to 100% relative (e.g., up to 38% overestimation in tau-bench setups, fragile SWE-bench Verified tests, brittle WebArena string matchers).",
+      "failure_mechanisms_documented": [
+        "Harness/Metric Artifact",
+        "Termination/Verification Failure"
+      ],
+      "mitigation_and_recovery_delta": "ABC-guided benchmark hardening reduced CVE-Bench score overestimation by 33%."
+    },
+    "architectural_limitations": {
+      "author_stated_limitations": "Absolute benchmark validity is difficult to guarantee universally without transparent reporting caveats; checklist application requires manual domain expertise.",
+      "threats_to_validity": "Preprint (arXiv:2507.02825); exact model backbones evaluated in benchmark case studies not itemized in open summary.",
+      "six_class_confounder_flags": [
+        "C5: Exact-Match / Harness Fragility / Benchmark Leakage"
+      ],
+      "publication_bias_or_status_caveats": "Preprint (arXiv:2507.02825); not peer-reviewed."
+    },
+    "supporting_evidence_locations": [
+      "https://arxiv.org/abs/2507.02825 (Abstract, ABC GitHub structure & Moonlight/Kili summaries)"
+    ]
+  },
+  "SR038": {
+    "objective": "Introduce BenchJack, an automated coding-agent red-teaming and generative-adversarial patching pipeline auditing 10 major agent benchmarks, uncovering 219 reward-hacking/harness-exploit flaws across 8 vulnerability classes.",
+    "architecture_and_agent_count": {
+      "system_names": [
+        "BenchJack"
+      ],
+      "topology_class": "Diagnostic/Benchmark Audit (N/A)",
+      "agent_count_n": "N/A (Diagnostic Audit)",
+      "backbone_models": "not verifiable from accessible open summary",
+      "model_heterogeneity": "Not Applicable (Diagnostic Audit)"
+    },
+    "coordination_and_communication_method": {
+      "interaction_paradigm": "Non-Comparative Diagnostic Audit",
+      "communication_protocol": "Automated coding agent inspects benchmark repositories to synthesize 'clairvoyant' reward-hacking exploits requiring near-zero task solving (even zero runtime LLM inference calls), paired with an iterative generative-adversarial harness patching loop. [Planning/Memory/Verification: Audits environment/grader isolation flaws across 10 SWE/web/desktop/terminal benchmarks.]",
+      "topology_optimization_or_pruning_method": "Iterative generative-adversarial harness patching",
+      "termination_mechanism": "Exploit synthesis verification / hackable-task ratio reduction (<10%)."
+    },
+    "planning_memory_verification_notes": {
+      "planning_mechanism": "Red-team coding agent analyzes benchmark source trees for exploit paths.",
+      "memory_and_state_sharing": "N/A (benchmark security audit).",
+      "verification_and_feedback": "Adversarial exploit execution verifies grader bypass; iterative patching secures WebArena and OSWorld."
+    },
+    "terminological_stratum": "Non-Comparative Diagnostic / Validity Study",
+    "role_specialization": {
+      "has_role_specialization": true,
+      "defined_roles": [
+        "Red-Team Exploit Coding Agent",
+        "Generative-Adversarial Harness Patcher"
+      ],
+      "asymmetric_tool_or_privilege_split": "Red-team auditor inspects full benchmark codebase and test harness internals."
+    },
+    "failure_mechanisms_and_mitigations": {
+      "regimes_where_mas_succeeded": "Generative-adversarial BenchJack patching cuts hackable-task ratios from ~100% to <10% and fully secures WebArena and OSWorld within a few iterations.",
+      "regimes_where_mas_degraded_or_failed": "219 distinct harness/reward-hacking flaws across 10 major benchmarks allow near-100% scores without solving underlying tasks.",
+      "failure_mechanisms_documented": [
+        "Harness/Metric Artifact",
+        "Termination/Verification Failure"
+      ],
+      "mitigation_and_recovery_delta": "Iterative generative-adversarial patching drops hackable-task fraction from ~100% to <10% (and 0% hackable in tested WebArena/OSWorld setups)."
+    },
+    "architectural_limitations": {
+      "author_stated_limitations": "not verifiable from accessible open summary",
+      "threats_to_validity": "Preprint (arXiv:2605.12673); exact coding-agent LLM backbones and full 10-benchmark list beyond WebArena/OSWorld not enumerated in open summary.",
+      "six_class_confounder_flags": [
+        "C5: Exact-Match / Harness Fragility / Benchmark Leakage"
+      ],
+      "publication_bias_or_status_caveats": "Preprint (arXiv:2605.12673); not peer-reviewed."
+    },
+    "supporting_evidence_locations": [
+      "https://arxiv.org/abs/2605.12673 (Abstract & GitHub summary)"
+    ]
+  },
+  "SR039": {
+    "objective": "Introduce WebArena Verified, replacing brittle substring/DOM/LLM-as-a-judge evaluators in WebArena with deterministic containerized backend database/API state checks and network trace replays.",
+    "architecture_and_agent_count": {
+      "system_names": [
+        "WebArena Verified"
+      ],
+      "topology_class": "Diagnostic/Benchmark Audit (N/A)",
+      "agent_count_n": "N/A (Diagnostic Audit)",
+      "backbone_models": "not verifiable from accessible open summary",
+      "model_heterogeneity": "Not Applicable (Diagnostic Audit)"
+    },
+    "coordination_and_communication_method": {
+      "interaction_paradigm": "Non-Comparative Diagnostic Audit",
+      "communication_protocol": "Evaluates web agents via deterministic backend database inspections, API calls, captured network trace replays, and data-type-aware comparators instead of surface string/DOM/LLM-judge checks. [Planning/Memory/Verification: Deterministic backend-state oracle reduces evaluation ambiguity and false negatives.]",
+      "topology_optimization_or_pruning_method": "None (deterministic evaluation harness)",
+      "termination_mechanism": "N/A (Diagnostic Audit)"
+    },
+    "planning_memory_verification_notes": {
+      "planning_mechanism": "N/A (evaluation harness replacement).",
+      "memory_and_state_sharing": "Lacks intermediate step-by-step state snapshots in agent logs (inspects final backend DB state).",
+      "verification_and_feedback": "Deterministic backend database/API and network-trace verification replacing LLM-as-a-judge and substring matchers."
+    },
+    "terminological_stratum": "Non-Comparative Diagnostic / Validity Study",
+    "role_specialization": {
+      "has_role_specialization": false,
+      "defined_roles": [],
+      "asymmetric_tool_or_privilege_split": "Evaluator directly inspects containerized backend databases and network replays hidden from surface DOM scrapers."
+    },
+    "failure_mechanisms_and_mitigations": {
+      "regimes_where_mas_succeeded": "Substantially lowers false-negative rates and boosts benchmark reproducibility on state-verifiable web tasks.",
+      "regimes_where_mas_degraded_or_failed": "Original WebArena string/DOM/LLM-judge checkers misclassify valid runs; rigid backend transaction expectations can still reject valid unconventional UI/API paths.",
+      "failure_mechanisms_documented": [
+        "Harness/Metric Artifact",
+        "Termination/Verification Failure"
+      ],
+      "mitigation_and_recovery_delta": "Deterministic backend-state comparators eliminate surface-string and LLM-judge scoring fragility in WebArena (exact numerical delta not verifiable from accessible open summary)."
+    },
+    "architectural_limitations": {
+      "author_stated_limitations": "Restricted to string/state-verifiable tasks (excludes visual/aesthetic goals), lacks intermediate state traces in logs, rigid transaction fingerprint expectations, does not fix original dataset biases/OOD limits, and requires containerized backend maintenance.",
+      "threats_to_validity": "Tier B Workshop contribution; exact false-negative reduction numbers not exposed in accessible open summary.",
+      "six_class_confounder_flags": [
+        "C5: Exact-Match / Harness Fragility / Benchmark Leakage"
+      ],
+      "publication_bias_or_status_caveats": "Workshop (NeurIPS 2025 Scaling Environments for Agents Workshop)."
+    },
+    "supporting_evidence_locations": [
+      "https://github.com/ServiceNow/webarena-verified",
+      "OpenReview NeurIPS 2025 SEA Workshop summary"
+    ]
+  },
+  "SR040": {
+    "objective": "Formalize Verification Transport and quantify Verification Transport Failure Rate (VTFR) when identical agent trajectories are judged across native views vs. macro-tool abstraction, multi-agent delegation (30.9% VTFR), and history compaction (~20% VTFR).",
+    "architecture_and_agent_count": {
+      "system_names": [
+        "Abstraction-Restoration Verification Transport Framework (V-LLM, V-EVIDENCE, V-AGENTIC, V-DELIBERATIVE)"
+      ],
+      "topology_class": "Diagnostic/Benchmark Audit (N/A)",
+      "agent_count_n": "N/A (Diagnostic Audit)",
+      "backbone_models": [
+        "GPT-OSS-120B",
+        "GPT-OSS-20B",
+        "Gemini-3.7-Flash",
+        "Gemini-2.5-Flash"
+      ],
+      "model_heterogeneity": "Not Applicable (Diagnostic Audit)"
+    },
+    "coordination_and_communication_method": {
+      "interaction_paradigm": "Non-Comparative Diagnostic Audit",
+      "communication_protocol": "Freezes tasks, trajectories, outcomes, criteria, and verifier models across native, abstracted (macro-tool wrappers, multi-agent delegation handoff logs, compacted history), and provenance-restored views across 4 verifier protocols (V-LLM, V-EVIDENCE, V-AGENTIC, V-DELIBERATIVE) on APB, ATBench, PRB, and AgentDojo. [Planning/Memory/Verification: Tests how lossy memory compaction and delegation boundaries break supervisor/verifier reliability.]",
+      "topology_optimization_or_pruning_method": "None (diagnostic verification audit)",
+      "termination_mechanism": "Verifier pass/fail/abstain verdict."
+    },
+    "planning_memory_verification_notes": {
+      "planning_mechanism": "Tests active provenance-seeking (V-AGENTIC) and deliberative auditing (V-DELIBERATIVE) against direct/evidence-grounded verifiers.",
+      "memory_and_state_sharing": "Measures ~20% VTFR under history compaction and 30.9% VTFR under multi-agent delegation handoff logs.",
+      "verification_and_feedback": "Provenance restoration recovers ~85.5% of transport failures when lossless sub-agent/tool logs are preserved."
+    },
+    "terminological_stratum": "Non-Comparative Diagnostic / Validity Study",
+    "role_specialization": {
+      "has_role_specialization": true,
+      "defined_roles": [
+        "Verifier Protocol Agent (V-LLM / V-EVIDENCE / V-AGENTIC / V-DELIBERATIVE)",
+        "Delegated Worker Subagents (in delegation boundary condition)"
+      ],
+      "asymmetric_tool_or_privilege_split": "Verifier observes only abstracted handoff/macro/compacted summaries unless provenance restoration exposes low-level execution steps."
+    },
+    "failure_mechanisms_and_mitigations": {
+      "regimes_where_mas_succeeded": "Restoring lossless execution provenance recovers ~85.5% of verification transport failures.",
+      "regimes_where_mas_degraded_or_failed": "Macro-tool abstraction (31.0% VTFR), multi-agent delegation (30.9% VTFR), and history compaction (~20% VTFR) break native-accurate verifiers: direct V-LLM hallucinates wrong verdicts while structured V-EVIDENCE/V-DELIBERATIVE abstain heavily.",
+      "failure_mechanisms_documented": [
+        "Handoff Information Loss (DPI)",
+        "Termination/Verification Failure",
+        "Harness/Metric Artifact"
+      ],
+      "mitigation_and_recovery_delta": "Lossless provenance restoration recovers ~85.5% of verification transport failures (degrading when restored logs remain lossy)."
+    },
+    "architectural_limitations": {
+      "author_stated_limitations": "Structured/deliberative protocols fail to eliminate transport failure; recovery degrades under lossy provenance logs; native-view accuracy overstates production verifier reliability.",
+      "threats_to_validity": "Tier B Workshop paper; evaluates frozen trajectory views rather than live closed-loop MAS re-planning.",
+      "six_class_confounder_flags": [
+        "C5: Exact-Match / Harness Fragility / Benchmark Leakage"
+      ],
+      "publication_bias_or_status_caveats": "Workshop (NeurIPS 2026 Who Verifies the Agents? Workshop)."
+    },
+    "supporting_evidence_locations": [
+      "https://arxiv.org/abs/2611.18471 (Abstract, Section 3, Sections 4-5, Tables 1-2)"
+    ]
+  },
+  "SR069": {
+    "objective": "Formalize and evaluate CORBA (Contagious Recursive Blocking Attacks — Denial-of-Collaboration) across AutoGen and CAMEL topologies (centralized, decentralized, hierarchical, complex graphs), proving benign-phrased recursive instructions paralyze N>=2 MAS.",
+    "architecture_and_agent_count": {
+      "system_names": [
+        "CORBA Attack Evaluation on AutoGen & CAMEL"
+      ],
+      "topology_class": "Multiple Topologies Compared",
+      "agent_count_n": "not verifiable from accessible open summary",
+      "backbone_models": "not verifiable from accessible open summary",
+      "model_heterogeneity": "not verifiable from accessible open summary"
+    },
+    "coordination_and_communication_method": {
+      "interaction_paradigm": "Interactive Stateful Multi-Turn",
+      "communication_protocol": "Evaluates AutoGen and CAMEL multi-agent message passing across centralized, decentralized, hierarchical, and complex graph topologies (spanning commercial and open-source LLMs; exact model names not verifiable from accessible open summary) under contagious recursive blocking triggers. [Planning/Memory/Verification: Exposes absence of collaboration-aware runtime guards, dialogue entropy monitors, or hard recursion bounds.]",
+      "topology_optimization_or_pruning_method": "None (evaluates attack propagation across existing topologies)",
+      "termination_mechanism": "Fails to terminate cleanly (infinite recursive message loops until resource exhaustion/timeout)."
+    },
+    "planning_memory_verification_notes": {
+      "planning_mechanism": "Exploits cooperative instruction-following across multi-turn delegation loops.",
+      "memory_and_state_sharing": "Contagious payloads propagate across neighbor communication edges.",
+      "verification_and_feedback": "Safety alignment, toxicity filters, and perplexity monitors fail to flag semantically benign recursive triggers."
+    },
+    "terminological_stratum": "Interactive / Stateful LLM-MAS",
+    "role_specialization": {
+      "has_role_specialization": true,
+      "defined_roles": [
+        "Cooperative Role-Playing Agents (CAMEL)",
+        "Conversational Team Agents (AutoGen)",
+        "Compromised Vector Node"
+      ],
+      "asymmetric_tool_or_privilege_split": "not verifiable from accessible open summary"
+    },
+    "failure_mechanisms_and_mitigations": {
+      "regimes_where_mas_succeeded": "N/A (adversarial Denial-of-Collaboration availability stress-test).",
+      "regimes_where_mas_degraded_or_failed": "Dense message-passing topologies accelerate system-wide recursive blocking; refusal training, safety prompts, and perplexity checks fail across both commercial and open LLMs.",
+      "failure_mechanisms_documented": [
+        "Prompt-Injection/Collusion Vulnerability",
+        "Termination/Verification Failure",
+        "Error Amplification"
+      ],
+      "mitigation_and_recovery_delta": "Static content filters fail; recommends collaboration-aware runtime defenses (dialogue entropy tracking, strict turn/depth caps, repetition monitors; empirical recovery delta not verifiable from accessible open summary)."
+    },
+    "architectural_limitations": {
+      "author_stated_limitations": "Robust collaboration-aware runtime defenses remain an open challenge; static toxicity and perplexity filters cannot separate recursive loops from complex collaboration.",
+      "threats_to_validity": "Adversarial availability attack rather than benign MAS-vs-SAS task-accuracy benchmark; exact backbone models, agent counts N, and ASR numbers require full ACL PDF inspection.",
+      "six_class_confounder_flags": [
+        "None Observed"
+      ],
+      "publication_bias_or_status_caveats": "Peer-reviewed conference (Findings of ACL 2026, 2026.findings-acl.342, pp. 6899-6908)."
+    },
+    "supporting_evidence_locations": [
+      "https://aclanthology.org/2026.findings-acl.342/",
+      "https://arxiv.org/abs/2502.14529 (Abstract & ACL Anthology summary)"
+    ]
+  },
+  "SR075": {
+    "objective": "Disentangle Other Agent's State observation (OAS), co-located Knowledge Exchange (KE), and Other Agent's Next Action prediction (OANA) in a 2x2x2 factorial design for decentralized N=2 embodied ReAct LLM-MAS across 1,000 PARTNR tasks.",
+    "architecture_and_agent_count": {
+      "system_names": [
+        "Decentralized Embodied ReAct LLM-MAS (PARTNR OAS/KE/OANA)"
+      ],
+      "topology_class": "Multiple Topologies Compared",
+      "agent_count_n": 2,
+      "backbone_models": "not verifiable from accessible open summary",
+      "model_heterogeneity": "not verifiable from accessible open summary"
+    },
+    "coordination_and_communication_method": {
+      "interaction_paradigm": "Interactive Stateful Multi-Turn",
+      "communication_protocol": "Decentralized zero-shot ReAct embodied controllers operating under Decoupled Partial Observability without explicit natural-language dialogue, varying OAS observation, co-located object Knowledge Exchange (KE), and explicit OANA next-action prediction across 16 model-context pairs. [Planning/Memory/Verification: Local zero-shot ReAct planning + co-located object-state memory exchange (KE); no central coordinator or explicit verifier.]",
+      "topology_optimization_or_pruning_method": "2x2x2 factorial ablation across OAS, KE, and OANA partner-information channels",
+      "termination_mechanism": "PARTNR task goal completion or episode horizon limit."
+    },
+    "planning_memory_verification_notes": {
+      "planning_mechanism": "Decentralized zero-shot ReAct embodied planning.",
+      "memory_and_state_sharing": "Strict Decoupled Partial Observability; KE exchanges object states only when agents are co-located.",
+      "verification_and_feedback": "Habitat simulator environment physics/state check; OANA induces shallow planner-dependent modeling."
+    },
+    "terminological_stratum": "Interactive / Stateful LLM-MAS",
+    "role_specialization": {
+      "has_role_specialization": true,
+      "defined_roles": [
+        "Embodied Robot Agent",
+        "Simulated Embodied Partner Agent"
+      ],
+      "asymmetric_tool_or_privilege_split": "Decoupled partial observability enforces strictly individual perception; embodied agents may hold distinct physical capabilities in PARTNR."
+    },
+    "failure_mechanisms_and_mitigations": {
+      "regimes_where_mas_succeeded": "Observing partner state (OAS) boosts task quality across all planners; co-located Knowledge Exchange (KE) cuts simulation steps up to 25%.",
+      "regimes_where_mas_degraded_or_failed": "Explicit OANA next-action prediction degrades task success in 15 of 16 model-context pairs while inflating superficial text mentions of the partner to 55%-100%.",
+      "failure_mechanisms_documented": [
+        "Specification/Role Failure",
+        "Error Amplification"
+      ],
+      "mitigation_and_recovery_delta": "Removing speculative OANA prediction in favor of reactive OAS + co-located KE avoids 15/16 degradation setups and reduces steps up to 25%."
+    },
+    "architectural_limitations": {
+      "author_stated_limitations": "Speculative OANA triggers shallow planner-dependent modeling and superficial partner mentions without true coordination gains; effective coordination relies on reactive shared state.",
+      "threats_to_validity": "Preprint (arXiv:2610.16895) linked to active double-blind TMLR Paper 13141 (Under review); exact LLM model names across the 16 pairs not exposed in accessed open summary.",
+      "six_class_confounder_flags": [
+        "C3: Process Proxy / Voting-as-Deliberation Conflation"
+      ],
+      "publication_bias_or_status_caveats": "Preprint (arXiv:2610.16895); concurrent TMLR Paper 13141 (OpenReview:SMe5HYmSff) remains Under review."
+    },
+    "supporting_evidence_locations": [
+      "https://arxiv.org/abs/2610.16895 (Abstract & ResearchGate/OpenReview summary)",
+      "https://openreview.net/forum?id=SMe5HYmSff"
+    ]
+  },
+  "SR076": {
+    "objective": "Introduce MADA-RL, a LoRA-based parameter-efficient multi-agent debate reinforcement learning framework specializing compact (<=4B) LLMs into generator and critic roles via a counterfactual critic advantage across 5 math benchmarks.",
+    "architecture_and_agent_count": {
+      "system_names": [
+        "MADA-RL (Generator-Critic Debate)"
+      ],
+      "topology_class": "Dense All-to-All Debate",
+      "agent_count_n": "not verifiable from accessible open summary",
+      "backbone_models": [
+        "DeepSeek-R1-Distill-Qwen-1.5B"
+      ],
+      "model_heterogeneity": "Homogeneous"
+    },
+    "coordination_and_communication_method": {
+      "interaction_paradigm": "Interactive Stateful Multi-Turn",
+      "communication_protocol": "Multi-round generator-critic debate where LoRA-specialized generator and critic adapters exchange full concatenated text responses (deliberately omitting an intermediate summarization model to keep memory lightweight). [Planning/Memory/Verification: Counterfactual critic advantage (critic reward minus generator ensemble per-instance accuracy) trains critics to fix consensus errors rather than imitate consensus.]",
+      "topology_optimization_or_pruning_method": "Role-conditioned LoRA RL post-training (no runtime edge pruning)",
+      "termination_mechanism": "Lightweight fixed multi-round debate (exact round integer not verifiable from accessible open summary)."
+    },
+    "planning_memory_verification_notes": {
+      "planning_mechanism": "RL-specialized multi-round generator-critic mathematical reasoning.",
+      "memory_and_state_sharing": "Direct text-response concatenation across debate rounds without an explicit summarizer.",
+      "verification_and_feedback": "Counterfactual critic advantage trains dedicated critic adapter to detect and repair generator ensemble mistakes."
+    },
+    "terminological_stratum": "Interactive / Stateful LLM-MAS",
+    "role_specialization": {
+      "has_role_specialization": true,
+      "defined_roles": [
+        "Generator Ensemble (LoRA-adapted)",
+        "Counterfactual Critic (LoRA-adapted)"
+      ],
+      "asymmetric_tool_or_privilege_split": "Shared <=4B base model parameterized asymmetrically via generator vs. critic LoRA adapters and counterfactual credit assignment."
+    },
+    "failure_mechanisms_and_mitigations": {
+      "regimes_where_mas_succeeded": "Significant improvements (p<0.001) across 5 math benchmarks (Math-500, AIME 2024/2025, AMC-23, Minerva-Math) over compact single-agent baselines with minimal updated LoRA parameters.",
+      "regimes_where_mas_degraded_or_failed": "Higher test-time inference compute/latency from multi-round debate vs. single-pass models; trails data-intensive full-trained baselines (DeepScaleR, STILL-3); omitting intermediate summarization caps long-trace performance.",
+      "failure_mechanisms_documented": [
+        "Conformity/Sycophancy Collapse"
+      ],
+      "mitigation_and_recovery_delta": "Counterfactual critic advantage directly prevents critic imitation of wrong consensus (p<0.001 across 5 math benchmarks vs. SAS/unspecialized baselines)."
+    },
+    "architectural_limitations": {
+      "author_stated_limitations": "Approaches but does not beat massive-data baselines (DeepScaleR, STILL-3); multi-round deployment incurs higher inference cost/latency; omits intermediate summarizer for training memory simplicity.",
+      "threats_to_validity": "Preprint (arXiv:2607.18006) linked to TMLR Paper 10674 (Under review); exact generator count N and compute-matched SAS parity details not fully exposed in open summary.",
+      "six_class_confounder_flags": [
+        "C1: Unmatched Inference Compute/Tokens",
+        "C6: Unamortized Search/Training Cost Omission"
+      ],
+      "publication_bias_or_status_caveats": "Preprint (arXiv:2607.18006); concurrent TMLR Paper 10674 (OpenReview:1tnHPWFS9I) remains Under review."
+    },
+    "supporting_evidence_locations": [
+      "https://arxiv.org/abs/2607.18006 (Abstract & arXiv methodology summary)",
+      "https://openreview.net/forum?id=1tnHPWFS9I"
+    ]
+  },
+  "SR079": {
+    "objective": "Prove via a contractive-assimilation variance model across 30 conditions (15 tasks, 5 model families) that MAD peer mixing causes diversity collapse and manufactured overconfidence, and propose CMAD with split-conformal coverage certification.",
+    "architecture_and_agent_count": {
+      "system_names": [
+        "Standard Multi-Agent LLM Debate (MAD)",
+        "CMAD (Calibrated Multi-Agent Debate)"
+      ],
+      "topology_class": "Dense All-to-All Debate",
+      "agent_count_n": "not verifiable from accessible open summary",
+      "backbone_models": "not verifiable from accessible open summary",
+      "model_heterogeneity": "not verifiable from accessible open summary"
+    },
+    "coordination_and_communication_method": {
+      "interaction_paradigm": "Interactive Stateful Multi-Turn",
+      "communication_protocol": "Multi-round peer debate across 15 tasks and 5 LLM families modeled via contractive assimilation driving inter-agent correlation toward 1.0; CMAD integrates Prevent/Detect assimilation levers and a split-conformal certificate. [Planning/Memory/Verification: Split-conformal set certificate guarantees >= (1-alpha) marginal coverage regardless of collapse, replacing brittle agreement-based stopping.]",
+      "topology_optimization_or_pruning_method": "CMAD conditional Prevent/Detect assimilation interventions",
+      "termination_mechanism": "Contrasts agreement-based stopping (causing 18%-47% miscoverage) against CMAD split-conformal set certification."
+    },
+    "planning_memory_verification_notes": {
+      "planning_mechanism": "Conditional assimilation prevention and collapse detection during debate.",
+      "memory_and_state_sharing": "Peer mixing compresses private independent innovation and drives inter-agent correlation -> 1.0.",
+      "verification_and_feedback": "Split-conformal prediction certificate guarantees marginal coverage (1-alpha) even under diversity collapse."
+    },
+    "terminological_stratum": "Interactive / Stateful LLM-MAS",
+    "role_specialization": {
+      "has_role_specialization": "not verifiable from accessible open summary",
+      "defined_roles": "not verifiable from accessible open summary",
+      "asymmetric_tool_or_privilege_split": "none"
+    },
+    "failure_mechanisms_and_mitigations": {
+      "regimes_where_mas_succeeded": "CMAD conformal certification guarantees >= (1-alpha) marginal coverage even when peer assimilation collapses ensemble diversity.",
+      "regimes_where_mas_degraded_or_failed": "Standard consensus-seeking MAD drives correlation -> 1.0 while verbalized confidence saturates independently of residual error, manufacturing highest overconfidence on wrong answers and 18%-47% miscoverage under agreement stopping.",
+      "failure_mechanisms_documented": [
+        "Conformity/Sycophancy Collapse",
+        "Termination/Verification Failure",
+        "Error Amplification"
+      ],
+      "mitigation_and_recovery_delta": "CMAD Prevent/Detect + split-conformal certificate restores >= (1-alpha) coverage vs. 18%-47% miscoverage under agreement-based stopping."
+    },
+    "architectural_limitations": {
+      "author_stated_limitations": "Debate gains remain constrained by task headroom and shared base-model blind spots; surface semantic proxies for collapse detection can miss subtle reasoning homogenization.",
+      "threats_to_validity": "Tier B Workshop paper with two prior public TMLR rejections (Paper 9844 & Paper 11271); exact 5 LLM names and agent counts N absent from accessible OpenReview summaries.",
+      "six_class_confounder_flags": [
+        "C3: Process Proxy / Voting-as-Deliberation Conflation"
+      ],
+      "publication_bias_or_status_caveats": "Workshop (KDD 2026 Workshop on Evaluation and Trustworthiness of Agentic AI); linked prior TMLR rejections (Paper 9844, Paper 11271) tracked for RQ4 sensitivity."
+    },
+    "supporting_evidence_locations": [
+      "https://openreview.net/group?id=KDD.org/2026/Workshop/Agentic_AI",
+      "OpenReview TMLR-9844 & TMLR-11271 public abstract summaries"
+    ]
+  },
+  "SR082": {
+    "objective": "Introduce SCALE, a persona-diverse multi-agent framework combining independent text coding, multi-round collaborative discussion, dynamic codebook evolution, and human-in-the-loop (HITL) intervention for social-science content analysis.",
+    "architecture_and_agent_count": {
+      "system_names": [
+        "SCALE"
+      ],
+      "topology_class": "Dense All-to-All Debate",
+      "agent_count_n": "not verifiable from accessible open summary",
+      "backbone_models": "not verifiable from accessible open summary",
+      "model_heterogeneity": "not verifiable from accessible open summary"
+    },
+    "coordination_and_communication_method": {
+      "interaction_paradigm": "Interactive Stateful Multi-Turn",
+      "communication_protocol": "4-phase iterative loop (using GPT and instruction-tuned LLM backbones; exact snapshots not verifiable from accessible open summary): (1) independent bot coding, (2) multi-round collaborative rationale debate, (3) dynamic codebook evolution, (4) optional human intervention (Book Updates, Collaborative, or Directive). [Planning/Memory/Verification: Evolving shared codebook acts as dynamic task-rule memory; inter-coder disagreement flagging + HITL feedback acts as verification.]",
+      "topology_optimization_or_pruning_method": "None (fixed peer discussion + dynamic codebook rule refinement)",
+      "termination_mechanism": "Annotation convergence across coders or predefined maximum round cap."
+    },
+    "planning_memory_verification_notes": {
+      "planning_mechanism": "Iterative 4-stage qualitative content-analysis workflow with optional HITL breakpoints.",
+      "memory_and_state_sharing": "Shared evolving codebook dynamically updates category definitions and inclusion/exclusion rules.",
+      "verification_and_feedback": "Inter-coder discrepancy negotiation plus human domain-expert intervention (Book Updates, Collaborative, Directive)."
+    },
+    "terminological_stratum": "Interactive / Stateful LLM-MAS",
+    "role_specialization": {
+      "has_role_specialization": true,
+      "defined_roles": [
+        "Persona-Diverse Social Scientist Coders (varying disciplinary/demographic profiles)",
+        "Human Domain Expert Interventionist (HITL)"
+      ],
+      "asymmetric_tool_or_privilege_split": "Human interventionist holds Directive and Book-Update authority overriding LLM coders."
+    },
+    "failure_mechanisms_and_mitigations": {
+      "regimes_where_mas_succeeded": "Social-science text content analysis outperforming N=1 single-agent coding baseline (accuracy/F1) and approaching human-coder agreement.",
+      "regimes_where_mas_degraded_or_failed": "High API/token cost and latency across multi-round coding/discussion/evolution; shared bias and conformity reinforcement during discussion; sensitivity to seed personas/codebooks; HITL drift vs. over-control balance.",
+      "failure_mechanisms_documented": [
+        "Conformity/Sycophancy Collapse",
+        "Specification/Role Failure"
+      ],
+      "mitigation_and_recovery_delta": "Human intervention (Collaborative/Directive/Book Updates) + dynamic codebook refinement anchor coding drift (exact deltas extracted in Wave 4C)."
+    },
+    "architectural_limitations": {
+      "author_stated_limitations": "Substantially higher token cost and latency vs. single-prompt coding, shared conformity/bias propagation, sensitivity to initial personas/codebook framing, and difficulty calibrating HITL intervention frequency.",
+      "threats_to_validity": "Prior version (ICLR 2025 Sub #6097) withdrawn on Jan 19, 2025 following cost/baseline criticisms before ACL 2025 revision; relies on HITL assistance and multi-round tokens vs. N=1 SAS.",
+      "six_class_confounder_flags": [
+        "C1: Unmatched Inference Compute/Tokens",
+        "C4: Asymmetric Prompting or Tool/Execution Feedback"
+      ],
+      "publication_bias_or_status_caveats": "Peer-reviewed conference (ACL 2025 Main Long Papers, 2025.acl-long.416); prior withdrawn ICLR2025-6097 tracked for longitudinal audit."
+    },
+    "supporting_evidence_locations": [
+      "https://aclanthology.org/2025.acl-long.416/",
+      "https://arxiv.org/abs/2502.10937 (Abstract & Moonlight methodology summary)"
+    ]
+  }
+}
