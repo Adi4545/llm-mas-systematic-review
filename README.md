@@ -77,7 +77,7 @@ To verify that all numbers, statistics, table rows, and citations in the manuscr
 
 ```bash
 # Clone the repository
-git clone https://github.com/<username>/llm-mas-systematic-review.git
+git clone https://github.com/Adi4545/llm-mas-systematic-review.git
 cd llm-mas-systematic-review
 
 # Run the 15-point automated verification audit
@@ -130,7 +130,7 @@ python3 scripts/verify_audit.py
   author={Sharma, Aditya and Contributors},
   journal={Systematic Literature Review Repository},
   year={2026},
-  url={https://github.com/<username>/llm-mas-systematic-review}
+  url={https://github.com/Adi4545/llm-mas-systematic-review}
 }
 ```
 
